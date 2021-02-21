@@ -1,5 +1,6 @@
 // index.ts
 // 获取应用实例
+import { hello } from "../../api/hello"
 const app = getApp<IAppOption>()
 
 Page({
@@ -18,9 +19,20 @@ Page({
   },
 
   btnFun() {
-    wx.vibrateShort();  // 1、使手机震动15ms
-    //或者
-    wx.vibrateLong();	// 2、使手机震动400ms
+    // wx.vibrateShort();  // 1、使手机震动15ms
+    // //或者
+    // wx.vibrateLong();	// 2、使手机震动400ms
+
+    // hello().then(res => {
+    //   console.log(res)
+    // }).catch(res => {
+    //   console.log(res)
+    // })
+    wx.login({
+      success: res => {
+        console.log(res.code)
+      }
+    })
   },
 
   onLoad() {
@@ -51,7 +63,7 @@ Page({
       })
     }
   },
-  
+
   getUserInfo(e: any) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

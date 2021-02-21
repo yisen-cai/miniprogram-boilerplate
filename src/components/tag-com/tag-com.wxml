@@ -1,0 +1,4 @@
+<!--components/tag-com/tag-com.wxml-->
+<view class="tag-container" style="background-image: url({{tagCover}})" hover-class="pressed" hover-stay-time="100">
+  <text class="tag-name">{{tagName}}</text>
+</view>

@@ -1,0 +1,21 @@
+/* components/tag-com/tag-com.wxss */
+.tag-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 120rpx;
+  height: 120rpx;
+  box-shadow: 0 0 30rpx 0 lightgray;
+  border-radius: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pressed {
+  box-shadow: 0 0 10rpx 0 lightgray;
+}
+
+.tag-name {
+  font-size: 24rpx;
+  font-family: 'Helvetica Neue';
+}

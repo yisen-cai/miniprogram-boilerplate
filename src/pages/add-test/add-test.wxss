@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  justify-content: space-around;
+  padding-bottom: 50rpx;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 234, 234, 1) 100%);
+}
+
+.container>view {
+  margin-top: 40rpx;
+}
+
+.test-cover {
+  width: 160rpx;
+  height: 160rpx;
+  box-shadow: 0 0 12rpx 0 #A5A5A529;
+  border-radius: 80rpx;
+  background-color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-svg {
+  left: 3rpx;
+  bottom: 5rpx;
+  width: 64rpx;
+  height: 64rpx;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27.652' height='27.888' viewBox='0 0 27.652 27.888'%3E %3Cg id='Icon_feather-edit' data-name='Icon feather-edit' transform='translate(-1.25 -0.862)'%3E %3Cpath id='Path_20' data-name='Path 20' d='M13.75,5H5A2.5,2.5,0,0,0,2.5,7.5V25A2.5,2.5,0,0,0,5,27.5H22.5A2.5,2.5,0,0,0,25,25V16.25' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5'/%3E %3Cpath id='Path_21' data-name='Path 21' d='M23.125,3.125a2.652,2.652,0,1,1,3.75,3.75L15,18.75,10,20l1.25-5Z' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5'/%3E %3C/g%3E %3C/svg%3E ");
+}
+
+.inline-input {
+  display: inline-flex;
+  align-items: center;
+  width: 650rpx;
+  justify-content: flex-end;
+}
+
+.label {
+  position: relative;
+  right: 20rpx;
+  font-size: 35rpx;
+}
+
+input {
+  padding-left: 10rpx;
+  background-color: white;
+  width: 500rpx;
+  height: 73rpx;
+  box-shadow: 0 0 12rpx 0 #A5A5A529;
+}
+
+
+#details-editor {
+  width: 640rpx;
+  background: white;
+  margin-top: 20rpx;
+  padding: 10rpx;
+  box-shadow: 0 0 12rpx 0 #A5A5A529;
+}
+
+button {
+  font-weight: normal;
+}

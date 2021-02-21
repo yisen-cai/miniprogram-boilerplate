@@ -1,0 +1,33 @@
+<!--src/pages/add-test/add-test.wxml-->
+<view class="container">
+
+  <view class="test-cover">
+    <view class="edit-svg"></view>
+  </view>
+
+  <view class="inline-input test-name">
+    <text class="label">名称* :</text>
+    <input type="text" />
+  </view>
+
+  <view class="inline-input test-score">
+    <text class="label">总分* :</text>
+    <input type="text" />
+  </view>
+
+  <view class="inline-input test-token">
+    <text class="label">密钥 :</text>
+    <input type="text" />
+  </view>
+
+  <view class="inline-input test-details">
+    <text class="label">详情* :</text>
+    <view style="width: 500rpx;padding: 10rpx;"></view>
+  </view>
+
+  <editor id="details-editor" class="ql-container"></editor>
+
+  <view class="test-next">
+    <button type="primary">NEXT</button>
+  </view>
+</view>

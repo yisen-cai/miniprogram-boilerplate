@@ -1,0 +1,40 @@
+/* components/complete-com/complete-com.wxss */
+.complete-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 600rpx;
+  justify-content: space-around;
+}
+
+.complete-details {
+  display: inline-flex;
+  align-items: center;
+}
+
+.complete-icon {
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'%3E %3Cg id='icons8-task_completed' transform='translate(-8)'%3E %3Cpath id='Path_14' data-name='Path 14' d='M36,4H26a2,2,0,0,1-4,0H12A4.012,4.012,0,0,0,8,8V40a4.012,4.012,0,0,0,4,4H36a4.012,4.012,0,0,0,4-4V8A4.012,4.012,0,0,0,36,4Z' fill='%23375a64'/%3E %3Cpath id='Path_15' data-name='Path 15' d='M36,41H12a.945.945,0,0,1-1-1V8a.945.945,0,0,1,1-1H36a.945.945,0,0,1,1,1V40A.945.945,0,0,1,36,41Z' fill='%23fff'/%3E %3Cpath id='Path_16' data-name='Path 16' d='M26,4a2,2,0,0,1-4,0H15V8a2.006,2.006,0,0,0,2,2H31a2.006,2.006,0,0,0,2-2V4Z' fill='%2387a4af'/%3E %3Cpath id='Path_17' data-name='Path 17' d='M24,0a4,4,0,1,0,4,4A4.012,4.012,0,0,0,24,0Zm0,6a2,2,0,1,1,2-2A2.006,2.006,0,0,1,24,6Z' fill='%2387a4af'/%3E %3Cpath id='Path_18' data-name='Path 18' d='M32,25a8,8,0,1,1-8-8,8.024,8.024,0,0,1,8,8' fill='%2300a03d'/%3E %3Cpath id='Path_19' data-name='Path 19' d='M23.117,29.031l-3.824-3.824,1.414-1.414,2.426,2.426L27.8,21.66l1.4,1.43Z' fill='%23d5edc7'/%3E %3C/g%3E %3C/svg%3E ");
+  width: 64rpx;
+  background-size: cover;
+  height: 88rpx;
+}
+
+
+.complete-msg {
+  font-size: 36rpx;
+  position: relative;
+  left: 20rpx;
+  top: 5rpx;
+}
+
+.complete-actions {
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button {
+  font-weight: normal;
+}

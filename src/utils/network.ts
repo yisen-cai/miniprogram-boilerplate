@@ -1,5 +1,6 @@
 // import 'miniprogram-api-typings';
 /// <reference lib="dom" />
+import Config from "../config/config";
 
 // 5xx status code
 const serverErrorPattern = new RegExp('^5..$'); // or /^5..$/
@@ -14,14 +15,21 @@ const redirectPattern = new RegExp('^3..$');
 const okPattern = new RegExp('^2..$');
 
 
-export function netRequest(url: string, method: Method, params: Map<string, string>, data: any): void {
+export function netRequest(url: string, method: Method, params: Map<String, String> | null = null, data: any | null = null) {
+  var header = {}
+  var authorization = wx.getStorageSync("Authorization")
+  if (authorization != null) {
+    header = {
+      'Authorization': authorization
+    }
+  }
   // let reqURL = url
   let promise = new Promise((resolve, reject) => {
     wx.request({
-      url: url,
+      url: Config.API + url,
       data: data,
       method: method,
-      header: {},
+      header: header,
       dataType: "json",
       responseType: "text",
       success: (res: WechatMiniprogram.RequestSuccessCallbackResult) => {
@@ -42,6 +50,7 @@ export function netRequest(url: string, method: Method, params: Map<string, stri
       }
     })
   })
+  return promise
 }
 
 

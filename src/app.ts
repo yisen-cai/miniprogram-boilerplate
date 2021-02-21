@@ -1,19 +1,16 @@
-// app.ts
+import Config from './config/config';
+
 App<IAppOption>({
-  globalData: {},
+  globalData: {
+  },
+
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        console.log(res.code)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      },
-    })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -33,6 +30,26 @@ App<IAppOption>({
           })
         }
       },
-    })
+    });
+
+    // 登录
+    wx.login({
+      success: res => {
+        console.log(res.code)
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if (res.code) {
+          wx.request({
+            url: Config.API + '/login',
+            method: 'POST',
+            data: {
+              code: res.code
+            },
+            success: resp => {
+              wx.setStorageSync("Authorization", `Bearer ${resp.data}`)
+            }
+          })
+        }
+      },
+    });
   },
 })

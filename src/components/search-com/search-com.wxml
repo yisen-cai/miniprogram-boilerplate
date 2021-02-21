@@ -1,0 +1,5 @@
+<!--components/search-com/search-com.wxml-->
+<view class="search-com" hover-class="pressed" hover-stay-time="100">
+  <input class="search-input" type="text" disabled="{{active}}"/>
+  <view class="search-icon search-active"></view>
+</view>

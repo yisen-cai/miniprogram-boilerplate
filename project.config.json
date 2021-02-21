@@ -8,12 +8,12 @@
   "libVersion": "2.8.2",
   "projectname": "miniprogram-boilerplate",
   "scripts": {
-    "beforeCompile": "npm run tsc",
-    "beforePreview": "npm run tsc",
-    "beforeUpload": "npm run tsc"
+    "beforeCompile": "tsc --build tsconfig.json",
+    "beforePreview": "tsc --build tsconfig.json",
+    "beforeUpload": "tsc --build tsconfig.json"
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -21,7 +21,7 @@
     "minified": true,
     "newFeature": false,
     "coverView": true,
-    "nodeModules": false,
+    "nodeModules": true,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -32,24 +32,24 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "bundle": false,
+    "bundle": true,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
-    "userConfirmedBundleSwitch": false,
+    "userConfirmedBundleSwitch": true,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useApiHostProcess": true
+    "minifyWXSS": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "appid": "wx1fb6ef2445bf7de7",
+  "appid": "wxef1c59645f9a2569",
   "condition": {}
 }

@@ -1,0 +1,16 @@
+<!--components/complete-com/complete-com.wxml-->
+<view class="complete-container">
+  <view class="complete-details">
+    <view class="complete-icon">
+    </view>
+
+    <view class="complete-msg">
+      <text>ADD {{message}} COMPLETE!</text>
+    </view>
+  </view>
+
+  <view class="complete-actions">
+    <button type="primary" >CHECK</button>
+    <button type="default">BACK HOME</button>
+  </view>
+</view>
