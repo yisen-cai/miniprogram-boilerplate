@@ -1,0 +1,12 @@
+.add-question-container {
+  width: 640rpx;
+  background: white;
+  padding: 20rpx 0;
+}
+
+.add-title {
+  text-align: center;
+  font-size: 45rpx;
+}
+
+

@@ -1,0 +1,17 @@
+<view class="add-container">
+  <view class="add-title">
+    添加问题{{title}}
+  </view>
+
+  <view class="label">
+    {{title}}* :
+  </view>
+
+  <view class="input">
+    <editor></editor>
+  </view>
+
+  <view class="actions">
+    <button type="primary">添加</button>
+  </view>
+</view>

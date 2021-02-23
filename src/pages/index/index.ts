@@ -9,6 +9,11 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    tag: {
+      id: "11",
+      name: "HISTORY",
+      cover: "https://oss.yisen614.top/background/history.jpeg"
+    }
   },
 
   // 事件处理函数

@@ -18,7 +18,10 @@
     "removeComments": true,
     "pretty": true,
     "strictPropertyInitialization": true,
-    "lib": ["ES6", "ES2020.Promise"],
+    "lib": [
+      "ES6",
+      "ES2015.Promise"
+    ],
     "skipLibCheck": true,
     "typeRoots": ["./typings", "./src/types"]
   },

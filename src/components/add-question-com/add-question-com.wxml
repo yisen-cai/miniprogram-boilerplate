@@ -1,0 +1,37 @@
+<view class="add-question-container">
+  <view class="add-title">
+    添加问题{{title}}
+  </view>
+
+  <view class="add-order">
+    <view class="label">
+      次序 :
+    </view>
+    <view class="property order">
+      
+    </view>
+  </view>
+
+  <view class="add-question">
+    <view class="label">
+      搜索添加 :
+    </view>
+
+    <view class="property">
+      
+    </view>
+  </view>
+
+  <view class="add-directly">
+    <view class="label">
+      直接添加 :
+    </view>
+
+    <view class="property">
+
+    </view>
+  </view>
+  <view class="actions">
+    <button type="primary">添加</button>
+  </view>
+</view>

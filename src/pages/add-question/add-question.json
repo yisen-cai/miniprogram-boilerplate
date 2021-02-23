@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "search-com": "/components/search-com/search-com"
+    "search-com": "/components/search-com/search-com",
+    "tag-com": "/components/tag-com/tag-com",
+    "add-com": "/components/add-com/add-com"
   }
 }

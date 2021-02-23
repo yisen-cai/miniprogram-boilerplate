@@ -75,10 +75,20 @@
         标签 :
       </view>
       <view class="placeholder search">
+        <search-com cusStyle="{{searchStyle}}"></search-com>
+      </view>
+    </view>
+
+    <view class="question-tags">
+      <view class="tag">
+        <tag-com canDelete="true" tag="{{tag}}"/>
       </view>
     </view>
     
     <view class="save-question">
       <button type="primary">保存</button>
     </view>
+
+    <add-com>
+    </add-com>
 </view>

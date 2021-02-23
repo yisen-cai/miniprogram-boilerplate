@@ -1,8 +1,11 @@
 {
   "pages": [
-    "pages/add-question/add-question",
-    "pages/add-test/add-test",
     "pages/index/index",
+    "pages/add-question/add-question",
+ 
+    
+    "pages/add-test/add-test",
+
     "pages/logs/logs",
     "pages/info/info",
     "pages/my/my",

@@ -1,4 +1,10 @@
 <!--components/tag-com/tag-com.wxml-->
-<view class="tag-container" style="background-image: url({{tagCover}})" hover-class="pressed" hover-stay-time="100">
-  <text class="tag-name">{{tagName}}</text>
+<view class="tag-container">
+  <view class="tag-back" style="display: {{canDelete ? 'block': 'none'}};" hover-stay-time="100" hover-class="pressed">
+    <view class="delete-tag"></view>
+  </view>
+
+  <view class="tag-cover" style="background-image: url({{tag.cover}})" hover-class="pressed" hover-stay-time="100">
+    <text class="tag-name">{{tag.name}}</text>
+  </view>
 </view>

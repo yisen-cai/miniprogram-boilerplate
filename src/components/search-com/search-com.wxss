@@ -6,7 +6,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0 0 30rpx 0 lightgray;
   background: white;
   padding: 0 20rpx;
 }
@@ -27,7 +26,6 @@
 }
 
 .search-input {
-  width: 500rpx;
-  height: 50rpx;
-  font-size: 16pt;
+  width: 83%;
+  height: 48%;
 }

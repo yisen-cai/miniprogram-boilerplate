@@ -1,0 +1,34 @@
+.option-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 640rpx;
+}
+
+.pressed {
+  box-shadow: 0 0 10rpx 0 lightgray !important;
+}
+
+
+.active {
+  background: #70e6a7 !important;
+  color: white;
+}
+
+.option-tag { 
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: white;
+  font-weight: 600;
+  box-shadow: 0 0 20rpx 0 lightgray;
+}
+
+.option-text {
+  font-size: 40rpx;
+  margin-left: 20rpx;
+}

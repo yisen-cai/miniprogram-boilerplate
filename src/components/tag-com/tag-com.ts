@@ -1,17 +1,17 @@
+
 Component({
   properties: {
-    tagName: {
-      type:String,
-      value: "HISTORY"
+    tag: {
+      type: Object,
     },
-    tagCover: {
-      type:String,
-      value: "https://oss.yisen614.top/background/history.jpeg"
+    canDelete: {
+      type: Boolean,
+      value: false
     }
   },
 
   data: {
-
+    
   },
 
   methods: {

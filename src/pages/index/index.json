@@ -3,6 +3,8 @@
     "search-com": "/components/search-com/search-com",
     "test-com": "/components/test-com/test-com",
     "tag-com": "/components/tag-com/tag-com",
-    "complete-com": "/components/complete-com/complete-com"
+    "complete-com": "/components/complete-com/complete-com",
+    "question-com": "/components/question-com/question-com",
+    "option-com": "/components/option-com/option-com"
   }
 }
