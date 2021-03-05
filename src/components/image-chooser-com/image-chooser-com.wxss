@@ -1,0 +1,21 @@
+.image-chooser-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-chooser {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100rpx;
+}
+
+.upload-progress {
+  height: 20rpx;
+  width: 100%;
+  padding: 10rpx 0 0 0;
+}
+
+progress {
+  height: 20rpx;
+  width: 100%;
+}

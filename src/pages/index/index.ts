@@ -27,17 +27,18 @@ Page({
     // wx.vibrateShort();  // 1、使手机震动15ms
     // //或者
     // wx.vibrateLong();	// 2、使手机震动400ms
+    hello().then((res: WechatMiniprogram.RequestSuccessCallbackResult) => {
+      console.log(res);
+      let result = <OssSignature>res.data;
+    }).catch((res: WechatMiniprogram.RequestFailCallback) => {
+      console.log(res);
+    });
 
-    // hello().then(res => {
-    //   console.log(res)
-    // }).catch(res => {
-    //   console.log(res)
-    // })
-    wx.login({
-      success: res => {
-        console.log(res.code)
-      }
-    })
+    // wx.login({
+    //   success: res => {
+    //     console.log(res.code);
+    //   }
+    // });
   },
 
   onLoad() {
@@ -65,16 +66,16 @@ Page({
             hasUserInfo: true,
           })
         },
-      })
+      });
     }
   },
 
   getUserInfo(e: any) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+    console.log(e);
+    app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true,
-    })
+    });
   },
 })

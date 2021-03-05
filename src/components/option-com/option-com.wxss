@@ -16,8 +16,8 @@
 }
 
 .option-tag { 
-  width: 100rpx;
-  height: 100rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 50rpx;
   display: inline-flex;
   justify-content: center;

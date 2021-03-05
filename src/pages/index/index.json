@@ -5,6 +5,7 @@
     "tag-com": "/components/tag-com/tag-com",
     "complete-com": "/components/complete-com/complete-com",
     "question-com": "/components/question-com/question-com",
-    "option-com": "/components/option-com/option-com"
+    "option-com": "/components/option-com/option-com",
+    "image-chooser-com": "/components/image-chooser-com/image-chooser-com"
   }
 }

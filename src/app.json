@@ -1,16 +1,15 @@
 {
   "pages": [
+    "pages/main/main",
     "pages/index/index",
     "pages/add-question/add-question",
- 
-    
     "pages/add-test/add-test",
-
     "pages/logs/logs",
     "pages/info/info",
     "pages/my/my",
     "pages/complete/complete",
     "pages/tag-detail/tag-detail"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

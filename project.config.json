@@ -46,7 +46,8 @@
     "userConfirmedBundleSwitch": true,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "skeletonGenerateFilesWithoutConfirm": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},

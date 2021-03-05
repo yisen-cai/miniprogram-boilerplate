@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="search-bar">
+    <search-com></search-com>
+  </view>
+
+  <view class="tabs">
+    <view class="hot-tab tab tab-active">
+      热门
+    </view>
+    <view class="uncomplete-tab tab">
+      未完成
+    </view>
+    <view class="history-tab tab">
+      历史记录
+    </view>
+  </view>
+
+  <view class="tests">
+    <view class="test-case" wx:for="{{tests}}" wx:key="id" wx:for-item="item" wx:for-index="index">
+      <test-com test="{{item}}"></test-com>
+    </view>
+  </view>
+</view>

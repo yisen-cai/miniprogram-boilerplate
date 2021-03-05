@@ -1,6 +1,6 @@
 <!--components/tag-com/tag-com.wxml-->
 <view class="tag-container">
-  <view class="tag-back" style="display: {{canDelete ? 'block': 'none'}};" hover-stay-time="100" hover-class="pressed">
+  <view class="tag-back" wx:if="{{canDelete}}" hover-stay-time="100" hover-class="pressed">
     <view class="delete-tag"></view>
   </view>
 

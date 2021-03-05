@@ -1,0 +1,35 @@
+/* src/pages/main/main.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 28rpx 0;
+  justify-content: flex-start;
+}
+
+
+.tabs {
+  padding-top: 54rpx;
+  display: inline-flex;
+  width: 620rpx;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tab-active {
+  color: black !important;
+  border-bottom: 4rpx solid black;
+}
+
+.tab {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+  color: gray;
+}
+
+.tests {
+  padding: 56rpx 0;
+}
+
+.test-case {
+  padding-bottom: 80rpx;
+}

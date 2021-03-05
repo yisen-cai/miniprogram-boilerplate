@@ -14,7 +14,8 @@ Component({
         width: '600rpx',
         height: '104rpx',
         iconWidth: '44rpx',
-        iconHeight: '44rpx'
+        iconHeight: '44rpx',
+        boxShadow: '10rpx'
       }
     }
   },
