@@ -1,0 +1,51 @@
+.tag-list-container {
+  width: 100%;
+  height: 160rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16rpx 32rpx;
+  background: white;
+  margin-top: 14rpx;
+}
+
+.tag-cover {
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 80rpx;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tag-meta {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  max-width: 536rpx;
+  height: 100%;
+}
+
+.tag-name {
+  font-size: 18px;
+  margin-top: 16rpx;
+  font-family: serif;
+  width: 536rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.tag-des {
+  font-size: 14px;
+  font-family: serif;
+  width: 536rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="search-bar">
+    <search-com></search-com>
+  </view>
+
+  <view class="search-tab" wx:if="{{searchText != ''}}">
+    <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabClick"
+      bindchange="onTabClick" 
+      tabBackgroundColor="none"
+      activeClass="tab-bar-title__selected">
+
+      <block wx:for="{{tabs}}" wx:key="title">
+        <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}">
+          <article-list-com></article-list-com>
+          <tag-list-com></tag-list-com>
+          <question-list-com></question-list-com>
+        </view>
+      </block>
+
+    </mp-tabs>
+  </view>
+
+  <view class="search-body" wx:if="{{searchText == ''}}">
+    <view class="search-histories">
+      <view class="hint-label">
+        历史
+      </view>
+
+      <view class="texts histories">
+        <text-com text="Java"></text-com>
+      </view>
+    </view>
+
+    <view class="search-suggestions">
+      <view class="hint-label">
+        <view class="label">
+          建议
+        </view>
+        <view class="expand-fold" style="transform:rotate({{showSuggestions? '0deg':'180deg'}});"
+          bindtap="toggleSuggestions">
+        </view>
+      </view>
+      <view wx:if="{{showSuggestions}}" class="texts suggestions">
+
+      </view>
+    </view>
+  </view>
+</view>

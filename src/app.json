@@ -1,21 +1,50 @@
 {
   "pages": [
-    "pages/main/main",
+    "pages/search/index",
+    "pages/main/index",
     "pages/index/index",
-    "pages/add-question/add-question",
-    "pages/add-test/add-test",
-    "pages/logs/logs",
-    "pages/info/info",
-    "pages/my/my",
-    "pages/complete/complete",
-    "pages/tag-detail/tag-detail"
-    
+    "pages/add-question/index",
+    "pages/add-test/index",
+    "pages/logs/index",
+    "pages/info/index",
+    "pages/my/index",
+    "pages/complete/index",
+    "pages/tag-detail/index",
+    "pages/test/index"
   ],
+  "tabBar": {
+    "color": "#c0c0c0",
+    "selectedColor": "#007FFF",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "iconPath": "assets/images/main.png",
+        "selectedIconPath": "assets/images/main-selected.png",
+        "pagePath": "pages/main/index",
+        "text": "主页"
+      },
+      {
+        "iconPath": "assets/images/info.png",
+        "selectedIconPath": "assets/images/info-selected.png",
+        "pagePath": "pages/info/index",
+        "text": "相关"
+      },
+      {
+        "iconPath": "assets/images/user.png",
+        "selectedIconPath": "assets/images/user-selected.png",
+        "pagePath": "pages/my/index",
+        "text": "我的"
+      }
+    ]
+  },
   "window": {
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "通用人员测评系统",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#fff"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

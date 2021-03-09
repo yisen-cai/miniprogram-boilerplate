@@ -1,0 +1,12 @@
+<view class="tag-list-container" bindtap="navigateTag">
+  <view class="tag-cover" style="background-image: url({{tag.cover}});">
+  </view>
+  <view class="tag-meta">
+    <view class="tag-name">
+      {{tag.name}}
+    </view>
+    <view class="tag-des">
+      {{tag.description}}
+    </view>
+  </view>
+</view>

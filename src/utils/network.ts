@@ -18,12 +18,19 @@ const redirectPattern = new RegExp('^3..$');
 const okPattern = new RegExp('^2..$');
 
 
-
-export function uploadFile(filePath: string, folder: string, self: WechatMiniprogram.Component.Instance<any, any, any>) {
+/**
+ * Upload file function
+ * @param filePath The file to be upload.
+ * @param folder File path append to OSS_ROOT.
+ * @param self Component or Page Instance.
+ */
+export function uploadFile(filePath: string, folder: string, self: WechatMiniprogram.Component.Instance<any, any, any> | WechatMiniprogram.Page.Instance<any, any>) {
   let key = `${Config.OSS_BUCKET}/${folder}/${uuid()}`;
+  // Request oss upload signature.
   ossSignature().then((res: WechatMiniprogram.RequestSuccessCallbackResult) => {
     let signature = <OssSignature>res.data;
 
+    // upload file.
     let uploader = wx.uploadFile({
       url: Config.OSS_ROOT, // 开发者服务器的URL。
       filePath: filePath,
@@ -50,6 +57,7 @@ export function uploadFile(filePath: string, folder: string, self: WechatMinipro
       }
     });
 
+    // Update progress.
     uploader.onProgressUpdate(res => {
       self.setData({
         uploadProgress: res.progress
@@ -75,11 +83,11 @@ function ossSignature() {
 export function netRequest(
   url: string,
   method: Method,
-  params: Map<string, string> | null = null,
-  data: any | null = null) {
-  
+  params: Map<string, any> | null = null,
+  data: any | null = null): Promise<WechatMiniprogram.RequestSuccessCallbackResult> {
+
   // auth related
-  var header = {}
+  var headers = {}
   var authorization = app.auth?.accessToken
   if (authorization != null) {
     if (isExpired()) {
@@ -88,24 +96,33 @@ export function netRequest(
         let result = <WechatAuthResult>res.data;
         app.auth = result.auth;
         app.user = result.user;
-        header = {
+        headers = {
           Authorization: `Bearer ${app.auth?.accessToken}`
         };
       });
+
     } else {
-      header = {
+      headers = {
         Authorization: `Bearer ${app.auth?.accessToken}`
-      }
+      };
     }
   }
+  return createRequestPromise(url, method, params, data, headers);
+}
 
-  // let reqURL = url
-  let promise = new Promise<WechatMiniprogram.RequestSuccessCallbackResult>((resolve, reject) => {
+
+function createRequestPromise(
+  url: string,
+  method: Method,
+  params: Map<string, any> | null = null,
+  data: any | null = null,
+  headers: Object): Promise<WechatMiniprogram.RequestSuccessCallbackResult> {
+  return new Promise<WechatMiniprogram.RequestSuccessCallbackResult>((resolve, reject) => {
     wx.request({
       url: `${Config.API}${url}${resolveParams(params)}`,
       data: data,
       method: method,
-      header: header,
+      header: headers,
       dataType: "json",
       responseType: "text",
       success: (res: WechatMiniprogram.RequestSuccessCallbackResult) => {
@@ -125,8 +142,7 @@ export function netRequest(
         // do something after
       }
     });
-  })
-  return promise;
+  });
 }
 
 
@@ -141,7 +157,7 @@ function isExpired(): boolean {
 function resolveParams(params: Map<string, string> | null): string {
   if (params != null) {
     let paramsStr = '?'
-    params.forEach((key, value) => {
+    params.forEach((value, key) => {
       paramsStr += `${key}=${value}&`;
     });
     return paramsStr.substring(0, paramsStr.length - 1);

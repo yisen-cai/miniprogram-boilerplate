@@ -1,0 +1,17 @@
+<view class="user-list-container">
+  <view class="avatar">
+  </view>
+
+  <view class="details">
+    <view class="username">
+
+    </view>
+    <view class="signature">
+      
+    </view>
+  </view>
+
+  <view class="action">
+
+  </view>
+</view>

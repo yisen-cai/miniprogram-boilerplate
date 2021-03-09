@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="search-bar" bindtap="navigateSearch">
+    <search-com></search-com>
+  </view>
+
+  <view class="tabs">
+    <view class="hot-tab tab {{tabActive == 0 ? 'tab-active': ''}}" data-value="0" bindtap="openTab">
+      热门
+    </view>
+    <view class="uncomplete-tab tab {{tabActive == 1 ? 'tab-active': ''}}"  data-value="1" bindtap="openTab">
+      未完成
+    </view>
+    <view class="history-tab tab {{tabActive == 2 ? 'tab-active': ''}}" data-value="2" bindtap="openTab">
+      历史记录
+    </view>
+  </view>
+
+  <view class="tests">
+    <view class="test-case" wx:for="{{tests}}" wx:key="id" wx:for-item="item" wx:for-index="index">
+      <test-com test="{{item}}"></test-com>
+    </view>
+  </view>
+</view>

@@ -9,6 +9,12 @@ type ErrResult = {
 }
 
 
+type PageResult<T> = {
+  total: number,
+  entities: Array<T>,
+  hasNext: boolean
+}
+
 /**
  * Ok response response body
  */

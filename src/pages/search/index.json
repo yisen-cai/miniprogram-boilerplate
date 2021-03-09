@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "text-com": "/components/text-com/index",
+    "search-com": "/components/search-com/index",
+    "mp-tabs": "@miniprogram-component-plus/tabs/index",
+    "article-list-com": "/components/article-list-com/index",
+    "tag-list-com": "/components/tag-list-com/index",
+    "question-list-com": "/components/question-list-com/index"
+  }
+}

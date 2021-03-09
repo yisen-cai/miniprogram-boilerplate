@@ -1,5 +1,11 @@
 
 
+type TagMeta = {
+  id: String,
+  cover: String,
+  name: String
+}
+
 type UserMeta = {
   id: string,
   username: string,
@@ -138,4 +144,16 @@ type ArticleVO = {
   cover: string,
   tags: string,
   content: string
+}
+
+
+type SearchResult = {
+  id: string,
+  text: string,
+  count: number,
+  createTime: number
+}
+
+type SearchVO = {
+  text: string
 }

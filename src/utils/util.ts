@@ -56,3 +56,14 @@ export const uuid = () => {
   var uuid = s.join("");
   return uuid;
 }
+
+
+export function pageParamsOf(page: number = 0, size: number = 20, sort: string | null = null): Map<string, any> {
+  let params = new Map<string, any>();
+  params.set('page', page);
+  params.set('size', size);
+  if(sort != null) {
+    params.set('sort', sort);
+  }
+  return params;
+}

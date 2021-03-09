@@ -44,10 +44,14 @@
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
     "userConfirmedBundleSwitch": true,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "skeletonGenerateFilesWithoutConfirm": true
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./src/"
+      }
+    ],
+    "minifyWXSS": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},

@@ -11,11 +11,11 @@
     <text class="user-motto">{{motto}}</text>
   </view>
   <view bindtap="btnFun">点击</view>
-  <!-- <option-com option="this is a option"></option-com>
+  <option-com option="this is a option"></option-com>
   <question-com></question-com>
   <search-com></search-com>
   <test-com></test-com>
   <tag-com tag="{{tag}}"></tag-com>
-  <complete-com></complete-com> -->
+  <complete-com></complete-com>
   <image-chooser-com></image-chooser-com>
 </view>

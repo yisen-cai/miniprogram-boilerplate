@@ -33,6 +33,11 @@ export function getTest(testId: string) {
 }
 
 
+export function getTests(params: Map<string, any>) {
+  return netRequest('/tests', 'GET', params);
+}
+
+
 export function addQuestionComment(questionId: string, comment: CommentVO) {
   return netRequest(`/questions/${questionId}/comments`, 'POST', null, comment);
 }
