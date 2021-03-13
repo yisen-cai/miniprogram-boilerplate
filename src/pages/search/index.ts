@@ -1,0 +1,102 @@
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    searchText: '11',
+    showSuggestions: false,
+    tabs: [
+      {
+        title: '文章',
+      },
+      {
+        title: '标签',
+      },
+      {
+        title: '试题',
+      },
+      {
+        title: '测评',
+      },
+      {
+        title: '用户'
+      }
+    ],
+    activeTab: 0,
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage(opts: any): WechatMiniprogram.Page.ICustomShareContent {
+    console.log(opts.target)
+    return {}
+  },
+
+  toggleSuggestions(event: any) {
+    this.setData({
+      showSuggestions: !this.data.showSuggestions
+    });
+  },
+
+  handleClick(event: any) {
+
+  },
+
+  onTabClick(event: any) {
+    const index = event.detail.index;
+    this.setData({
+      activeTab: index
+    });
+  },
+})

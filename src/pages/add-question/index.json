@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search-com": "/components/search-com/index",
+    "tag-com": "/components/tag-com/index",
+    "add-com": "/components/add-com/index"
+  }
+}

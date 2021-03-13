@@ -1,0 +1,8 @@
+<view class="test-container">
+  <view class="test-com" style="background-image: url({{test.cover}});" hover-class="pressed" hover-stay-time="500"
+    bindtap="navigate">
+    <view class="text-back">
+      <text class="test-name">{{test.name}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<view class="article-list-container" bindtap="navigateArticle">
+  <view class="article-meta">
+    <view class="article-content">
+      {{article.content}}
+    </view>
+    <view class="article-counts">
+      <view class="count like-count">
+        <view class="count-icon like-icon">
+        </view>
+        <view class="count-text">
+          {{article.likeCount}}
+        </view>
+      </view>
+      <view class="count dislike-count">
+        <view class="count-icon dislike-icon">
+        </view>
+        <view class="count-text">
+          {{article.dislikeCount}}
+        </view>
+      </view>
+      <view class="count read-count">
+        <view class="count-icon read-icon">
+        </view>
+        <view class="count-text">
+          {{article.readCount}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="article-cover" style="background-image: url({{article.cover}});">
+  </view>
+</view>

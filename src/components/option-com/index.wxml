@@ -1,0 +1,10 @@
+<view class="option-container">
+  
+  <view class="{{selected ? 'active' : 'unactive'}} option-tag" hover-stay-time="100" hover-class="pressed">
+    {{tag}}
+  </view>
+
+  <view class="option-text">
+    {{option}}
+  </view>
+</view>

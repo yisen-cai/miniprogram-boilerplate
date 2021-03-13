@@ -1,0 +1,62 @@
+.user-list-container {
+  width: 100%;
+  padding: 20rpx 40rpx;
+  background: white;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 14rpx;
+}
+
+
+.avatar {
+  width: 110rpx;
+  height: 110rpx;
+  background-size: cover;
+  border-radius: 60rpx;
+  background-repeat: no-repeat;
+}
+
+
+.username {
+  font-size: 20px;
+  font-family: serif;
+  width: 100%;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.signature {
+  font-family: serif;
+  font-size: 14px;
+  font-weight: lighter;
+  width: 100%;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.details {
+  width: 420rpx;
+  height: 110rpx;
+  padding-left: 20rpx;
+}
+
+.action {
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+  text-align: center;
+  width: 132rpx;
+  display: inline-flex;
+  border-radius: 40rpx;
+  background-color: #70e6a7;
+  color: white;
+}

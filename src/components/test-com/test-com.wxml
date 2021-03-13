@@ -1,5 +1,0 @@
-<view class="test-container" style="background-image: url({{testCover}})" hover-stay-time="100" hover-class="pressed">
-  <view class="text-back">
-    <text class="test-name">{{testName}}</text>
-  </view>
-</view>
