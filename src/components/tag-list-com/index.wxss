@@ -1,17 +1,16 @@
 .tag-list-container {
   width: 100%;
-  height: 160rpx;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 16rpx 32rpx;
+  padding: 20rpx 40rpx;
   background: white;
   margin-top: 14rpx;
 }
 
 .tag-cover {
-  height: 130rpx;
-  width: 130rpx;
+  height: 110rpx;
+  width: 110rpx;
   border-radius: 80rpx;
   background-size: cover;
   background-repeat: no-repeat;

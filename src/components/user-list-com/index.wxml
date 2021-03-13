@@ -1,17 +1,17 @@
-<view class="user-list-container">
-  <view class="avatar">
+<view class="user-list-container" bindtap="navigateUser">
+  <view class="avatar" style="background-image: url({{user.avatar}});">
   </view>
 
   <view class="details">
     <view class="username">
-
+      {{user.username}}
     </view>
     <view class="signature">
-      
+      {{user.signature}}
     </view>
   </view>
 
   <view class="action">
-
+    关注
   </view>
 </view>

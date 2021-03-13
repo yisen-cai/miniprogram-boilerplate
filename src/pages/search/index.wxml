@@ -11,12 +11,12 @@
 
       <block wx:for="{{tabs}}" wx:key="title">
         <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}">
-          <article-list-com></article-list-com>
-          <tag-list-com></tag-list-com>
-          <question-list-com></question-list-com>
+          <article-list-com wx:if="{{activeTab == 0}}"></article-list-com>
+          <tag-list-com wx:if="{{activeTab == 1}}"></tag-list-com>
+          <question-list-com wx:if="{{activeTab == 2}}"></question-list-com>
+          <user-list-com wx:if="{{activeTab == 3}}"></user-list-com>
         </view>
       </block>
-
     </mp-tabs>
   </view>
 

@@ -3,7 +3,7 @@
   </view>
   <view class="tag-meta">
     <view class="tag-name">
-      {{tag.name}}
+      #{{tag.name}}
     </view>
     <view class="tag-des">
       {{tag.description}}

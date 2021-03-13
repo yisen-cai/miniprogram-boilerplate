@@ -5,6 +5,7 @@
     "mp-tabs": "@miniprogram-component-plus/tabs/index",
     "article-list-com": "/components/article-list-com/index",
     "tag-list-com": "/components/tag-list-com/index",
-    "question-list-com": "/components/question-list-com/index"
+    "question-list-com": "/components/question-list-com/index",
+    "user-list-com": "/components/user-list-com/index"
   }
 }

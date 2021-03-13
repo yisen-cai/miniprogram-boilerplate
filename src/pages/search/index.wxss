@@ -25,11 +25,15 @@
 .weui-tabs-bar__wrp {
   white-space: nowrap;
   display: inline-flex;
-  padding: 0 55rpx;
   align-items: center;
+  position: relative;
+  left: 55rpx;
   justify-content: flex-start;
   background: none !important;
+  width: 600rpx !important;
 }
+
+
 
 .weui-tabs-bar__item {
   display: inline-block;

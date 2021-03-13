@@ -9,8 +9,12 @@
     "pages/info/index",
     "pages/my/index",
     "pages/complete/index",
-    "pages/tag-detail/index",
-    "pages/test/index"
+    "pages/tag/index",
+    "pages/test/index",
+    "pages/article/index",
+    "pages/question/question",
+    "pages/user/index",
+    "pages/question/index"
   ],
   "tabBar": {
     "color": "#c0c0c0",
@@ -20,24 +24,26 @@
     "list": [
       {
         "iconPath": "assets/images/main.png",
-        "selectedIconPath": "assets/images/main-selected.png",
+        "selectedIconPath": "assets/images/main_selected.png",
         "pagePath": "pages/main/index",
         "text": "主页"
       },
       {
         "iconPath": "assets/images/info.png",
-        "selectedIconPath": "assets/images/info-selected.png",
+        "selectedIconPath": "assets/images/info_selected.png",
         "pagePath": "pages/info/index",
         "text": "相关"
       },
       {
         "iconPath": "assets/images/user.png",
-        "selectedIconPath": "assets/images/user-selected.png",
+        "selectedIconPath": "assets/images/user_selected.png",
         "pagePath": "pages/my/index",
         "text": "我的"
       }
     ]
   },
+  "darkmode": true,
+  "themeLocation": "theme.json",
   "window": {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "通用人员测评系统",

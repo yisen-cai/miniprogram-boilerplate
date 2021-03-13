@@ -6,7 +6,7 @@ Component({
         id: '',
         avatar: 'https://yisen614.oss-cn-beijing.aliyuncs.com/background/oxxw29.jpg',
         username: 'Marry Bris',
-        
+        signature: 'Signature'
       }
     }
   },
@@ -16,6 +16,10 @@ Component({
   },
 
   methods: {
-
+    navigateUser(event: any) {
+      wx.navigateTo({
+        url: `/pages/user/user?id=${this.properties.user.id}`
+      });
+    }
   }
 });
