@@ -40,6 +40,9 @@ App<MyAppOption>({
       wx.setStorageSync("Authorization", `Bearer ${result.auth.accessToken}`);
       wx.setStorageSync("expiration", result.auth.expiration);
       wx.setStorageSync("user", result.user);
+      if (this.loginReadyCallback) {
+        this.loginReadyCallback(res);
+      }
     });
   },
 })

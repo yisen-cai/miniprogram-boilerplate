@@ -1,20 +1,21 @@
 {
-  "pages": [
-    "pages/search/index",
+  "pages": [ 
+    "pages/my/index",
     "pages/main/index",
+    "pages/search/index",
+ 
     "pages/index/index",
     "pages/add-question/index",
     "pages/add-test/index",
     "pages/logs/index",
     "pages/info/index",
-    "pages/my/index",
+   
     "pages/complete/index",
     "pages/tag/index",
     "pages/test/index",
     "pages/article/index",
-    "pages/question/question",
-    "pages/user/index",
-    "pages/question/index"
+    "pages/question/index",
+    "pages/user/index"
   ],
   "tabBar": {
     "color": "#c0c0c0",

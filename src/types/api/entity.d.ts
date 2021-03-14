@@ -157,3 +157,14 @@ type SearchResult = {
 type SearchVO = {
   text: string
 }
+
+type ArticleDTO = {
+  id: string,
+  title: string,
+  cover: string,
+  rating: number,
+  content: string,
+  likeCount: number,
+  dislikeCount: number,
+  readCount: number
+}

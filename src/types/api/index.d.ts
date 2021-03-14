@@ -13,5 +13,6 @@
 
 interface MyAppOption extends IAppOption {
   user?: any,
-  auth?: AuthResult
+  auth?: AuthResult,
+  loginReadyCallback?: Function
 }

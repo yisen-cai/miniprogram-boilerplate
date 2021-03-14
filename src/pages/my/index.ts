@@ -1,17 +1,25 @@
+const app = <MyAppOption>getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    user: {
+      id: 1,
+      username: 'username',
+      avatar: '',
+      gender: 'MALE',
+      birthday: '1997/06/14'
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-
+  onLoad(options: any) {
+    
   },
 
   /**
@@ -25,7 +33,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      user: app.user
+    });
   },
 
   /**
@@ -39,7 +49,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    
   },
 
   /**

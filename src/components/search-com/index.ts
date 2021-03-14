@@ -21,10 +21,25 @@ Component({
   },
 
   data: {
+    searchText: ''
+  },
 
+
+  lifetimes: {
+    ready() {
+      this.setData({
+        searchText: this.properties.text
+      });
+    },
   },
 
   methods: {
-
+    bindInput(event:any) {
+      this.setData({
+        searchText: event.detail.value
+      });
+      // trigger parent event
+      this.triggerEvent('search', {searchText: event.detail.value}, {});
+    }
   }
 })

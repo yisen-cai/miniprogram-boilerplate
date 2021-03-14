@@ -1,10 +1,15 @@
+import { getArticles } from "../../api/api";
+import { pageParamsOf } from "../../utils/util";
+
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchText: '11',
+    searchText: '',
     showSuggestions: false,
     tabs: [
       {
@@ -24,6 +29,31 @@ Page({
       }
     ],
     activeTab: 0,
+    articles: {
+      entities: [{}],
+      index: 0,
+      hasNext: true
+    },
+    tags: {
+      entities: [{}],
+      index: 0,
+      hasNext: true
+    },
+    questions: {
+      entities: [{}],
+      index: 0,
+      hasNext: true
+    },
+    tests: {
+      entities: [{}],
+      index: 0,
+      hasNext: true
+    },
+    users: {
+      entities: [{}],
+      index: 0,
+      hasNext: true
+    }
   },
 
   /**
@@ -37,7 +67,27 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    let self = this;
+    // app.loginReadyCallback = res => {
+    //   global.indexPage().then(data => {
+    //     this.setData(data)
+    //     this.setData({
+    //       loading: false
+    //     })
+    //   }).catch((res) => {
+    //     console.log(res)
+    //     this.setData({
+    //       loading: false
+    //     })
+    //   });
+    // }
+    this.setData({
+      'articles.entities': [],
+      'tags.entities': [],
+      'questions.entities': [],
+      'tests.entities': [],
+      'users.entities': []
+    });
   },
 
   /**
@@ -99,4 +149,10 @@ Page({
       activeTab: index
     });
   },
+
+  search(event: any) {
+    this.setData({
+      searchText: event.detail.searchText
+    });
+  }
 })

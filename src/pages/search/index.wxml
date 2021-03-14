@@ -1,6 +1,6 @@
 <view class="container">
   <view class="search-bar">
-    <search-com></search-com>
+    <search-com bind:search="search" text="{{searchText}}"></search-com>
   </view>
 
   <view class="search-tab" wx:if="{{searchText != ''}}">
@@ -11,10 +11,10 @@
 
       <block wx:for="{{tabs}}" wx:key="title">
         <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}">
-          <article-list-com wx:if="{{activeTab == 0}}"></article-list-com>
-          <tag-list-com wx:if="{{activeTab == 1}}"></tag-list-com>
-          <question-list-com wx:if="{{activeTab == 2}}"></question-list-com>
-          <user-list-com wx:if="{{activeTab == 3}}"></user-list-com>
+          <article-list-com style="display: {{activeTab == 0 ? 'block': 'none'}};"></article-list-com>
+          <tag-list-com style="display: {{activeTab == 1 ? 'block': 'none'}};"></tag-list-com>
+          <question-list-com style="display: {{activeTab == 2 ? 'block': 'none'}};"></question-list-com>
+          <user-list-com style="display: {{activeTab == 4 ? 'block': 'none'}};"></user-list-com>
         </view>
       </block>
     </mp-tabs>

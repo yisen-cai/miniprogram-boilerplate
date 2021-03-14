@@ -65,3 +65,12 @@ export function addTestCaseAnswer(testId: string, testCaseId: string, answer: Te
 export function addArticle(article: ArticleVO) {
   return netRequest('/articles', 'POST', null, article);
 }
+
+
+/**
+ * Get articles
+ * @param params page
+ */
+export function getArticles(params: Map<string, any>) {
+  return netRequest('/articles', 'GET', params, null);
+}

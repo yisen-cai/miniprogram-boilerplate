@@ -15,9 +15,9 @@ Component({
   },
 
   methods: {
-    navigate(event) {
+    navigate(event:any) {
       wx.navigateTo({
-        url: '/pages/test/test?id=' + this.properties.test.id
+        url: '/pages/test/index?id=' + this.properties.test.id
       });
     }
   }

@@ -1,5 +1,7 @@
-import { getTests } from "../../api/api"
-import { pageParamsOf } from "../../utils/util"
+import { getTests } from "../../api/api";
+import { pageParamsOf } from "../../utils/util";
+const app = <MyAppOption>getApp();
+
 
 Page({
   data: {
@@ -11,8 +13,11 @@ Page({
     tabActive: 0
   },
 
-  onLoad() {
+  onLoad(options: any) {
     let self = this;
+    app.loginReadyCallback = (res: any) => {
+      
+    }
     getTests(pageParamsOf(0, 20, 'totalTested desc')).then(res => {
       let pageResult = <PageResult<TestResult>>res.data;
       self.setData({
@@ -33,9 +38,10 @@ Page({
   onReachBottom() {
 
   },
-  navigateSearch(event:any) {
+  
+  navigateSearch(event: any) {
     wx.navigateTo({
-      url: '/pages/search/search'
+      url: '/pages/search/index'
     });
   }
 })
