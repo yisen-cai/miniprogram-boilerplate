@@ -15,6 +15,15 @@ type PageResult<T> = {
   hasNext: boolean
 }
 
+
+type SearchResult<T> = {
+  tests?: PageResult<T>,
+  articles?: PageResult<T>,
+  tags?: PageResult<T>,
+  questions?: PageResult<T>,
+  users?: PageResult<T>
+}
+
 /**
  * Ok response response body
  */

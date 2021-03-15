@@ -1,4 +1,4 @@
-<view class="text-container">
+<view class="text-container" bindtap="search" data-value="{{text}}">
   <view class="delete-back" style="display: {{canDelete ? 'block': 'none'}};" bindtap="deleteText">
     <view class="delete-flag"></view>
   </view>

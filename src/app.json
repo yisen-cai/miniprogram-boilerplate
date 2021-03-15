@@ -1,9 +1,8 @@
 {
   "pages": [ 
-    "pages/my/index",
     "pages/main/index",
     "pages/search/index",
- 
+    "pages/my/index", 
     "pages/index/index",
     "pages/add-question/index",
     "pages/add-test/index",

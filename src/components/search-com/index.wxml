@@ -2,7 +2,11 @@
 <view class="search-com" hover-class="pressed" hover-stay-time="100"
   style="width: {{cusStyle.width}}; height: {{cusStyle.height}};box-shadow: 0 0 {{cusStyle.boxShadow}} 0 lightgray;">
 
-  <input class="search-input" placeholder="键入搜索" type="text" disabled="{{active}}" bindinput="bindInput" value="{{searchText}}" />
-  <view class="search-icon search-active" style="width: {{cusStyle.iconWidth}}; height: {{cusStyle.iconHeight}}"></view>
+  <input class="search-input" placeholder="键入搜索" type="text" disabled="{{active}}" bindinput="bindInput"
+    value="{{text}}" focus="{{inputShowed}}" disabled="{{!inputShowed}}" />
+
+  <view class="clear-icon" bindtap="clear" style="opacity: {{text != '' ? '100%' : '0'}};"/>
+
+  <view class="search-icon search-active" bindtap="search" style="width: {{cusStyle.iconWidth}}; height: {{cusStyle.iconHeight}}"></view>
 
 </view>

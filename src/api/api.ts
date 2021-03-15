@@ -1,4 +1,5 @@
 import { netRequest } from "../utils/network";
+import { pageParamsOf } from "../utils/util";
 
 
 /**
@@ -73,4 +74,39 @@ export function addArticle(article: ArticleVO) {
  */
 export function getArticles(params: Map<string, any>) {
   return netRequest('/articles', 'GET', params, null);
+}
+
+
+/**
+ * Search suggestions order by count
+ */
+export function searchSuggestions() {
+  return netRequest('/search/suggestions', 'GET', pageParamsOf(0, 10, 'count desc'), null)
+}
+
+
+/**
+ * Search history
+ */
+export function searchHistories() {
+  return netRequest('/search/histories', 'GET', pageParamsOf(0, 20), null)
+}
+
+
+/**
+ * delete history
+ * @param keyword
+ */
+export function deleteHistory(keyword: string) {
+  return netRequest(`/search/histories/${keyword}`, 'GET', null, null)
+}
+
+
+
+/**
+ * Search
+ * @param params 
+ */
+export function search(params: Map<string, any>) {
+  return netRequest('/search', 'GET', params, null)
 }

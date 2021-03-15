@@ -16,7 +16,11 @@ Component({
 
   methods: {
     delete(event) {
+      // TODO: trigger delete operation
+    },
 
+    search(event: any) {
+      this.triggerEvent('search', {searchText: this.data.text}, {});
     }
   }
 });

@@ -8,6 +8,10 @@ Component({
       type: String,
       value: ''
     },
+    inputShowed: {
+      type: Boolean,
+      value: false,
+    },
     cusStyle: {
       type: Object,
       value: {
@@ -21,25 +25,26 @@ Component({
   },
 
   data: {
-    searchText: ''
   },
 
 
   lifetimes: {
     ready() {
-      this.setData({
-        searchText: this.properties.text
-      });
     },
   },
 
   methods: {
-    bindInput(event:any) {
-      this.setData({
-        searchText: event.detail.value
-      });
+    bindInput(event: any) {
       // trigger parent event
-      this.triggerEvent('search', {searchText: event.detail.value}, {});
+      this.triggerEvent('search', { searchText: event.detail.value }, {});
+    },
+
+    clear(event: any) {
+      this.triggerEvent('clear', {}, {});
+    },
+
+    search(event: any) {
+      this.triggerEvent('searchResult', { searchText: this.data.text }, {});
     }
   }
 })

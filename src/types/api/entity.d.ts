@@ -119,6 +119,44 @@ type TagResult = {
   isDelete: boolean
 }
 
+
+type TagDTO = {
+  id: string,
+  cover: string,
+  name: string,
+  description: string
+}
+
+type QuestionDTO = {
+  id: string,
+  description: string,
+  type: string,
+  tags: string,
+  likeCount: number,
+  dislikeCount: number,
+  rating: number
+}
+
+
+type UserDTO = {
+  id: string,
+  username: string,
+  avatar: string,
+  gender: string,
+  signature: string  
+}
+
+type TestDTO = {
+  id: string,
+  name: string,
+  cover: string,
+  author: UserMeta,
+  description: string,
+  totalTested: number,
+  rating: number,
+  createTime: number
+}
+
 type TestCaseAnswerVO = {
   index: number,
   questionId: string,
@@ -147,12 +185,6 @@ type ArticleVO = {
 }
 
 
-type SearchResult = {
-  id: string,
-  text: string,
-  count: number,
-  createTime: number
-}
 
 type SearchVO = {
   text: string
@@ -167,4 +199,12 @@ type ArticleDTO = {
   likeCount: number,
   dislikeCount: number,
   readCount: number
+}
+
+
+type SearchWordDTO = {
+  id: string,
+  keyword: string,
+  count: number,
+  createTime: number
 }
