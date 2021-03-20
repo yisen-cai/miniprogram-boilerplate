@@ -2,15 +2,23 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 28rpx 0;
   justify-content: flex-start;
 }
 
+swiper {
+  min-height: 1200rpx !important;
+}
 
+mp-tabs {
+  width: 100% !important;
+}
+
+ 
 .tabs {
-  padding-top: 54rpx;
   display: inline-flex;
-  width: 620rpx;
+  width: 100%;
   align-items: center;
   justify-content: flex-start;
 }
@@ -20,14 +28,16 @@
   border-bottom: 4rpx solid black;
 }
 
-.tab {
-  font-size: 40rpx;
-  margin-right: 20rpx;
-  color: gray;
-}
-
 .tests {
   padding: 56rpx 0;
+}
+
+
+.entity-list {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center !important;
+  margin-top: 30rpx !important;
 }
 
 .test-case {

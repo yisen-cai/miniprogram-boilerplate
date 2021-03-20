@@ -1,6 +1,7 @@
 <view class="container">
   <view class="search-bar">
-    <search-com bind:search="search" text="{{searchText}}" inputShowed="{{true}}" bind:clear="clearText" bind:searchResult="searchResult">
+    <search-com bind:search="search" text="{{searchText}}" inputShowed="{{true}}" bind:clear="clearText"
+      bind:searchResult="searchResult">
     </search-com>
   </view>
 
@@ -8,36 +9,40 @@
     <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabClick"
       tabBackgroundColor="none" activeClass="tab-bar-title__selected">
 
-      <block wx:for="{{tabs}}" wx:key="title">
-        <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}">
-
-          <!-- articles -->
-          <view class="entity-list" style="display: {{activeTab == 0 ? 'flex': 'none'}};"
-            wx:for="{{articles.entities}}" wx:key="id" wx:for-item="article" wx:for-index="index">
+      <block wx:for="{{tabs}}" wx:key="title" wx:for-index="tabIndex">
+        <!-- articles -->
+        <view class="tab-content" data-set="{{item}}" slot="tab-content-0" >
+          <view class="entity-list" wx:for="{{tabIndex==0 ? articles.entities : []}}" wx:key="id" wx:for-item="article"
+            wx:for-index="index">
             <article-list-com article="{{article}}"></article-list-com>
           </view>
+        </view>
 
-          <!-- tags -->
-          <view class="entity-list" style="display: {{activeTab == 1 ? 'flex': 'none'}};" wx:for="{{tags.entities}}"
-            wx:key="id" wx:for-item="tag" wx:for-index="index">
+        <!-- tags -->
+        <view class="tab-content" data-set="{{item}}" slot="tab-content-1">
+          <view class="entity-list" wx:for="{{tabIndex==1 ? tags.entities : []}}" wx:key="id" wx:for-item="tag" wx:for-index="index">
             <tag-list-com tag="{{tag}}"></tag-list-com>
           </view>
+        </view>
 
-          <!-- questions -->
-          <view class="entity-list" style="display: {{activeTab == 2 ? 'flex': 'none'}};"
-            wx:for="{{questions.entities}}" wx:key="id" wx:for-item="question" wx:for-index="index">
+        <!-- questions -->
+        <view class="tab-content" data-set="{{item}}" slot="tab-content-2">
+          <view class="entity-list" wx:for="{{tabIndex==2 ? questions.entities : []}}" wx:key="id" wx:for-item="question"
+            wx:for-index="index">
             <question-list-com question="{{question}}"></question-list-com>
           </view>
+        </view>
 
-          <!-- tests -->
-          <view class="entity-list" style="display: {{activeTab == 3 ? 'flex': 'none'}};" wx:for="{{tests.entities}}"
-            wx:key="id" wx:for-item="test" wx:for-index="index">
+        <!-- tests -->
+        <view class="tab-content" data-set="{{item}}" slot="tab-content-3">
+          <view class="entity-list" wx:for="{{tabIndex==3 ? tests.entities: []}}" wx:key="id" wx:for-item="test" wx:for-index="index">
             <test-com test="{{test}}"></test-com>
           </view>
+        </view>
 
-          <!-- users -->
-          <view class="entity-list" style="display: {{activeTab == 4 ? 'flex': 'none'}};" wx:for="{{users.entities}}"
-            wx:key="id" wx:for-item="user" wx:for-index="index">
+        <!-- users -->
+        <view class="tab-content" data-set="{{item}}" slot="tab-content-4">
+          <view class="entity-list" wx:for="{{tabIndex==4 ? users.entities: []}}" wx:key="id" wx:for-item="user" wx:for-index="index">
             <user-list-com user="{{user}}"></user-list-com>
           </view>
         </view>

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "search-com": "/components/search-com/index",
-    "test-com": "/components/test-com/index"
+    "test-com": "/components/test-com/index",
+    "mp-tabs": "@miniprogram-component-plus/tabs/index"
   }
 }

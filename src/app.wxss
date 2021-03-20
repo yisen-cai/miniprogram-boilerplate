@@ -12,6 +12,48 @@
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 234, 234, 1) 100%);
 }
 
+
+.tab-bar-title__selected {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-tab {
+  width: 100%;
+}
+
+
+.weui-tabs {
+  margin-top: 28rpx;
+}
+
+
+.weui-tabs-bar__wrp {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  left: 55rpx;
+  justify-content: flex-start;
+  background: none !important;
+  width: 600rpx !important;
+}
+
+
+.weui-tabs-bar__item {
+  display: inline-block;
+  padding-right: 40rpx;
+  font-family: serif;
+  font-size: 18px;
+  background-color: none !important;
+}
+
+.tab-bar-title__selected {
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom-color: #007FFF !important;
+}
+
 page {
   height: 100%;
 }
