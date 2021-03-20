@@ -2,13 +2,12 @@
   "pages": [ 
     "pages/main/index",
     "pages/search/index",
-    "pages/my/index", 
+    "pages/my/index",
     "pages/index/index",
     "pages/add-question/index",
     "pages/add-test/index",
     "pages/logs/index",
     "pages/info/index",
-   
     "pages/complete/index",
     "pages/tag/index",
     "pages/test/index",

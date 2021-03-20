@@ -12,14 +12,46 @@ Page({
       avatar: '',
       gender: 'MALE',
       birthday: '1997/06/14'
-    }
+    },
+    menus: [
+      {
+        id: '',
+        name: '题库管理',
+        cover: 'question',
+        page: '',
+      },
+      {
+        id: '',
+        name: '人员管理',
+        cover: 'staff',
+        page: '',
+      },
+      {
+        id: '',
+        name: '收藏',
+        cover: 'star',
+        page: '',
+      },
+      {
+        id: '',
+        name: '浏览历史',
+        cover: 'history',
+        page: '',
+      },
+      {
+        id: '',
+        name: '设置',
+        cover: 'settings',
+        page: '',
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options: any) {
-    
+
   },
 
   /**
@@ -49,7 +81,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-    
+
   },
 
   /**
@@ -72,5 +104,12 @@ Page({
   onShareAppMessage(opts: any): WechatMiniprogram.Page.ICustomShareContent {
     console.log(opts.target)
     return {}
+  },
+
+  navigateToPage(event: any) {
+    let page = <string>event.currentTarget.dataset.page;
+    wx.navigateTo({
+      url: page
+    });
   }
 })

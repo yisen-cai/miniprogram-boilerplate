@@ -120,8 +120,12 @@ Page({
   onPullDownRefresh() {
     this.initPageData();
     let params = this.generatePageParams();
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading'
+    });
     if (params != null)
-      this.setPageData(params);
+      this.setPageData(params, true);
   },
 
   /**
@@ -217,10 +221,17 @@ Page({
     });
   },
 
-  setPageData(params: Map<string, any>) {
+  setPageData(params: Map<string, any>, stopLoading: boolean = false) {
     let self = this;
     search(params!!).then(res => {
       let page;
+      if (stopLoading)
+        wx.stopPullDownRefresh({
+          complete(res) {
+            wx.hideToast();
+            wx.hideNavigationBarLoading();
+          }
+        });
       switch (this.data.activeTab) {
         case 0:
           page = <SearchResult<ArticleDTO>>res.data;

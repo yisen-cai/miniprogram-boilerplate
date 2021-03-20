@@ -29,9 +29,15 @@
     </view>
   </view>
 
-  <view class="actions-list">
-    <view class="action">
-
+  <view class="menu-list">
+    <view class="menus" wx:for="{{menus}}" wx:key="id" wx:for-item="menu" wx:for-index="index">
+      <view class="menu" hover-class="menu-pressed" hover-stay-time="200">
+        <view class="menu-cover {{menu.cover}}" data-page="{{menu.page}}" bindtap="navigateToPage">
+        </view>
+        <view class="menu-text">
+          {{menu.name}}
+        </view>
+      </view>
     </view>
   </view>
 </view>

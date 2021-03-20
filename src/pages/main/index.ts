@@ -15,6 +15,7 @@ Page({
 
   onLoad(options: any) {
     let self = this;
+    this.initData();
     app.loginReadyCallback = (res: any) => {
       
     }
@@ -33,6 +34,12 @@ Page({
     this.setData({
       tabActive: value
     });
+  },
+
+  initData() {
+    this.setData({
+      tests: []
+    })
   },
 
   onReachBottom() {
