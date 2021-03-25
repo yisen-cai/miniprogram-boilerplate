@@ -58,4 +58,10 @@ page {
   height: 100%;
 }
 
+
+.pressed {
+  background: whitesmoke;
+  opacity: .8;
+}
+
 @import 'app-wxa-auto-dark.wxss'

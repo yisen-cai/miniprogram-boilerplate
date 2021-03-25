@@ -1,19 +1,26 @@
 {
-  "pages": [ 
+  "pages": [
+    "pages/info/index",
     "pages/main/index",
+    "pages/create/index",
     "pages/search/index",
     "pages/my/index",
     "pages/index/index",
     "pages/add-question/index",
     "pages/add-test/index",
     "pages/logs/index",
-    "pages/info/index",
     "pages/complete/index",
     "pages/tag/index",
     "pages/test/index",
     "pages/article/index",
     "pages/question/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/settings/index",
+    "pages/user-manage/index",
+    "pages/collect/index",
+    "pages/history/index",
+    "pages/edit-my/index",
+    "pages/messages/index"
   ],
   "tabBar": {
     "color": "#c0c0c0",

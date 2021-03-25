@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="create-items">
+    <view class="item" wx:for="{{items}}" wx:key="page" wx:for-item="item" wx:for-index="index" data-page="{{item.page}}" bindtap="navigateTo" hover-class="item-pressed" hover-stay-time="50">
+      <view class="cover {{item.coverClass}}"></view>
+      <view class="text">{{item.name}}</view>
+    </view>
+  </view>
+</view>

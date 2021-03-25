@@ -28,6 +28,6 @@
   <editor id="details-editor" class="ql-container"></editor>
 
   <view class="test-next">
-    <button type="primary">NEXT</button>
+    <button type="primary">下一步</button>
   </view>
 </view>

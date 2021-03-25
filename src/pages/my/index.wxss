@@ -99,14 +99,15 @@
 }
 
 .menu-list {
-  margin-top: 60rpx;
+  margin-top: 40rpx;
+  width: 100%;
 }
 
 
 .menus {
   display: flex;
   flex-direction: column;
-  width: 640rpx;
+  width: 100%;
   justify-content: center;
   margin-top: 20rpx;
 }
@@ -125,15 +126,15 @@
 
 .menu-pressed {
   background: whitesmoke !important;
-  box-shadow: 0 0 20rpx lightgray !important;
 }
 
 .menu {
-  width: 640rpx;
+  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
   height: 90rpx;
+  padding: 5rpx;
   background: white;
   box-shadow: 0 0 10rpx 0 lightgray;
 }

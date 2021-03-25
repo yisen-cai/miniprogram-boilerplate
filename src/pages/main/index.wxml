@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove">
   <view class="search-bar" bindtap="navigateSearch">
     <search-com></search-com>
   </view>
@@ -21,4 +21,9 @@
     </mp-tabs>
   </view>
 
+  <view class="create-action" wx:if="{{showCreate}}" hover-class="pressed" hover-stay-time="50"
+    bindtap="navigateCreate">
+    <view class="create-icon">
+    </view>
+  </view>
 </view>
