@@ -31,7 +31,7 @@ Component({
   },
 
   data: {
-    img: '',
+    imageSrc: '',
     cropperWidth: 720,
     showCropper: false,
     uploadProgress: 0
@@ -40,7 +40,7 @@ Component({
   lifetimes: {
     attached() {
       this.setData({
-        img: this.properties.imgSrc
+        imageSrc: this.properties.imgSrc
       });
     }
   },
@@ -55,7 +55,7 @@ Component({
         console.log(img.path);
 
         this.setData({
-          img: img.path,
+          imageSrc: img.path,
           uploadProgress: 0
         });
         // this.uploadImage(img.path);
@@ -75,7 +75,6 @@ Component({
           self.finishUpload(src);
           console.log(src);
         },
-
         fail(res) {
         }
       });

@@ -7,7 +7,6 @@
     "pages/search/index",
     "pages/my/index",
     "pages/index/index",
-    "pages/add-question/index",
     "pages/logs/index",
     "pages/complete/index",
     "pages/tag/index",
@@ -22,6 +21,14 @@
     "pages/edit-my/index",
     "pages/messages/index",
     "pages/test-detail/index"
+  ],
+  "subpackages": [
+    {
+      "root": "editor_pac",
+      "pages": [
+        "pages/add-question/index"
+      ]
+    }
   ],
   "tabBar": {
     "color": "#000000",

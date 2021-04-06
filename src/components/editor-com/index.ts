@@ -1,3 +1,4 @@
+import { uploadFile } from "../../utils/network";
 
 type EditorData = {
   formats: any,
@@ -8,9 +9,9 @@ type EditorData = {
   isIOS: boolean,
   safeHeight: number,
   toolBarHeight: number,
-  editorCtx: any
+  editorCtx: any,
+  uploadProgress: number
 }
-
 
 Component
   <EditorData,
@@ -37,7 +38,8 @@ Component
       isIOS: false,
       safeHeight: 0,
       toolBarHeight: 50,
-      editorCtx: null
+      editorCtx: null,
+      uploadProgress: 0
     },
 
     methods: {
@@ -179,17 +181,7 @@ Component
         wx.chooseImage({
           count: 1,
           success: function (res) {
-            that.data.editorCtx.insertImage({
-              src: res.tempFilePaths[0],
-              data: {
-                id: 'abcd',
-                role: 'god'
-              },
-              width: '100%',
-              success: function () {
-                console.log('insert image success')
-              }
-            });
+            uploadFile(res.tempFilePaths[0], '/editor', that);
           }
         });
       }

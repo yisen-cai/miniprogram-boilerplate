@@ -1,7 +1,7 @@
 Page({
   data: {
     name: '',
-    cover: '',
+    cover: 'https://oss.yisen614.top/background/image-back.png',
     description: '<p>1111</p>',
     totalScore: 100,
     accessToken: '',

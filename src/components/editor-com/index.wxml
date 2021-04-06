@@ -1,6 +1,7 @@
 <view class="container" style="height:{{editorHeight}}px;">
 	<editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady" bindinput="updateContent">
 	</editor>
+	<progress style="opacity:{{(uploadProgress > 0 && uploadProgress < 100) ? 1 : 0}};" percent="{{uploadProgress}}" stroke-width="3" />
 </view>
 
 <view class="toolbar" catchtouchend="format" hidden="{{false}}" style="bottom: {{isIOS ? keyboardHeight : 0}}px; height: {{toolBarHeight}}px; padding-bottom: {{isIOS ? safeHeight : 0}}px">

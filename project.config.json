@@ -5,7 +5,7 @@
   },
   "miniprogramRoot": "src/",
   "compileType": "miniprogram",
-  "libVersion": "2.9.5",
+  "libVersion": "2.12.3",
   "projectname": "miniprogram-boilerplate",
   "scripts": {
     "beforeCompile": "tsc --build tsconfig.json",
