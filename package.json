@@ -16,6 +16,7 @@
     "@dw/wx-cropper": "^1.0.6",
     "@miniprogram-component-plus/tabs": "^1.0.0",
     "@miniprogram-i18n/core": "^1.0.0-rc.11",
+    "@vant/weapp": "^1.6.8",
     "ali-oss": "^6.13.2",
     "vant-weapp": "^0.5.29"
   }

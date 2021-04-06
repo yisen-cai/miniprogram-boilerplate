@@ -1,32 +1,18 @@
 <!--src/pages/add-test/add-test.wxml-->
 <view class="container">
 
-  <view class="test-cover">
-    <view class="edit-svg"></view>
+  <view class="test-cover" style="z-index: 1000;">
+    <image-chooser-com bind:finishUpload="finishUpload"></image-chooser-com>
   </view>
 
-  <view class="inline-input test-name">
-    <text class="label">名称* :</text>
-    <input type="text" />
-  </view>
+  <van-cell-group>
+    <van-field model:value="{{ name }}" label="名称" placeholder="请输入测评名称" required clearable />
+    <van-field model:value="{{ totalScore }}" type="digit" required clearable label="总分" placeholder="请输入测评总分" />
+    <van-field model:value="{{accessToken}}" label="访问密钥" placeholder="请输入访问密钥" clearable />
+    <van-field label="测评详情" type="text" autosize readonly="{{true}}"/>
+  </van-cell-group>
 
-  <view class="inline-input test-score">
-    <text class="label">总分* :</text>
-    <input type="text" />
-  </view>
-
-  <view class="inline-input test-token">
-    <text class="label">密钥 :</text>
-    <input type="text" />
-  </view>
-
-  <view class="inline-input test-details">
-    <text class="label">详情* :</text>
-    <view style="width: 500rpx;padding: 10rpx;"></view>
-  </view>
-
-  <editor id="details-editor" class="ql-container"></editor>
-
+  <editor-com style="width: 100%;" placeholder="请输入测评详情" bind:updateDes="updateDes" editorText="{{description}}"></editor-com>
   <view class="test-next">
     <button type="primary">下一步</button>
   </view>

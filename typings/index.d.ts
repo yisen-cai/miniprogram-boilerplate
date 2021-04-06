@@ -7,3 +7,8 @@ interface IAppOption {
   }
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
 }
+
+interface EditorOptions extends WechatMiniprogram.Component.PropertyOption {
+  editorCtx: any,
+  _safeHeight: number
+}

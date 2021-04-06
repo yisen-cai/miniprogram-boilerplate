@@ -14,6 +14,11 @@
   margin-top: 40rpx;
 }
 
+van-cell-group {
+  margin-top: 80rpx;
+  width: 100%;
+}
+
 .test-cover {
   width: 160rpx;
   height: 160rpx;

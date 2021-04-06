@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/add-test/index",
     "pages/info/index",
     "pages/main/index",
     "pages/create/index",
@@ -7,7 +8,6 @@
     "pages/my/index",
     "pages/index/index",
     "pages/add-question/index",
-    "pages/add-test/index",
     "pages/logs/index",
     "pages/complete/index",
     "pages/tag/index",
@@ -20,11 +20,12 @@
     "pages/collect/index",
     "pages/history/index",
     "pages/edit-my/index",
-    "pages/messages/index"
+    "pages/messages/index",
+    "pages/test-detail/index"
   ],
   "tabBar": {
-    "color": "#c0c0c0",
-    "selectedColor": "#007FFF",
+    "color": "#000000",
+    "selectedColor": "#72b89f",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [

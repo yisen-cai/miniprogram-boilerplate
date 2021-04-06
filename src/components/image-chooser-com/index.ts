@@ -23,18 +23,26 @@ Component({
     imageKey: {
       type: String,
       value: 'avatar'
+    },
+    imgSrc: {
+      type: String,
+      value: 'https://oss.yisen614.top/background/image-back.png'
     }
   },
 
   data: {
-    imageSrc: 'https://oss.yisen614.top/background/image-back.png',
+    img: '',
     cropperWidth: 720,
     showCropper: false,
     uploadProgress: 0
   },
 
   lifetimes: {
-
+    attached() {
+      this.setData({
+        img: this.properties.imgSrc
+      });
+    }
   },
 
   methods: {
@@ -47,7 +55,7 @@ Component({
         console.log(img.path);
 
         this.setData({
-          imageSrc: img.path,
+          img: img.path,
           uploadProgress: 0
         });
         // this.uploadImage(img.path);
@@ -56,18 +64,25 @@ Component({
     },
 
     choose() {
+      let self = this;
       wx.chooseImage({
         count: 1, // 默认9
         sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
         sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
         success(res) {
+          // 上传完成后
           const src = res.tempFilePaths[0];
+          self.finishUpload(src);
           console.log(src);
         },
 
         fail(res) {
         }
       });
+    },
+
+    finishUpload(src) {
+      this.triggerEvent('finish', { src: src }, {});
     },
 
     chooseImage() {
