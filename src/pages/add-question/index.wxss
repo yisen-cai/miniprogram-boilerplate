@@ -1,0 +1,26 @@
+.container {
+  padding: 28rpx 0;
+  justify-content: flex-start;
+}
+
+
+.label, .weui-cells__title {
+  width: 680rpx;
+  text-align: left;
+}
+
+
+
+.weui-cells {
+  text-align: center;
+  padding: 20rpx;
+  width: 200rpx;
+  border: 1px dotted lightgray;
+  padding: 15rpx 20rpx;
+  background: white;
+}
+
+.question-description {
+  width: 100%;
+  padding: 20rpx 0;
+}

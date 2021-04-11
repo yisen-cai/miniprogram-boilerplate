@@ -2,7 +2,8 @@
   "usingComponents": {
     "van-field": "@vant/weapp/field/index",
     "image-chooser-com": "/components/image-chooser-com/index",
-    "editor-com": "/components/editor-com/index"
+    "editor-com": "/components/editor-com/index",
+    "van-notify": "@vant/weapp/notify/index"
   },
   "enablePullDownRefresh": false
 }

@@ -17,7 +17,7 @@ Component
   <EditorData,
     WechatMiniprogram.Component.PropertyOption,
     WechatMiniprogram.Component.MethodOption
-    >
+  >
   ({
     properties: {
       placeholder: {
@@ -79,7 +79,7 @@ Component
 
         });
       },
-      
+
       updateContent(event: any) {
         this.triggerEvent('updateDes', { description: event.detail.html }, {});
       },
@@ -90,7 +90,7 @@ Component
         })
       },
 
-      updatePosition(keyboardHeight) {
+      updatePosition(keyboardHeight: number) {
         const toolbarHeight = 50
         const { windowHeight, platform } = wx.getSystemInfoSync()
         let editorHeight = keyboardHeight > 0 ? (windowHeight - keyboardHeight - toolbarHeight) : windowHeight
@@ -126,8 +126,8 @@ Component
           });
           editorCtx.setContents({
             html: that.properties.editorText,   //这里就是设置默认值的地方（html 后面给什么就显示什么）
-                                        //that.data.content 是我存在 data 里面的数据
-                                        //注意是 this 赋值的 that，如果用 this 就把上面的 function 改成箭头函数
+            //that.data.content 是我存在 data 里面的数据
+            //注意是 this 赋值的 that，如果用 this 就把上面的 function 改成箭头函数
           });
         }).exec();
       },
@@ -136,14 +136,14 @@ Component
         this.data.editorCtx.blur();
       },
 
-      format(e) {
+      format(e: any) {
         let { name, value } = e.target.dataset
         if (!name) return
         console.log('format', name, value)
         this.data.editorCtx.format(name, value)
       },
 
-      onStatusChange(e) {
+      onStatusChange(e: any) {
         const formats = e.detail;
         this.setData({ formats });
       },
@@ -181,7 +181,7 @@ Component
         wx.chooseImage({
           count: 1,
           success: function (res) {
-            uploadFile(res.tempFilePaths[0], '/editor', that);
+            uploadFile(res.tempFilePaths[0], 'editor', that);
           }
         });
       }

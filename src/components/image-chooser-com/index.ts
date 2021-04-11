@@ -80,8 +80,8 @@ Component({
       });
     },
 
-    finishUpload(src) {
-      this.triggerEvent('finish', { src: src }, {});
+    finishUpload(src: string) {
+      this.triggerEvent('finishUpload', { src: src }, {});
     },
 
     chooseImage() {

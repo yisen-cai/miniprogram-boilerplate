@@ -54,7 +54,7 @@ type TestVO = {
   description: string,
   totalScore: number,
   accessToken: string,
-  questions: Array<TestQuestion>
+  questions: Array<TestQuestion>?
 }
 
 
@@ -143,7 +143,7 @@ type UserDTO = {
   username: string,
   avatar: string,
   gender: string,
-  signature: string  
+  signature: string
 }
 
 type TestDTO = {

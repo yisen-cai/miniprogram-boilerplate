@@ -50,5 +50,6 @@ page>view {
   border: 1px solid #ECECEC;
   border-left: none;
   border-right: none;
+  background: white;
 }
 

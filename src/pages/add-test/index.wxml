@@ -1,7 +1,7 @@
 <!--src/pages/add-test/add-test.wxml-->
 <view class="container">
-
-  <view class="test-cover" style="z-index: 1000;">
+  <van-notify id="van-notify" />
+  <view class="test-cover" style="z-index: 100;">
     <image-chooser-com bind:finishUpload="finishUpload" imgSrc="{{cover}}"></image-chooser-com>
   </view>
 
@@ -14,6 +14,6 @@
 
   <editor-com style="width: 100%;" placeholder="请输入测评详情" bind:updateDes="updateDes" editorText="{{description}}"></editor-com>
   <view class="test-next">
-    <button type="primary">下一步</button>
+    <button type="primary" bindtap="validateForm">下一步</button>
   </view>
 </view>

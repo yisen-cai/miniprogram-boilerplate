@@ -48,10 +48,11 @@ export function uploadFile(filePath: string, folder: string, self: WechatMinipro
         if (res.statusCode === 204) {
           console.log('上传成功');
         }
-        // 
-        if(folder === '/editor') {
+        
+        let src = `${Config.OSS_ROOT}/${key}`;
+        if(folder === 'editor') {
           self.data.editorCtx.insertImage({
-            src: `${Config.OSS_ROOT}/${key}`,
+            src: src,
             data: {
               id: 'abcd',
               role: 'god'
@@ -61,9 +62,11 @@ export function uploadFile(filePath: string, folder: string, self: WechatMinipro
               console.log('insert image success')
             }
           });
+        } else if (folder == 'avatar') {
+          self.finishUpload(src);
         }
         self.setData({
-          imageSrc: `${Config.OSS_ROOT}/${key}`
+          imageSrc: src,
         });
       },
       fail: err => {

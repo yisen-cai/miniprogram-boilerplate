@@ -15,12 +15,12 @@ Component({
   },
 
   methods: {
-    delete(event) {
+    delete(event: any) {
       // TODO: trigger delete operation
     },
 
     search(event: any) {
-      this.triggerEvent('search', {searchText: this.data.text}, {});
+      this.triggerEvent('search', { searchText: this.data.text }, {});
     }
   }
 });

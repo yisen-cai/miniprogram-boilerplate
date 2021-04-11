@@ -62,8 +62,12 @@ export function pageParamsOf(page: number = 0, size: number = 20, sort: string |
   let params = new Map<string, any>();
   params.set('page', page);
   params.set('size', size);
-  if(sort != null) {
+  if (sort != null) {
     params.set('sort', sort);
   }
   return params;
 }
+
+export function notEmptyString(str: string) {
+  return str != '';
+} 

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加问题",
+  "usingComponents": {
+    "editor-com": "/components/editor-com/index"
+  }
+}

@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="questions-displayer">
+    <view class="label">
+      问题*:
+    </view>
+
+    <view class="questions-container">
+      
+    </view>
+  </view>
+
+  <view class="score-count">
+    <view class="score-left-label">
+      剩余分数:
+    </view>
+    <view class="score-left">
+
+    </view>
+  </view>
+
+  <view class="complete-action">
+    <button type="primary">完成</button>
+  </view>
+</view>
