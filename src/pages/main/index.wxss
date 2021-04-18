@@ -7,10 +7,6 @@
   justify-content: flex-start;
 }
 
-swiper {
-  min-height: 1200rpx !important;
-}
-
 mp-tabs {
   width: 100% !important;
 }

@@ -1,6 +1,12 @@
 {
   "navigationBarTitleText": "添加问题",
+  "enablePullDownRefresh": false,
   "usingComponents": {
-    "editor-com": "/components/editor-com/index"
+    "editor-com": "/components/editor-com/index",
+    "question-option-com": "/components/question-option-com/index",
+    "tag-name-com": "/components/tag-name-com/index",
+    "search-com": "/components/search-com/index",
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "van-notify": "@vant/weapp/notify/index"
   }
 }

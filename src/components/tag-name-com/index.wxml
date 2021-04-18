@@ -1,0 +1,3 @@
+<view class="tag-name-container">
+  <tag-com tag="{{tag}}" canDelete="{{true}}"></tag-com>
+</view>

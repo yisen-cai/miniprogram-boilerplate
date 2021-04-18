@@ -1,15 +1,15 @@
 .container {
-  padding: 28rpx 0;
+  padding: 28rpx 0 56rpx 0;
   justify-content: flex-start;
 }
 
 
-.label, .weui-cells__title {
+.label,
+.weui-cells__title {
   width: 680rpx;
   text-align: left;
+  margin: 30rpx 0 10rpx 0;
 }
-
-
 
 .weui-cells {
   text-align: center;
@@ -23,4 +23,118 @@
 .question-description {
   width: 100%;
   padding: 20rpx 0;
+}
+
+.question-options {
+  margin: 10rpx 0;
+}
+
+.question-options>view {
+  margin-top: 10rpx;
+}
+
+.question-answers>view {
+  margin-top: 10rpx;
+}
+
+.question-tags {
+  margin: 10rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.show-search-tags {
+  background: white;
+  width: 600rpx;
+  height: 400rpx;
+}
+
+.question-tags-items {
+  display: inline-flex;
+  flex-wrap: wrap;
+  
+}
+
+
+.add-data {
+  width: 640rpx;
+  height: 40rpx;
+  background: white;
+  text-align: center;
+  padding: 20rpx;
+}
+
+
+.add-icon {
+  margin: auto;
+  width: 40rpx;
+  height: 40rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath id='Icon_ionic-ios-add' data-name='Icon ionic-ios-add' d='M32.408,19.908H23.021V10.521a1.556,1.556,0,1,0-3.113,0v9.387H10.521a1.556,1.556,0,0,0,0,3.113h9.387v9.387a1.556,1.556,0,0,0,3.113,0V23.021h9.387a1.556,1.556,0,0,0,0-3.113Z' transform='translate(-8.965 -8.965)' fill='%23000'/%3E%3C/svg%3E%0A");
+}
+
+
+.add-dialog {
+  display: flex;
+  flex-direction: column;
+  width: 640rpx;
+  background: white;
+  position: fixed;
+  top: 300rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 10rpx;
+  box-shadow: 0 0 10rpx 10rpx whitesmoke;
+}
+
+.add-label {
+  width: 90%;
+}
+
+.show-input {}
+
+.hide-input {}
+
+textarea {
+  border: 1rpx dashed black;
+  width: 600rpx;
+  margin-top: 20rpx;
+  padding: 10rpx;
+}
+
+
+.added-data {
+  background: whitesmoke;
+  opacity: .8;
+}
+
+.error {
+  border: 1rpx solid red;
+}
+
+.hide-text {
+  opacity: 0;
+}
+
+.show-text {
+  opacity: 1;
+  color: red;
+}
+
+.first-line {
+  display: inline-flex;
+  align-items: center;
+}
+
+.close-input {
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  left: 200rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E %3Cpath id='Icon_ionic-ios-close' data-name='Icon ionic-ios-close' d='M14.352,13.407l2.857-2.858a.67.67,0,1,0-.947-.947L13.405,12.46,10.548,9.6a.67.67,0,1,0-.947.947l2.857,2.858L9.6,16.265a.67.67,0,0,0,.947.947l2.857-2.858,2.857,2.858a.67.67,0,0,0,.947-.947Z' transform='translate(-9.404 -9.407)'/%3E %3C/svg%3E ");
 }

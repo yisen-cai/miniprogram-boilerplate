@@ -981,6 +981,11 @@
   "resolved" "https://registry.npmjs.org/vant-weapp/-/vant-weapp-0.5.29.tgz"
   "version" "0.5.29"
 
+"weui-miniprogram@^1.0.8":
+  "integrity" "sha512-fm9Hi/3s2Imp2xufuxBcbzYxIcrVt0gPMIdjHfuIFA0Fxiukztc+c2nyFspmkI9YkrdHM1o2h6qsStdK+wFhWQ=="
+  "resolved" "https://registry.npmjs.org/weui-miniprogram/-/weui-miniprogram-1.0.8.tgz"
+  "version" "1.0.8"
+
 "win-release@^1.0.0":
   "integrity" "sha1-X6VeAr58qTTt/BJmVjLoSbcuUgk="
   "resolved" "https://registry.npmjs.org/win-release/-/win-release-1.1.1.tgz"

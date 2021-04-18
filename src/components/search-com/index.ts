@@ -12,6 +12,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    scaleStyle: {
+      type: Number,
+      value: 1
+    },
     cusStyle: {
       type: Object,
       value: {

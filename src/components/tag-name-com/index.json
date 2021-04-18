@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tag-com": "/components/tag-com/index"
+  }
+}

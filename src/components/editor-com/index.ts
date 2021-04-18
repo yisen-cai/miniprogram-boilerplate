@@ -1,6 +1,6 @@
 import { uploadFile } from "../../utils/network";
 
-type EditorData = {
+type EditorDataOption = {
   formats: any,
   readOnly: boolean,
   placeholder: string,
@@ -14,9 +14,9 @@ type EditorData = {
 }
 
 Component
-  <EditorData,
+  <EditorDataOption,
     WechatMiniprogram.Component.PropertyOption,
-    WechatMiniprogram.Component.MethodOption
+    WechatMiniprogram.Component.MethodOption | any
   >
   ({
     properties: {
@@ -97,8 +97,8 @@ Component
         if (keyboardHeight === 0) {
           this.setData({
             editorHeight, keyboardHeight,
-            // toolBarHeight: this.data.isIOS ? 50 + this._safeHeight : 50,
-            // safeHeight: this._safeHeight,
+            toolBarHeight: this.data.isIOS ? 50 + this._safeHeight : 50,
+            safeHeight: this._safeHeight,
           })
         } else {
           this.setData({

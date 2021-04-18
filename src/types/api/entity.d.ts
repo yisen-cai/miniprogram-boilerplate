@@ -17,6 +17,11 @@ type QuestionOption = {
   content: string
 }
 
+type QuestionAnswer = {
+  index: number,
+  content: string
+}
+
 type QuestionVO = {
   description: string,
   content: string,

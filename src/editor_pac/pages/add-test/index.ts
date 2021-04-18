@@ -1,5 +1,5 @@
-import { addTest } from "../../api/api";
-import { notEmptyString } from "../../utils/util";
+import { addTest } from "../../../api/api";
+import { notEmptyString } from "../../../utils/util";
 import Notify from '@vant/weapp/notify/notify';
 // import Notify from '@vant/weapp/dist/notify/notify';
 

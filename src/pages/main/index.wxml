@@ -5,7 +5,7 @@
 
   <view class="tabs">
     <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabClick"
-      tabBackgroundColor="none" activeClass="tab-bar-title__selected">
+      tabBackgroundColor="none" activeClass="tab-bar-title__selected" swiperHeight="{{swiperHeight}}">
 
       <block wx:for="{{tabs}}" wx:key="title" wx:for-index="tabIndex">
 

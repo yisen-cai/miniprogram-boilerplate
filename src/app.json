@@ -1,9 +1,8 @@
 {
   "pages": [
     "pages/add-question/index",
-    "pages/add-test/index",
-    "pages/info/index",
     "pages/main/index",
+    "pages/info/index",
     "pages/create/index",
     "pages/search/index",
     "pages/my/index",
@@ -12,33 +11,33 @@
     "pages/complete/index",
     "pages/tag/index",
     "pages/test/index",
-    "pages/article/index",
     "pages/question/index",
     "pages/user/index",
     "pages/settings/index",
-    "pages/user-manage/index",
+
     "pages/collect/index",
     "pages/history/index",
-    "pages/edit-my/index",
+
     "pages/messages/index",
-    "pages/test-detail/index",
-    "pages/add-test-question/index"
+    "pages/test-detail/index"
+
   ],
-  "subpackages": [
-    {
-      "root": "editor_pac",
-      "pages": [
-        "pages/add-question/index"
-      ]
-    }
-  ],
+  "subpackages": [{
+    "root": "editor_pac",
+    "pages": [
+      "pages/article/index",
+      "pages/user-manage/index",
+      "pages/add-test-question/index",
+      "pages/add-test/index",
+      "pages/edit-my/index"
+    ]
+  }],
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#72b89f",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
-    "list": [
-      {
+    "list": [{
         "iconPath": "assets/images/main.png",
         "selectedIconPath": "assets/images/main_selected.png",
         "pagePath": "pages/main/index",

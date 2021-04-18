@@ -110,3 +110,12 @@ export function deleteHistory(keyword: string) {
 export function search(params: Map<string, any>) {
   return netRequest('/search', 'GET', params, null)
 }
+
+
+/**
+ * Get tag by name
+ * @param params 
+ */
+export function getTagByName(tagName: string) {
+  return netRequest(`/tags/name/${tagName}`, 'GET', null, null);
+}

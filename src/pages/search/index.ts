@@ -3,7 +3,27 @@ import { pageParamsOf } from "../../utils/util";
 
 const app = getApp();
 
-Page({
+type PageData<T> = {
+  entities: Array<T>,
+  index: number,
+  hasNext: boolean
+}
+
+type SearchDataOption = {
+  tabs: Array<any>,
+  suggestions: Array<any>,
+  searchText: string,
+  showSuggestions: true,
+  activeTab: number,
+  articles: PageData<ArticleDTO>,
+  tags: PageData<TagDTO>,
+  questions: PageData<QuestionDTO>,
+  tests: PageData<TestDTO>,
+  users: PageData<UserDTO>
+}
+
+
+Page<SearchDataOption, WechatMiniprogram.Page.CustomOption>({
 
   /**
    * 页面的初始数据
@@ -11,7 +31,7 @@ Page({
   data: {
     searchText: '',
     showSuggestions: true,
-    suggestions: [{}],
+    suggestions: [],
     tabs: [
       {
         title: '文章',
@@ -31,27 +51,27 @@ Page({
     ],
     activeTab: 0,
     articles: {
-      entities: [{}],
+      entities: [],
       index: 0,
       hasNext: true
     },
     tags: {
-      entities: [{}],
+      entities: [],
       index: 0,
       hasNext: true
     },
     questions: {
-      entities: [{}],
+      entities: [],
       index: 0,
       hasNext: true
     },
     tests: {
-      entities: [{}],
+      entities: [],
       index: 0,
       hasNext: true
     },
     users: {
-      entities: [{}],
+      entities: [],
       index: 0,
       hasNext: true
     }
@@ -69,7 +89,7 @@ Page({
       });
     }).catch(err => {
       console.error(err);
-    })
+    });
   },
 
   /**
@@ -140,14 +160,14 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage(opts: any): WechatMiniprogram.Page.ICustomShareContent {
-    console.log(opts.target)
-    return {}
+  onShareAppMessage(opts: WechatMiniprogram.Page.IShareAppMessageOption): WechatMiniprogram.Page.ICustomShareContent {
+    console.log(opts.target);
+    return {};
   },
 
   toggleSuggestions(event: any) {
     this.setData({
-      showSuggestions: !this.data.showSuggestions
+      showSuggestions: this.data.showSuggestions
     });
   },
 

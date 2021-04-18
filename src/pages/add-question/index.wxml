@@ -1,4 +1,5 @@
 <view class="container">
+  <van-notify id="van-notify" />
   <view class="weui-cells__title">问题类型<text style="color: red;">*</text>:</view>
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
@@ -21,22 +22,74 @@
   <view class="weui-cells__title">问题选项<text style="color: red;">*</text>:</view>
 
   <view class="question-options">
+    <view wx:for="{{options}}" wx:key="id" wx:for-item="option" wx:for-index="index">
+      <question-option-com optionContent="{{option.content}}" optionIndex="{{option.index}}"
+        bind:deleteOption="deleteOption">
+      </question-option-com>
+    </view>
 
+    <view class="add-data option" hover-class="added-data" hover-stay-time="100" bindtap="addQuestionOption">
+      <view class="add-icon">
+      </view>
+    </view>
   </view>
 
   <view class="weui-cells__title">问题答案<text style="color: red;">*</text>:</view>
-
   <view class="question-answers">
+    <view wx:for="{{answers}}" wx:key="id" wx:for-item="answer" wx:for-index="index">
+      <question-option-com optionContent="{{answer.content}}" optionIndex="{{answer.index}}"
+        bind:deleteOption="deleteAnswer">
+      </question-option-com>
+    </view>
 
+    <view class="add-data answer" hover-class="added-data" hover-stay-time="100" bindtap="addQuestionAnswer">
+      <view class="add-icon">
+      </view>
+    </view>
   </view>
 
-  <view class="weui-cells__title">问题标签:</view>
 
+  <view class="weui-cells__title">问题标签:</view>
   <view class="question-tags">
 
+    <search-com text="{{tagSearchText}}" bind:search="searchTag" inputShowed="{{true}}" active="{{true}}"
+      bind:searchResult="searchTagResult" bind:clear="clearTagText" scaleStyle=".8"></search-com>
+
+    <view class="show-search-tags">
+    </view>
+
+    <view class="question-tags">
+      <view class="question-tag" wx:for="{{tags}}" wx:key="index" wx:for-index="index">
+        <tag-name-com tagName="{{item}}"></tag-name-com>
+      </view>
+    </view>
   </view>
 
   <view class="question-action">
     <button type="primary" bindtap="validateForm">添加问题</button>
+  </view>
+  <!-- add option dialog -->
+  <view class="add-dialog" wx:if="{{showInput}}">
+
+    <view class="first-line">
+      <view class="tooltip">
+        添加问题{{addLabel}}
+      </view>
+
+      <view class="close-input" bindtap="closeInput">
+      </view>
+    </view>
+
+
+    <view class="add-label">
+      {{addLabel}}<text style="color: red;">*</text>
+    </view>
+
+    <view>
+      <textarea class="add-input-text {{inputValid ? 'ok' : 'error'}}" model:value="{{questionInput}}"></textarea>
+      <text class="{{inputValid ? 'hide-text' : 'show-text'}}">请填写内容</text>
+    </view>
+
+    <button type="primary" bindtap="addToQuestion">添加{{addLabel}}</button>
   </view>
 </view>

@@ -27,7 +27,8 @@ Page({
       }
     ],
     // 0, 1, 2
-    activeTab: 0
+    activeTab: 0,
+    swiperHeight: 260
   },
 
   onLoad(options: any) {
@@ -66,6 +67,10 @@ Page({
           index: self.data.tests.index + 1,
           hasNext: pageResult.hasNext
         }
+      });
+      // set test height
+      this.setData({
+        swiperHeight: 260 * pageResult.entities.length
       });
     }).catch(err => {
       console.error(err);

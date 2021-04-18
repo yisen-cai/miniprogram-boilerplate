@@ -1,10 +1,18 @@
+import Notify from '@vant/weapp/notify/notify';
+
 type TAddQuestion = {
   type: 'JUDGE' | 'SELECT' | 'CHECK' | ' INPUT' | 'ANSWER',
   description: string,
   options: Array<QuestionOption>,
-  answers: Array<string>,
+  answers: Array<QuestionAnswer>,
   questionTypes: Array<string>,
-  questionIndex: number
+  questionIndex: number,
+  addLabel: string,
+  questionInput: string,
+  inputValid: boolean,
+  showInput: boolean,
+  tags: Array<string>,
+  tagSearchText: string
 }
 
 
@@ -16,8 +24,12 @@ Page<TAddQuestion, WechatMiniprogram.Page.CustomOption>({
   data: {
     type: 'SELECT',
     description: '',
-    options: [],
-    answers: [],
+    options: [
+    ],
+    answers: [
+    ],
+    addLabel: '选项',
+    questionInput: '',
     questionTypes: [
       '判断题',
       '选择题',
@@ -25,7 +37,13 @@ Page<TAddQuestion, WechatMiniprogram.Page.CustomOption>({
       '填空题',
       '简答题'
     ],
-    questionIndex: 1
+    questionIndex: 1,
+    inputValid: true,
+    showInput: false,
+    tags: [
+      '英语'
+    ],
+    tagSearchText: ''
   },
 
   /**
@@ -42,59 +60,145 @@ Page<TAddQuestion, WechatMiniprogram.Page.CustomOption>({
 
   },
 
+
+  /**
+   * 删除问题选项
+   * @param event 
+   */
+  deleteOption(event: any) {
+    let index = event.detail.index;
+    let options: Array<QuestionOption> = [];
+    this.data.options.forEach(v => {
+      if (v.index != index)
+        options.push(v);
+    });
+    this.setData({
+      options: options
+    });
+  },
+
+  /**
+   * search tag action, expand or fold
+   * @param event 
+   */
+  searchTag(event: any) {
+
+  },
+
+  clearTagText(event: any) {
+
+  },
+
+  searchTagResult(event: any) {
+
+  },
+
+  deleteAnswer(event: any) {
+    let index = event.detail.index;
+    let answers: Array<QuestionAnswer> = [];
+    this.data.answers.forEach(v => {
+      if (v.index != index)
+        answers.push(v);
+    });
+    this.setData({
+      answers: answers
+    });
+  },
+
+  addQuestionOption(event: any) {
+    if (this.data.questionIndex == 0) {
+      if (this.data.options.length < 2) {
+        this.setData({
+          addLabel: '选项',
+          showInput: true
+        });
+      } else {
+        Notify({ type: 'danger', message: '判断题只能为真或假!' });
+      }
+    }
+  },
+
+  addQuestionAnswer(event: any) {
+    if (this.data.questionIndex == 0 || this.data.questionIndex == 1) {
+      if (this.data.options.length < 1) {
+        this.setData({
+          addLabel: '答案',
+          showInput: true
+        });
+      } else {
+        // can't add
+        Notify({ type: 'danger', message: '单选或判断只能有一个答案!' });
+      }
+    } else {
+      this.setData({
+        addLabel: '答案',
+        showInput: true
+      });
+    }
+  },
+
+  closeInput(event: any) {
+    this.setData({
+      showInput: false
+    });
+  },
+
+  /**
+   * add option or answer to question
+   */
+  addToQuestion(event: any) {
+    if (this.data.questionInput == '') {
+      this.setData({
+        inputValid: false
+      });
+      return;
+    }
+
+    if (this.data.addLabel == '选项') {
+      let maxInd = 0;
+      this.data.options.forEach(v => {
+        maxInd = v.index;
+      });
+      let options = this.data.options.concat({
+        index: maxInd,
+        content: this.data.questionInput
+      });
+      this.setData({
+        options: options
+      });
+    } else {
+      let maxInd = 0;
+      this.data.answers.forEach(v => {
+        maxInd = v.index;
+      });
+      let answers = this.data.answers.concat({
+        index: maxInd,
+        content: this.data.questionInput
+      });
+      this.setData({
+        answers: answers
+      });
+    }
+
+    this.setData({
+      questionInput: '',
+      showInput: false
+    });
+  },
+
   bindPickerChange(e: any) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      dialogShow: true
+    });
     this.setData({
       questionIndex: e.detail.value
-    })
+    });
   },
 
   updateDes(event: any) {
     this.setData({
       description: event.detail.description
     });
-  },
-  
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage(opts: any): WechatMiniprogram.Page.ICustomShareContent {
-    console.log(opts.target)
-    return {}
   }
-})
+});

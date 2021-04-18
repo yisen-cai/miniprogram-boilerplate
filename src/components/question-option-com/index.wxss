@@ -1,0 +1,22 @@
+.quesiton-option-container {
+  width: 100%;
+  height: 70rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10rpx 0rpx;
+  background: white;
+}
+
+.option-details {
+  width: 400rpx;
+  font-size: 15pt;
+}
+
+.delete-flag {
+  width: 30rpx;
+  height: 30rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E %3Cpath id='Icon_ionic-ios-close' data-name='Icon ionic-ios-close' d='M14.352,13.407l2.857-2.858a.67.67,0,1,0-.947-.947L13.405,12.46,10.548,9.6a.67.67,0,1,0-.947.947l2.857,2.858L9.6,16.265a.67.67,0,0,0,.947.947l2.857-2.858,2.857,2.858a.67.67,0,0,0,.947-.947Z' transform='translate(-9.404 -9.407)'/%3E %3C/svg%3E ");
+}
