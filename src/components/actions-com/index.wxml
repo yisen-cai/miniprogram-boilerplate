@@ -1,0 +1,17 @@
+<view class="actions-com">
+  <view class="main-manipulations">
+    <view class="main-manipulation details-info">
+    </view>
+
+    <view class="main-manipulation     collect-action">
+    </view>
+
+    <view class="share-action main-manipulation">
+    </view>
+  </view>
+
+  <view class="like-or-dislike-action">
+    <view class="like-dislike-icon">
+    </view>
+  </view>
+</view>

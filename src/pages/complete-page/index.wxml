@@ -1,0 +1,4 @@
+<view class="container">
+
+  <complete-com message="{{message}}"></complete-com>
+</view>

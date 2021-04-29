@@ -1,33 +1,26 @@
-import { getTest } from "../../api/api"
-
-
-type TTestDetail = {
-  test: TestDTO | null
+type TCompletePageData = {
+  message: string,
+  url: string
 }
 
-let app = getApp();
 
-
-Page<TTestDetail, WechatMiniprogram.Page.CustomOption>({
+Page<TCompletePageData, WechatMiniprogram.Page.CustomOption>({
 
   /**
    * 页面的初始数据
    */
   data: {
-    test: null
+    message: '测评',
+    url: 'url'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options: BaseParam) {
-    getTest(options.id).then(res => {
-      let testDTO: TestDTO = <TestDTO>res.data;
-      this.setData({
-        test: testDTO
-      });
-    }).catch(err => {
-      console.log(err);
+  onLoad(options: CompleteParam) {
+    this.setData({
+      message: options.message,
+      url: options.url
     });
   },
 

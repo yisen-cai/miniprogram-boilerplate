@@ -1,0 +1,7 @@
+<view class="author-com" bindtap="navigateToUser">
+  <view class="author-avatar" style="background-image: url({{author.avatar}});">
+  </view>
+  <view class="author-name">
+    {{author.username}}
+  </view>
+</view>

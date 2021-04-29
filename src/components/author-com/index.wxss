@@ -1,0 +1,20 @@
+.author-com {
+  width: 200rpx;
+  height: 46rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.author-avatar {
+  border-radius: 30rpx;
+  height: 46rpx;
+  width: 46rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 8rpx;
+}
+
+.author-name {
+
+}

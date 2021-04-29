@@ -10,6 +10,7 @@
 .complete-details {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 
 .complete-icon {
@@ -37,4 +38,25 @@
 
 button {
   font-weight: normal;
+}
+
+
+.button {
+  width: 400rpx;
+  padding: 25rpx;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10rpx 10rpx 0 lightgray;
+}
+
+.check-button {
+  background: #70e6a7;
+}
+
+.back-button {
+  background: #82e3d4;
+}
+
+.pressed {
+  opacity: .8;
 }

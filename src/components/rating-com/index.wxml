@@ -1,0 +1,17 @@
+<view class="rating-com">
+  <view class="meta-data">
+    <author-com author="{{rating.author}}"></author-com>
+
+    <view class="rating-grade">
+      {{author.score}}
+    </view>
+
+    <view class="actions" wx:if="{{rating.author.id == authorId}}">
+      删除
+    </view>
+  </view>
+
+  <view class="rating-body">
+    {{rating.content}}
+  </view>
+</view>

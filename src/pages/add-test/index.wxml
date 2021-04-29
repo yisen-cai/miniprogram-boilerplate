@@ -14,6 +14,6 @@
 
   <editor-com style="width: 100%;" placeholder="请输入测评详情" bind:updateDes="updateDes" editorText="{{description}}"></editor-com>
   <view class="test-next">
-    <button type="primary" bindtap="validateForm">下一步</button>
+    <button type="primary" bindtap="validateForm">创建测评</button>
   </view>
 </view>

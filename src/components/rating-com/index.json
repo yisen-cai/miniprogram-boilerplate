@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "my-cropper": "/components/wx-cropper/index"
+    "author-com": "/components/author-com/index"
   }
 }

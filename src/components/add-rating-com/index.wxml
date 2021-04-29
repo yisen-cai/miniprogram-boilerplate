@@ -1,0 +1,16 @@
+<view class="add-rating-com">
+  <view class="rating-bar">
+    <view class="rating-star" wx:for="{{stars}}" wx:for-item="star" wx:for-index="index" wx:key="index">
+      <view class="star">
+      </view>
+    </view>
+  </view>
+
+  <view class="comment-actions">
+    <input type="text" class="comment-input" placeholder="添加评论" />
+    <view class="add-action" hover-class="add-action-pressed" hover-start-time="0" hover-stay-time="0">
+      添加
+    </view>
+  </view>
+</view>
+

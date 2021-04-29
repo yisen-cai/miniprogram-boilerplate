@@ -1,4 +1,4 @@
-<view class="test-container">
+<view class="test-container" style="scale: {{scale}};">
   <view class="test-com" style="background-image: url({{test.cover}});" hover-class="pressed" hover-stay-time="500"
     bindtap="navigate">
     <view class="text-back">

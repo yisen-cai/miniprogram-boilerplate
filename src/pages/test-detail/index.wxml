@@ -1,2 +1,87 @@
-<!--src/pages/test-detail/index.wxml-->
-<text>src/pages/test-detail/index.wxml</text>
+<view class="container">
+  <view class="test-details">
+    <view class="test-cover" style="background-image: url({{test.cover}});">
+    </view>
+
+    <view class="test-basic-info">
+      <view class="line1 line">
+        <view class="test-name">
+          {{test.name}}
+        </view>
+        <view class="user-status">
+          已完成
+        </view>
+      </view>
+
+      <view class="line">
+        <view class="min-label">
+          作者:
+        </view>
+        <view class="test-author">
+          <author-com author="{{test.author}}"></author-com>
+        </view>
+      </view>
+
+      <view class="line">
+        <view class="grades">
+          <view class="min-label">
+            总分:
+          </view>
+          <view class="test-total">
+            {{test.totalScore}}
+          </view>
+        </view>
+
+        <view class="grades">
+          <view class="min-label">
+            平均分:
+          </view>
+          <view class="test-average">
+            {{test.averageScore}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="test-desc">
+    <view class="label">
+      详细介绍:
+    </view>
+    <rich-text nodes="{{test.description}}"></rich-text>
+  </view>
+
+
+  <view class="test-actions">
+    <button bindtap="addToQuestion">参与测评</button>
+  </view>
+
+
+  <view class="test-comments">
+    <view class="label">
+      评分:
+    </view>
+
+    <view class="comments">
+      comment
+    </view>
+  </view>
+
+  <view class="comment-bar">
+    <add-rating-com></add-rating-com>
+  </view>
+
+  <view class="actions-bar">
+    <actions-com></actions-com>
+  </view>
+
+  <view class="related-tests">
+    <view class="label">
+      相关测评:
+    </view>
+
+    <view class="tests">
+      <test-com></test-com>
+    </view>
+  </view>
+</view>

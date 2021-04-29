@@ -1,1 +1,136 @@
-/* src/pages/test-detail/index.wxss */
+.container {
+  padding: 28rpx 0 56rpx 0;
+  justify-content: flex-start;
+}
+
+.test-details {
+  height: 200rpx;
+  width: 90%;
+  display: inline-flex;
+  align-items: center;
+  font-family: serif;
+}
+
+.user-status {
+  background: #57f281;
+  border-radius: 20rpx;
+  color: white;
+  padding: 8rpx 16rpx;
+  font-family: serif;
+}
+
+.test-basic-info {
+  width: 70%;
+  display: flex;
+  height: 200rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: serif;
+  justify-content: space-evenly;
+}
+
+.test-name {
+  margin-right: 30rpx;
+  font-size: 16pt;
+  font-family: serif;
+}
+
+.min-label {
+  font-weight: 600;
+  margin-right: 10rpx;
+  font-family: serif;
+}
+
+.line {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  font-family: serif;
+  justify-content: flex-start;
+  padding-left: 30rpx;
+}
+
+.line1 {
+  justify-content: space-between;
+}
+.grades {
+ display: inline-flex;
+ margin-right: 30rpx;
+ font-family: serif;
+}
+
+.test-cover {
+  height: 160rpx;
+  width: 160rpx;
+  border-radius: 80rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.test-desc {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  font-family: serif;
+  min-height: 600rpx;
+}
+
+.label {
+  text-align: left;
+  font-weight: 600;
+  font-size: 14pt;
+  font-family: serif;
+}
+
+
+button {
+  border-radius: 0 !important;
+  color: white !important;
+  width: 400rpx;
+  background-color: #57f281 !important;
+  box-shadow: 0 0 10rpx 0 lightgray;
+  margin-bottom: 40rpx;
+}
+
+.button-hover {
+  color: whitesmoke !important;
+  border-radius: 0 !important;
+}
+
+rich-text {
+  margin-top: 20rpx;
+  min-height: 600rpx;
+}
+
+.comment-bar {
+  margin-bottom: 50rpx;
+  width: 90%;
+}
+
+.test-comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 90%;
+}
+
+.actions-bar {
+  width: 90%;
+}
+
+.related-tests {
+  margin-top: 50rpx;
+  width: 90%;
+}
+
+.tests {
+  margin-top: 30rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

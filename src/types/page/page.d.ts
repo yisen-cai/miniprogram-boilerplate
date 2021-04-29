@@ -1,4 +1,10 @@
 
 interface BaseParam extends Record<string, string> {
-  id: String
+  id: string
+}
+
+
+interface CompleteParam extends Record<string, string> {
+  message: string,
+  url: string
 }

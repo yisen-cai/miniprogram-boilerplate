@@ -1,5 +1,5 @@
-import { addTest } from "../../../api/api";
-import { notEmptyString } from "../../../utils/util";
+import { addTest } from "../../api/api";
+import { notEmptyString } from "../../utils/util";
 import Notify from '@vant/weapp/notify/notify';
 // import Notify from '@vant/weapp/dist/notify/notify';
 
@@ -41,9 +41,12 @@ Page({
       accessToken: this.data.accessToken,
       questions: null
     }).then(res => {
-
+      let url = `/pages/test-detail/index?id=${res.data}`
+      wx.navigateTo({
+        url: `/pages/complete-page/index?message=测评&url=`
+      });
     }).catch(err => {
-
+      Notify({type: 'danger', message: '创建测评失败!'});
     });
   },
 

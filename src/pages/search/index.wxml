@@ -1,7 +1,7 @@
 <view class="container">
   <view class="search-bar">
     <search-com bind:search="search" text="{{searchText}}" inputShowed="{{true}}" bind:clear="clearText"
-      bind:searchResult="searchResult">
+      bind:searchResult="searchResult" active="{{true}}">
     </search-com>
   </view>
 

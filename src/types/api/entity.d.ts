@@ -74,6 +74,11 @@ type Rating = {
   isDelete: boolean
 }
 
+type RatingVO = {
+  content: string,
+  score: number
+}
+
 type TestResult = {
   id: string,
   name: string,
@@ -156,6 +161,7 @@ type TestDTO = {
   name: string,
   cover: string,
   author: UserMeta,
+  state: number,
   description: string,
   totalTested: number,
   rating: number,

@@ -1,0 +1,23 @@
+.rating-com {
+  width: 90%;
+  height: 130rpx;
+}
+
+
+.meta-data {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.actions {
+  text-decoration: underline;
+  font-weight: lighter;
+}
+
+
+.rating-body {
+  position: relative;
+  left: 60rpx;
+}

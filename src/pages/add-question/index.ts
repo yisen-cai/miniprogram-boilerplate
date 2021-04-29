@@ -106,7 +106,13 @@ Page<TAddQuestion, WechatMiniprogram.Page.CustomOption>({
   },
 
   addQuestionOption(event: any) {
-    if (this.data.questionIndex == 0) {
+    if (this.data.questionIndex != 0) {
+      this.setData({
+        addLabel: '选项',
+        showInput: true
+      });
+    }
+    else if (this.data.questionIndex == 0) {
       if (this.data.options.length < 2) {
         this.setData({
           addLabel: '选项',

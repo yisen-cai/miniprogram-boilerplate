@@ -119,3 +119,31 @@ export function search(params: Map<string, any>) {
 export function getTagByName(tagName: string) {
   return netRequest(`/tags/name/${tagName}`, 'GET', null, null);
 }
+
+
+/**
+ * Add test rating.
+ * @param testId 
+ * @param rating 
+ */
+export function addTestRating(testId: string, rating: RatingVO) {
+  return netRequest(`/tests/${testId}/ratings`, 'POST', null, rating)
+}
+
+
+/**
+ * Get test ratings.
+ * @param testId 
+ * @param ratingId 
+ */
+export function getTestRatings(testId:string, params:Map<string, any>) {
+  return netRequest(`/tests/${testId}/ratings`, 'GET', params, null)
+}
+
+
+/**
+ * Delete test rating.
+ */
+export function deleteTestRating(testId: string, ratingId: string) {
+  return netRequest(`/tests/${testId}/ratings/${ratingId}`, 'DELETE', null)
+}
