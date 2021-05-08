@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/complete-page/index",
     "pages/main/index",
     "pages/test-detail/index",
     "pages/test/index",
@@ -20,8 +19,8 @@
     "pages/settings/index",
     "pages/collect/index",
     "pages/history/index",
-    "pages/messages/index"
-
+    "pages/messages/index",
+    "pages/complete-page/index"
   ],
   "subpackages": [{
     "root": "editor_pac",

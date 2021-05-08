@@ -36,3 +36,31 @@
 .statistics {
   margin-top: 20rpx;
 }
+
+.infomations {
+  width: 90%;
+  margin: auto;
+  height: 90rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+
+.info {
+  text-align: center;
+}
+
+.orders {
+  width: 60%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-label {
+  font-weight: bolder;
+  font-family: serif;
+  width: 100%;
+}

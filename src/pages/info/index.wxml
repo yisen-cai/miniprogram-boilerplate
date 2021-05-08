@@ -12,7 +12,7 @@
 
     <view class="card">
       <view class="infomations">
-        <view class="tested">
+        <view class="info tested">
           <view class="info-name">
             已做测评
           </view>
@@ -21,7 +21,7 @@
           </view>
         </view>
 
-        <view class="my-grade">
+        <view class="info my-grade">
           <view class="info-name">
             我的排行
           </view>
@@ -30,19 +30,18 @@
           </view>
         </view>
 
-        <view class="wrong-questions">
+        <view class="info wrong-questions">
           <view class="info-name">
             错题集
           </view>
           <view class="count">
-
+            10
           </view>
         </view>
       </view>
 
       <view class="orders">
-        
-
+        <view class="order-label">排行榜</view>
       </view>
     </view>
   </view>

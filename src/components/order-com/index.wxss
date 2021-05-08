@@ -1,0 +1,17 @@
+.order-com {
+  width: 130rpx;
+  height: 70rpx;
+}
+
+.avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 40rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.message {
+  color: lightcoral;
+
+}
