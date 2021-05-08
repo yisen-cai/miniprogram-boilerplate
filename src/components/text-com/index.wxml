@@ -1,9 +1,9 @@
-<view class="text-container" bindtap="search" data-value="{{text}}">
-  <view class="delete-back" style="display: {{canDelete ? 'block': 'none'}};" bindtap="deleteText">
+<view class="text-container" bindtap="search" data-value="{{history.word.keyword}}">
+  <view class="delete-back" style="display: {{canDelete ? 'block': 'none'}};" bindtap="deleteHistory" hover-class="pressed" hover-start-time="0" hover-stay-time="0">
     <view class="delete-flag"></view>
   </view>
 
   <view class="text-content" bindtap="search">
-    <text>{{text}}</text>
+    <text>{{history.word.keyword}}</text>
   </view>
 </view>

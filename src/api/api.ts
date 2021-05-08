@@ -81,7 +81,7 @@ export function getArticles(params: Map<string, any>) {
  * Search suggestions order by count
  */
 export function searchSuggestions() {
-  return netRequest('/search/suggestions', 'GET', pageParamsOf(0, 10, 'count desc'), null)
+  return netRequest('/search/suggestions', 'GET', pageParamsOf(0, 10, 'count desc'), null);
 }
 
 
@@ -89,7 +89,7 @@ export function searchSuggestions() {
  * Search history
  */
 export function searchHistories() {
-  return netRequest('/search/histories', 'GET', pageParamsOf(0, 20), null)
+  return netRequest('/search/histories', 'GET', null);
 }
 
 
@@ -97,8 +97,8 @@ export function searchHistories() {
  * delete history
  * @param keyword
  */
-export function deleteHistory(keyword: string) {
-  return netRequest(`/search/histories/${keyword}`, 'GET', null, null)
+export function deleteHistory(historyId: string) {
+  return netRequest(`/search/histories/${historyId}`, 'DELETE', null, null);
 }
 
 
@@ -108,7 +108,7 @@ export function deleteHistory(keyword: string) {
  * @param params 
  */
 export function search(params: Map<string, any>) {
-  return netRequest('/search', 'GET', params, null)
+  return netRequest('/search', 'GET', params, null);
 }
 
 
@@ -136,7 +136,7 @@ export function addTestRating(testId: string, rating: RatingVO) {
  * @param testId 
  * @param ratingId 
  */
-export function getTestRatings(testId:string, params:Map<string, any>) {
+export function getTestRatings(testId: string, params: Map<string, any>) {
   return netRequest(`/tests/${testId}/ratings`, 'GET', params, null)
 }
 

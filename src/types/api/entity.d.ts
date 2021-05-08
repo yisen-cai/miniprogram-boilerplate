@@ -1,5 +1,17 @@
 
 
+
+namespace API {
+  type HistoryDTO = {
+    id: string,
+    user: UserMeta,
+    word: SearchWordDTO,
+    createTime: number
+  }
+}
+
+
+
 type TagMeta = {
   id: String,
   cover: String,
@@ -29,6 +41,7 @@ type QuestionVO = {
   options: Array<QuestionOption>,
   answers: Array<string>
 }
+
 
 type QuestionResult = {
   id: string,

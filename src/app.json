@@ -20,22 +20,28 @@
     "pages/collect/index",
     "pages/history/index",
     "pages/messages/index",
-    "pages/complete-page/index"
+    "pages/complete-page/index",
+    "pages/add-article/index",
+    "pages/add-user/index",
+    "pages/add-tag/index"
   ],
-  "subpackages": [{
-    "root": "editor_pac",
-    "pages": [
-      "pages/article/index",
-      "pages/user-manage/index",
-      "pages/edit-my/index"
-    ]
-  }],
+  "subpackages": [
+    {
+      "root": "editor_pac",
+      "pages": [
+        "pages/article/index",
+        "pages/user-manage/index",
+        "pages/edit-my/index"
+      ]
+    }
+  ],
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#72b89f",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
-    "list": [{
+    "list": [
+      {
         "iconPath": "assets/images/main.png",
         "selectedIconPath": "assets/images/main_selected.png",
         "pagePath": "pages/main/index",

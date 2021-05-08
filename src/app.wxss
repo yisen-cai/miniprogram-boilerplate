@@ -14,6 +14,10 @@
 }
 
 
+.pressed {
+  opacity: .8;
+}
+
 .tab-bar-title__selected {
   font-size: 20px;
   font-weight: normal !important;

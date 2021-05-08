@@ -1,4 +1,4 @@
-import { getArticles, search, searchSuggestions } from "../../api/api";
+import { getArticles, search, searchHistories, searchSuggestions } from "../../api/api";
 import { pageParamsOf } from "../../utils/util";
 
 const app = getApp();
@@ -11,6 +11,7 @@ type PageData<T> = {
 
 type SearchDataOption = {
   tabs: Array<any>,
+  histories: Array<API.HistoryDTO>,
   suggestions: Array<any>,
   searchText: string,
   showSuggestions: true,
@@ -31,6 +32,7 @@ Page<SearchDataOption, WechatMiniprogram.Page.CustomOption>({
   data: {
     searchText: '',
     showSuggestions: true,
+    histories: [],
     suggestions: [],
     tabs: [
       {
@@ -87,8 +89,13 @@ Page<SearchDataOption, WechatMiniprogram.Page.CustomOption>({
       this.setData({
         suggestions: results.entities
       });
-    }).catch(err => {
-      console.error(err);
+    });
+
+    searchHistories().then(res => {
+      let results = <PageResult<API.HistoryDTO>>res.data;
+      this.setData({
+        histories: results.entities
+      });
     });
   },
 
@@ -238,6 +245,15 @@ Page<SearchDataOption, WechatMiniprogram.Page.CustomOption>({
         index: 0,
         hasNext: true
       }
+    });
+  },
+
+  deleteUserHistory(event: any) {
+    let index = <number>event.detail.index;
+    let histories =  this.data.histories;
+    histories.splice(0, 1);
+    this.setData({
+      histories: histories
     });
   },
 

@@ -11,7 +11,7 @@
 
       <block wx:for="{{tabs}}" wx:key="title" wx:for-index="tabIndex">
         <!-- articles -->
-        <view class="tab-content" data-set="{{item}}" slot="tab-content-0" >
+        <view class="tab-content" data-set="{{item}}" slot="tab-content-0">
           <view class="entity-list" wx:for="{{tabIndex==0 ? articles.entities : []}}" wx:key="id" wx:for-item="article"
             wx:for-index="index">
             <article-list-com article="{{article}}"></article-list-com>
@@ -20,29 +20,32 @@
 
         <!-- tags -->
         <view class="tab-content" data-set="{{item}}" slot="tab-content-1">
-          <view class="entity-list" wx:for="{{tabIndex==1 ? tags.entities : []}}" wx:key="id" wx:for-item="tag" wx:for-index="index">
+          <view class="entity-list" wx:for="{{tabIndex==1 ? tags.entities : []}}" wx:key="id" wx:for-item="tag"
+            wx:for-index="index">
             <tag-list-com tag="{{tag}}"></tag-list-com>
           </view>
         </view>
 
         <!-- questions -->
         <view class="tab-content" data-set="{{item}}" slot="tab-content-2">
-          <view class="entity-list" wx:for="{{tabIndex==2 ? questions.entities : []}}" wx:key="id" wx:for-item="question"
-            wx:for-index="index">
+          <view class="entity-list" wx:for="{{tabIndex==2 ? questions.entities : []}}" wx:key="id"
+            wx:for-item="question" wx:for-index="index">
             <question-list-com question="{{question}}"></question-list-com>
           </view>
         </view>
 
         <!-- tests -->
         <view class="tab-content" data-set="{{item}}" slot="tab-content-3">
-          <view class="entity-list" wx:for="{{tabIndex==3 ? tests.entities: []}}" wx:key="id" wx:for-item="test" wx:for-index="index">
+          <view class="entity-list" wx:for="{{tabIndex==3 ? tests.entities: []}}" wx:key="id" wx:for-item="test"
+            wx:for-index="index">
             <test-com test="{{test}}"></test-com>
           </view>
         </view>
 
         <!-- users -->
         <view class="tab-content" data-set="{{item}}" slot="tab-content-4">
-          <view class="entity-list" wx:for="{{tabIndex==4 ? users.entities: []}}" wx:key="id" wx:for-item="user" wx:for-index="index">
+          <view class="entity-list" wx:for="{{tabIndex==4 ? users.entities: []}}" wx:key="id" wx:for-item="user"
+            wx:for-index="index">
             <user-list-com user="{{user}}"></user-list-com>
           </view>
         </view>
@@ -57,7 +60,9 @@
       </view>
 
       <view class="texts histories">
-        <text-com text="Java"></text-com>
+        <view class="items" wx:for="{{histories}}" wx:key='index'>
+          <text-com history="{{item}}" index="{{index}}" bind:deleteUserHistory="deleteUserHistory"></text-com>
+        </view>
       </view>
     </view>
 
