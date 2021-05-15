@@ -1,2 +1,11 @@
-<!--src/pages/add-tag/index.wxml-->
-<text>src/pages/add-tag/index.wxml</text>
+<view class="container">
+  <view class="add-tag-container">
+    
+  </view>
+
+  <view class="added">
+    <view class="text">添加标签完成!</view>
+    <van-button type="primary" block bindtap="inviteUser">查看</van-button>
+    <van-button type="primary" block bindtap="inviteUser">返回</van-button>
+  </view>
+</view>

@@ -85,6 +85,10 @@ export function searchSuggestions() {
 }
 
 
+export function inviteUser(user: API.InviteUserVO) {
+  return netRequest('/users/invitation', 'POST', null, user)
+}
+
 /**
  * Search history
  */

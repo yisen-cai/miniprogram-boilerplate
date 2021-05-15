@@ -8,6 +8,14 @@ namespace API {
     word: SearchWordDTO,
     createTime: number
   }
+
+
+  type InviteUserVO = {
+    username: string,
+    email: string,
+    password: string,
+    role: string
+  }
 }
 
 

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/add-tag/index",
     "pages/main/index",
     "pages/test-detail/index",
     "pages/test/index",
@@ -22,8 +23,8 @@
     "pages/messages/index",
     "pages/complete-page/index",
     "pages/add-article/index",
-    "pages/add-user/index",
-    "pages/add-tag/index"
+    "pages/add-user/index"
+
   ],
   "subpackages": [
     {

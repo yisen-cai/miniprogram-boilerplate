@@ -1,1 +1,50 @@
-/* src/pages/add-user/index.wxss */
+.container {
+  padding: 28rpx 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+van-cell-group {
+  width: 100%;
+}
+
+.add-user {
+  width: 100%;
+}
+
+.van-cells__title {
+  color: #646566;
+  font-size: 11pt;
+  color: var(--field-label-color, #646566);
+}
+
+.weui-cells {
+  text-align: center;
+  padding: 20rpx;
+  width: 200rpx;
+  padding: 15rpx 20rpx;
+  margin-right: 100rpx;
+  background: white;
+}
+
+.selectors {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: white;
+  padding: 20rpx 14rpx;
+}
+
+button {
+  width: 400rpx !important;
+  margin-top: 50rpx;
+}
+
+.add-user-complete {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx;
+}

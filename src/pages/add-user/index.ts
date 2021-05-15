@@ -1,10 +1,34 @@
-Page({
+import Notify from '@vant/weapp/notify/notify';
+import { inviteUser } from "../../api/api";
+
+type TAddUserData = {
+  username: string,
+  email: string,
+  password: string,
+  roles: Array<String>,
+  role: string,
+  roleIndex: number,
+  complete: boolean
+}
+
+
+Page<TAddUserData, WechatMiniprogram.Page.CustomOption>({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    username: '',
+    email: '',
+    password: '',
+    roles: [
+      'USER',
+      'MANAGER',
+      'ADMIN'
+    ],
+    role: '',
+    roleIndex: 0,
+    complete: false
   },
 
   /**
@@ -21,46 +45,62 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  initData() {
+    this.setData({
+      username: '',
+      password: '',
+      email: '',
+      roleIndex: 0,
+      complete: false
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  bindPickerChange(event: any) {
+    this.setData({
+      dialogShow: true
+    });
+    this.setData({
+      roleIndex: event.detail.value
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  validate() {
+    if (this.data.email == '') {
+      Notify({ type: 'danger', message: '邮箱不可为空!' });
+      throw 'input data not valid!';
+    }
+    if (this.data.username == '') {
+      Notify({ type: 'danger', message: '用户名不可为空!' });
+      throw 'input data not valid!';
+    }
+    if (this.data.password == '') {
+      Notify({ type: 'danger', message: '密码不可为空!' });
+      throw 'input data not valid!';
+    }
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  inviteUser(event: any) {
+    this.validate();
+    let self = this;
+    inviteUser({
+      username: this.data.username,
+      password: this.data.password,
+      email: this.data.email,
+      role: this.data.roles[this.data.roleIndex] as string
+    }).then(res => {
+      self.setData({
+        complete: true
+      });
+    }).catch(err => {
+      Notify({ type: 'danger', message: '参数有误, 请检查!' });
+    })
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
+  continueInvite(event: any) {
+    this.initData();
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage(opts: any): WechatMiniprogram.Page.ICustomShareContent {
-    console.log(opts.target)
-    return {}
+  returnHome(event: any) {
+    wx.navigateBack();
   }
-})
+});

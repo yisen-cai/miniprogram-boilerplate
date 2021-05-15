@@ -1,2 +1,37 @@
-<!--src/pages/add-user/index.wxml-->
-<text>src/pages/add-user/index.wxml</text>
+<view class="container">
+  <view class="add-user" wx:if="{{!complete}}">
+    <van-notify id="van-notify" />
+    <van-cell-group>
+      <van-field model:value="{{ email }}" required clearable label="邮箱" placeholder="请输入邮箱" bind:click-icon="onClickIcon" />
+
+      <van-field model:value="{{ username }}" required clearable label="用户名" placeholder="请输入用户名"
+        bind:click-icon="onClickIcon" />
+
+      <van-field model:value="{{ password }}" type="password" label="初始密码" placeholder="请输入密码" required
+        border="{{ false }}" />
+
+      <view class="selectors">
+        <view class="van-cells__title"><text style="color: red;">*</text>用户身份</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+              <picker bindchange="bindPickerChange" value="{{roleIndex}}" range="{{roles}}">
+                <view class="weui-input">{{roles[roleIndex]}}
+                </view>
+              </picker>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-cell-group>
+
+    <van-button type="primary" block bindtap="inviteUser">邀请用户</van-button>
+  </view>
+
+
+  <view class="add-user-complete" wx:if="{{complete}}">
+    <view class="text">邀请用户成功!</view>
+    <van-button type="primary" block bindtap="continueInvite">继续邀请</van-button>
+    <van-button type="primary" block bindtap="returnHome">返回</van-button>
+  </view>
+</view>
