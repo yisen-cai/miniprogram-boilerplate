@@ -1,0 +1,14 @@
+<view class="notification-com">
+  <view class="nofitication-type">
+    {{types[notification.type]}}:
+  </view>
+  <view class="message">
+    {{notification.message}}
+  </view>
+
+  <view class="time-label">
+    {{timestamp}}
+  </view>
+  <view class="read-flag" style="opacity: {{nofitication.readed ? 0 : 1}};">
+  </view>
+</view>

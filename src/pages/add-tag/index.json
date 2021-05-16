@@ -1,5 +1,9 @@
 {
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "image-chooser-com": "/components/image-chooser-com/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "editor-com": "/components/editor-com/index"
   }
 }

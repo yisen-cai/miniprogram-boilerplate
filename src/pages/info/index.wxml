@@ -1,9 +1,11 @@
 <view class="container">
   <view class="content messages">
     <view class="label">消息</view>
-
-    <view class="card">
-
+    <view class="card" style="padding-top: 30rpx;">
+      <notification-com></notification-com>
+    </view>
+    <view class="more-messages">
+      更多>>
     </view>
   </view>
 
@@ -42,6 +44,23 @@
 
       <view class="orders">
         <view class="order-label">排行榜</view>
+
+        <view id="user-orders">
+          <view class="user-order">
+            <user-order></user-order>
+          </view>
+          <view class="user-order">
+            <user-order></user-order>
+          </view>
+          <view class="user-order">
+            <user-order></user-order>
+          </view>
+        </view>
+
+        <!-- MORE -->
+        <view class="more-order" bindtap="moreOrders">
+          更多>>
+        </view>
       </view>
     </view>
   </view>

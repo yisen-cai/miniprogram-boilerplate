@@ -1,0 +1,24 @@
+.notification-com {
+  width: 560rpx;
+  height: 35rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.message {
+  width: 320rpx;
+  position: relative;
+  left: 10rpx;
+  text-decoration: underline;
+}
+
+.read-flag {
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 20rpx;
+  background: red;
+  position: relative;
+  bottom: 15rpx;
+  left: 10rpx;
+}

@@ -14,7 +14,7 @@ type SearchDataOption = {
   histories: Array<API.HistoryDTO>,
   suggestions: Array<any>,
   searchText: string,
-  showSuggestions: true,
+  showSuggestions: boolean,
   activeTab: number,
   articles: PageData<ArticleDTO>,
   tags: PageData<TagDTO>,
@@ -174,7 +174,7 @@ Page<SearchDataOption, WechatMiniprogram.Page.CustomOption>({
 
   toggleSuggestions(event: any) {
     this.setData({
-      showSuggestions: this.data.showSuggestions
+      showSuggestions: !this.data.showSuggestions
     });
   },
 
@@ -250,8 +250,8 @@ Page<SearchDataOption, WechatMiniprogram.Page.CustomOption>({
 
   deleteUserHistory(event: any) {
     let index = <number>event.detail.index;
-    let histories =  this.data.histories;
-    histories.splice(0, 1);
+    let histories = this.data.histories;
+    histories.splice(index, 1);
     this.setData({
       histories: histories
     });

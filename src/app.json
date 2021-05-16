@@ -1,15 +1,16 @@
 {
   "pages": [
-    "pages/add-tag/index",
+    "pages/info/index",
     "pages/main/index",
+    "pages/search/index",
+    "pages/add-article/index",
+    "pages/add-tag/index",
+    "pages/add-test/index",
     "pages/test-detail/index",
     "pages/test/index",
     "pages/add-question/index",
     "pages/add-test-question/index",
-    "pages/add-test/index",
-    "pages/info/index",
     "pages/create/index",
-    "pages/search/index",
     "pages/my/index",
     "pages/index/index",
     "pages/logs/index",
@@ -22,9 +23,7 @@
     "pages/history/index",
     "pages/messages/index",
     "pages/complete-page/index",
-    "pages/add-article/index",
     "pages/add-user/index"
-
   ],
   "subpackages": [
     {

@@ -1,10 +1,28 @@
-Page({
+
+import Notify from '@vant/weapp/notify/notify';
+import { addTag } from "../../api/api";
+
+
+type TAddTagData = {
+  addedId: string,
+  cover: string,
+  name: string,
+  description: string,
+  complete: boolean
+}
+
+
+Page<TAddTagData, WechatMiniprogram.Page.CustomOption>({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    cover: 'https://oss.yisen614.top/background/image-back.png',
+    name: '',
+    description: '',
+    complete: false,
+    addedId: ''
   },
 
   /**
@@ -28,6 +46,12 @@ Page({
 
   },
 
+  finishUpload(event: any) {
+    this.setData({
+      cover: event.detail.src
+    });
+  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -35,32 +59,53 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  initData() {
+    this.setData({
+      cover: 'https://oss.yisen614.top/background/image-back.png',
+      name: '',
+      description: '',
+      complete: false
+    });
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  validateData() {
+    if (this.data.name == '') {
+      Notify({ type: 'danger', message: '标签名称不可为空!' });
+      throw 'input data not valid!';
+    }
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
+  updateDes(event: any) {
+    this.setData({
+      description: event.detail.description
+    });
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage(opts: any): WechatMiniprogram.Page.ICustomShareContent {
-    console.log(opts.target)
-    return {}
+  addTag(event: any) {
+    this.validateData();
+    addTag({
+      cover: this.data.cover,
+      name: this.data.name,
+      description: this.data.description
+    }).then(res => {
+      this.setData({
+        complete: true
+      });
+    }).catch(err => {
+      console.log(err);
+      Notify({ type: 'danger', message: '错误，无法创建!' });
+    });
+  },
+
+  checkTag(event: any) {
+    wx.navigateTo({
+      url: `/pages/tag/index?id=${this.data.addedId}`
+    });
+  },
+
+  backToHome(event: any) {
+    wx.navigateTo({
+      url: '/pages/main/index'
+    })
   }
 })

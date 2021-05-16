@@ -1,2 +1,38 @@
-<!--src/pages/add-article/index.wxml-->
-<text>src/pages/add-article/index.wxml</text>
+<view class="container">
+  <view class="add-article-container" wx:if="{{!complete}}">
+    <view class="cover-content">
+      <view class="input-label">
+        文章封面
+      </view>
+      <view class="article-cover" style="z-index: 1000;">
+        <image-chooser-com bind:finishUpload="finishUpload" imgSrc="{{cover}}"></image-chooser-com>
+      </view>
+    </view>
+
+    <van-cell-group>
+      <van-field model:value="{{ title }}" required clearable label="标签名称" placeholder="文章标题"
+        bind:click-icon="onClickIcon" />
+
+      <van-field label="文章详情" type="text" autosize readonly="{{true}}" />
+
+      <editor-com style="width: 100%;" placeholder="请输入文章详情" bind:updateDes="updateDes" editorText="{{content}}">
+      </editor-com>
+
+      <view class="article-tags">
+      <view class="article-tag" wx:for="{{tags}}" wx:key="index" wx:for-index="index">
+        <tag-name-com tagName="{{item}}"></tag-name-com>
+      </view>
+    </view>
+    </van-cell-group>
+    <van-button type="primary" block bindtap="addArticle">添加文章</van-button>
+  </view>
+
+  <view class="add-complete" wx:if="{{complete}}">
+    <view class="text">
+      添加文章完成!
+    </view>
+
+    <van-button type="primary" block bindtap="checkResult">查看</van-button>
+    <van-button type="primary" block bindtap="backToHome">返回主页</van-button>
+  </view>
+</view>

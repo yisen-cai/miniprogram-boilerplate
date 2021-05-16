@@ -1,0 +1,16 @@
+
+.user-order-com {
+  height: 70rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.user-avatar {
+  background-repeat: no-repeat;
+  width: 70rpx;
+  height: 70rpx;
+  background-size: cover;
+  border-radius: 50rpx;
+  margin-right: 10rpx;
+}

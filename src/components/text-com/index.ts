@@ -9,6 +9,13 @@ Component({
         word: null,
       }
     },
+    searchWord: {
+      type: Object,
+      value: {
+        id: '',
+        keyword: ''
+      }
+    },
     index: {
       type: Number,
       value: 0
@@ -34,7 +41,11 @@ Component({
     },
 
     search(event: any) {
-      this.triggerEvent('search', { searchText: this.data.history.word.keyword }, {});
+      if (this.properties.canDelete) {
+        this.triggerEvent('search', { searchText: this.properties.history.word.keyword }, {});
+      } else {
+        this.triggerEvent('search', { searchText: this.properties.searchWord.keyword }, {});
+      }
     }
   }
 });

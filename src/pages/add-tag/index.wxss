@@ -4,13 +4,63 @@
   justify-content: flex-start;
 }
 
-
-.added {
+.add-tag-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+}
+
+
+.input-label {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  left: 12rpx;
+  background: white;
+  padding: 15rpx;
+}
+
+
+.cover-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 10rpx;
+  background: white;
+  border-bottom: 1rpx solid whitesmoke;
+}
+
+van-cell-group {
+  width: 100%;
+}
+
+.test-cover {
+  width: 160rpx;
+  height: 160rpx;
+  box-shadow: 0 0 12rpx 0 #A5A5A529;
+  border-radius: 80rpx;
+  background-color: white;
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.added {
+  width: 100%;
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  font-size: 16pt;
 }
 
 

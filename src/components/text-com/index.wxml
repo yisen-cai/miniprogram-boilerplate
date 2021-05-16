@@ -4,6 +4,7 @@
   </view>
 
   <view class="text-content" bindtap="search">
-    <text>{{history.word.keyword}}</text>
+    <text wx:if="{{canDelete}}">{{history.word.keyword}}</text>
+    <text wx:if="{{!canDelete}}">{{searchWord.keyword}}</text>
   </view>
 </view>

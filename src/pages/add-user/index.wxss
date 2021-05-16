@@ -1,5 +1,5 @@
 .container {
-  padding: 28rpx 0;
+  padding: 48rpx 0;
   align-items: center;
   justify-content: flex-start;
 }

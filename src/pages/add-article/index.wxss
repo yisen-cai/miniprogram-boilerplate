@@ -1,1 +1,55 @@
-/* src/pages/add-article/index.wxss */
+.container {
+  padding: 46rpx 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cover-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-bottom: 1rpx solid whitesmoke;
+}
+
+.input-label {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  left: 12rpx;
+  background: white;
+  padding: 15rpx;
+}
+
+
+.add-article-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+van-cell-group {
+  width: 100%;
+}
+
+.add-complete {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+
+.text {
+  font-size: 16pt;
+}
+
+button {
+  width: 400rpx !important;
+  margin-top: 60rpx;
+}

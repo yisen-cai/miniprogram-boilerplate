@@ -1,11 +1,31 @@
 <view class="container">
-  <view class="add-tag-container">
-    
+  <van-notify id="van-notify" />
+  <view class="add-tag-container" wx:if="{{!complete}}">
+    <view class="cover-content">
+      <view class="input-label">
+        标签封面
+      </view>
+      <view class="test-cover" style="z-index: 1000;">
+        <image-chooser-com bind:finishUpload="finishUpload" imgSrc="{{cover}}"></image-chooser-com>
+      </view>
+    </view>
+
+    <van-cell-group>
+      <van-field model:value="{{ name }}" required clearable label="标签名称" placeholder="请输入标签名称"
+        bind:click-icon="onClickIcon" />
+
+      <van-field label="标签详情" type="text" autosize readonly="{{true}}" />
+
+      <editor-com style="width: 100%;" placeholder="请输入标签详情" bind:updateDes="updateDes" editorText="{{description}}">
+      </editor-com>
+    </van-cell-group>
+
+    <van-button type="primary" block bindtap="addTag">添加标签</van-button>
   </view>
 
-  <view class="added">
+  <view class="added" wx:if="{{complete}}">
     <view class="text">添加标签完成!</view>
-    <van-button type="primary" block bindtap="inviteUser">查看</van-button>
-    <van-button type="primary" block bindtap="inviteUser">返回</van-button>
+    <van-button type="primary" block bindtap="checkTag">查看</van-button>
+    <van-button type="primary" block bindtap="backToHome">返回</van-button>
   </view>
 </view>

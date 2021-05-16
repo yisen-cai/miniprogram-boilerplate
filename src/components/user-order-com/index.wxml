@@ -1,0 +1,8 @@
+<view class="user-order-com" bindtap="onTap">
+  <view class="user-avatar" style="background-image: url({{user.avatar}});">
+  </view>
+
+  <view class="username">
+    {{user.username}}
+  </view>
+</view>

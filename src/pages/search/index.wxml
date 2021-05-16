@@ -78,7 +78,7 @@
 
       <view wx:if="{{showSuggestions}}" class="texts suggestions">
         <view class="items" wx:for="{{suggestions}}" wx:key='index'>
-          <text-com text="{{item.keyword}}" canDelete="{{false}}" bind:search="searchResult"></text-com>
+          <text-com searchWord="{{item}}" canDelete="{{false}}" bind:search="searchResult"></text-com>
         </view>
       </view>
     </view>
