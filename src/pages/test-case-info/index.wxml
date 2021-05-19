@@ -1,0 +1,18 @@
+<view class="container">
+  <van-notify id="van-notify" />
+  <view class="complete-info">
+    <view class="label">
+      请填写必要信息
+    </view>
+    <van-cell-group>
+      <van-field model:value="{{ username }}" required clearable label="姓名" placeholder="请输入姓名"
+        bind:click-icon="onClickIcon" />
+      <van-field model:value="{{ email }}" required clearable label="邮箱" placeholder="请输入邮箱"
+        bind:click-icon="onClickIcon" />
+      <van-field model:value="{{ password }}" type="password" label="访问密钥" placeholder="请输入密钥" required
+        border="{{ false }}" />
+    </van-cell-group>
+
+    <van-button type="primary" block bindtap="continueInvite">下一步</van-button>
+  </view>
+</view>

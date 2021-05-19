@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/info/index",
+    "pages/test-case-info/index",
+    "pages/test-case-attention/index",
     "pages/main/index",
+    "pages/info/index",
     "pages/search/index",
     "pages/add-article/index",
     "pages/add-tag/index",

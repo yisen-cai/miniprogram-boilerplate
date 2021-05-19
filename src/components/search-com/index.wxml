@@ -1,6 +1,6 @@
 <!--components/search-com/search-com.wxml-->
 <view class="search-com" hover-class="pressed" hover-stay-time="100"
-  style="width: {{cusStyle.width}}; height: {{cusStyle.height}};box-shadow: 0 0 {{cusStyle.boxShadow}} 0 lightgray; scale: {{scaleStyle}}">
+  style="width: {{cusStyle.width}}; height: {{cusStyle.height}};box-shadow: 0 10rpx {{cusStyle.boxShadow}} 0 lightgray; scale: {{scaleStyle}}">
 
   <input class="search-input" placeholder="键入搜索" type="text" disabled="{{!active}}" bindinput="bindInput"
     value="{{text}}" focus="{{inputShowed}}"/>

@@ -9,7 +9,7 @@
           {{test.name}}
         </view>
         <view class="user-status">
-          已完成
+          未参与
         </view>
       </view>
 

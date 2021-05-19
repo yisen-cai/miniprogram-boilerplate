@@ -126,15 +126,15 @@ Page<TAddQuestion, WechatMiniprogram.Page.CustomOption>({
 
   addQuestionAnswer(event: any) {
     if (this.data.questionIndex == 0 || this.data.questionIndex == 1) {
-      if (this.data.options.length < 1) {
-        this.setData({
-          addLabel: '答案',
-          showInput: true
-        });
-      } else {
-        // can't add
-        Notify({ type: 'danger', message: '单选或判断只能有一个答案!' });
-      }
+if (this.data.options.length < 1) {
+  this.setData({
+    addLabel: '答案',
+    showInput: true
+  });
+} else {
+  // can't add
+  Notify({ type: 'danger', message: '单选或判断只能有一个答案!' });
+}
     } else {
       this.setData({
         addLabel: '答案',
@@ -193,7 +193,6 @@ Page<TAddQuestion, WechatMiniprogram.Page.CustomOption>({
   },
 
   bindPickerChange(e: any) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
       dialogShow: true
     });

@@ -8,10 +8,11 @@
   justify-content: space-around;
   background: white;
   padding: 0 20rpx;
+  box-shadow: 0 10rpx 20rpx 0 lightgray;
 }
 
 .pressed {
-  box-shadow: 0 0 10rpx 0 lightgray;
+  box-shadow: 0 10rpx 20rpx 0 lightgray;
 }
 
 .search-icon {

@@ -1,0 +1,30 @@
+.container {
+  padding: 50rpx 0;
+  justify-content: flex-start;
+}
+
+.title {
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 50rpx;
+}
+
+.test-time-span {
+  width: 80%;
+  line-height: 1.5;
+}
+
+
+van-checkbox {
+  margin-top: 50rpx;
+}
+
+.attention {
+  width: 80%;
+  line-height: 1.5;
+}
+
+van-button {
+  margin-top: 20rpx;
+  width: 80% !important;
+}

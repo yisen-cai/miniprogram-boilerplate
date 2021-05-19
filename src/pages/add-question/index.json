@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "添加问题",
+  "navigationBarTitleText": "添加试题",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "editor-com": "/components/editor-com/index",

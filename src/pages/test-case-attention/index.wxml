@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="title">
+    测评须知
+  </view>
+
+  <view class="test-time-span">
+    测评时间: {{startTime}}~{{endTime}}, 共计{{timeSpan}}分钟
+  </view>
+  <view class="attention">
+    注意事项: 本次测评过程均在手机上完成，测评过程中请保持手机电量充足，防止出现意外情况导致测评中断。
+  </view>
+
+  <van-checkbox value="{{ verify }}" shape="square" checked-color="#58bd6a" bind:change="onChange">确认</van-checkbox>
+  <van-button type="primary" block bindtap="continueInvite" disabled="{{countDown != 0}}">开始测评<text wx:if="{{countDown != 0 && countDown != 15}}"> ({{countDown}})</text></van-button>
+</view>

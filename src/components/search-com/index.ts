@@ -23,7 +23,7 @@ Component({
         height: '104rpx',
         iconWidth: '44rpx',
         iconHeight: '44rpx',
-        boxShadow: '10rpx'
+        boxShadow: '20rpx'
       }
     }
   },
