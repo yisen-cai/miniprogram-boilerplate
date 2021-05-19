@@ -6,7 +6,7 @@
 }
 
 .pressed {
-  box-shadow: 0 0 10rpx 0 lightgray !important;
+  box-shadow: 0 10rpx 10rpx 0 lightgray !important;
 }
 
 
@@ -25,7 +25,7 @@
   text-align: center;
   background: white;
   font-weight: 600;
-  box-shadow: 0 0 20rpx 0 lightgray;
+  box-shadow: 0 10rpx 20rpx 0 lightgray;
 }
 
 .option-text {

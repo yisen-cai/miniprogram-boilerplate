@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="question-body">
+    <view class="question-content">
+      <view class="question-index">
+        1.
+      </view>
+      <view class="question-content-des">
+        This actor often has the first two tricks
+        planned before performing, and then
+        goes for______.
+      </view>
+    </view>
+
+    <view class="question-options">
+      <option-com option="whichever" tag="A" selected="{{false}}"></option-com>
+      <option-com option="whenever" tag="B" selected="{{false}}"></option-com>
+      <option-com option="whatever" tag="C" selected="{{false}}"></option-com>
+      <option-com option="wherever" tag="D" selected="{{false}}"></option-com>
+    </view>
+  </view>
+
+  <view class="expand-fold-questions">
+    <view class="expand-fold-icon">
+    </view>
+  </view>
+
+  <view class="bottom-navi">
+    <view class="prev-question">
+      上一题
+    </view>
+
+    <view class="timer">
+      00:32:21
+    </view>
+
+    <view class="next-question">
+      下一题
+    </view>
+  </view>
+</view>

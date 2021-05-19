@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/join-test/index",
     "pages/test-case-info/index",
     "pages/test-case-attention/index",
     "pages/main/index",
@@ -26,6 +27,7 @@
     "pages/messages/index",
     "pages/complete-page/index",
     "pages/add-user/index"
+
   ],
   "subpackages": [
     {

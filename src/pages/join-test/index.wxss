@@ -1,0 +1,62 @@
+.container {
+  justify-content: flex-start;
+  padding: 28rpx 0;
+}
+
+
+.question-body {
+  width: 95%;
+}
+
+.question-content {
+  font-size: 14pt;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+option-com {
+  margin-bottom: 40rpx;
+}
+
+.question-options {
+  margin-top: 60rpx;
+  display: flex;
+  padding: 20rpx 30rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.question-index {
+  width: 20rpx;
+  margin-right: 20rpx;
+}
+
+
+
+
+.bottom-navi {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 120rpx;
+  background: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.timer {
+  font-size: 16pt;
+}
+
+
+.expand-fold-questions {
+  width: 100%;
+}
+
+.expand-fold-icon {
+  height: 30rpx;
+  height: 100%;
+}
