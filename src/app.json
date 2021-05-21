@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/complete/index",
+    "pages/main/index",
     "pages/join-test/index",
     "pages/test-case-info/index",
     "pages/test-case-attention/index",
-    "pages/main/index",
     "pages/info/index",
     "pages/search/index",
     "pages/add-article/index",
@@ -17,7 +18,6 @@
     "pages/my/index",
     "pages/index/index",
     "pages/logs/index",
-    "pages/complete/index",
     "pages/tag/index",
     "pages/question/index",
     "pages/user/index",
@@ -26,8 +26,8 @@
     "pages/history/index",
     "pages/messages/index",
     "pages/complete-page/index",
-    "pages/add-user/index"
-
+    "pages/add-user/index",
+    "pages/test-case/index"
   ],
   "subpackages": [
     {

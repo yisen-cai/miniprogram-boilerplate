@@ -19,8 +19,15 @@
     </view>
   </view>
 
-  <view class="expand-fold-questions">
-    <view class="expand-fold-icon">
+  <view class="{{expandFold ? 'expand-content' : ''}}  expand-fold-questions">
+    <view class="{{expandFold ? 'expand-icon' : ''}} expand-fold-icon" bindtap="expandFoldContent">
+    </view>
+
+    <view class="expand-fold-content">
+      <question-com question="{{question1}}" canDelete="{{false}}" selected="{{true}}"></question-com>
+      <question-com question="{{question2}}" canDelete="{{false}}" selected="{{false}}"></question-com>
+      <question-com question="{{question3}}" canDelete="{{false}}" selected="{{false}}"></question-com>
+      <question-com question="{{question4}}" canDelete="{{false}}" selected="{{false}}"></question-com>
     </view>
   </view>
 
@@ -29,8 +36,12 @@
       上一题
     </view>
 
-    <view class="timer">
+    <view class="timer" wx:if="{{!expandFold}}">
       00:32:21
+    </view>
+    
+    <view class="post-answer" wx:if="{{expandFold}}">
+      <van-button type="primary" block bindtap="continueInvite">交卷</van-button>
     </view>
 
     <view class="next-question">

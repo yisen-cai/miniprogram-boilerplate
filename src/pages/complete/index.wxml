@@ -1,2 +1,61 @@
-<!--src/pages/complete/complete.wxml-->
-<text>src/pages/complete/complete.wxml</text>
+<view class="container">
+  <view class="complete-ratio main-con">
+    <view class="label">
+      完成率：
+    </view>
+
+    <view class="ratio">
+      <progress percent="{{completeRatio}}" stroke-width="5">
+        <view class="complete-ratio-progress">
+          {{completeRatio}}%
+        </view>
+      </progress>
+    </view>
+  </view>
+
+
+  <view class="time-spend main-con">
+    <view class="label">
+      完成耗时：
+    </view>
+
+    <view class="ratio">
+      <progress percent="{{timeRatio}}" stroke-width="5">
+        <view class="spend-time">
+          {{spendTime}}分钟
+        </view>
+      </progress>
+    </view>
+
+  </view>
+
+  <view class="right-ratio main-con">
+    <view class="label">
+      正确率：
+    </view>
+
+    <view class="ratio">
+      <progress percent="{{rightRatio}}" stroke-width="5">
+        <view class="right-ratio-progress">
+          {{rightRatio}}%
+        </view>
+      </progress>
+    </view>
+  </view>
+
+  <view class="grade-predict main-con">
+    <view class="label">
+      预计分数：
+    </view>
+
+    <view class="ratio">
+      <view class="grade-detail">
+        {{gradePredict}}
+      </view>
+    </view>
+  </view>
+
+  <view class="test-details" hover-class="pressed" hover-start-time="100" hover-stay-time="100">
+    查看测评结果
+  </view>
+</view>

@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "option-com": "/components/option-com"
+    "option-com": "/components/option-com",
+    "question-com": "/components/question-com",
+    "van-button": "@vant/weapp/button"
   }
 }

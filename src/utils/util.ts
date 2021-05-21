@@ -83,7 +83,7 @@ export function wechatLogin(success: WechatMiniprogram.RequestSuccessCallback) {
 }
 
 export const uuid = () => {
-  var s = [];
+  var s:string[] = [];
   var hexDigits = "0123456789abcdef";
   for (var i = 0; i < 36; i++) {
     s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);

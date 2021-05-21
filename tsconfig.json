@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "strictNullChecks": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "module": "CommonJS",
     "target": "ES6",
-    "allowJs": false,
     "experimentalDecorators": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
@@ -22,6 +21,7 @@
     "types": [
       "miniprogram-api-typings"
     ],
+    
     "paths": {
       "@vant/weapp/*": [
         "./node_modules/@vant/weapp/dist/*"
@@ -35,5 +35,7 @@
     "typeRoots": ["./typings", "./src/types"]
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

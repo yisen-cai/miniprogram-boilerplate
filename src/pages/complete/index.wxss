@@ -1,1 +1,38 @@
-/* src/pages/complete/complete.wxss */
+.container {
+  padding: 28rpx 0;
+  justify-content: flex-start;
+}
+
+
+.main-con {
+  width: 80%;
+}
+
+
+/**index.wxss**/
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+
+.label {
+  font-size: 16pt;
+  margin-top: 50rpx;
+}
+
+.grade-detail {
+  font-size: 18pt;
+}
+
+.test-details {
+  background: #13b859;
+  box-shadow: 0 10rpx 20rpx 0 lightgray;
+  width: 80%;
+  color: white;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50rpx;
+}
