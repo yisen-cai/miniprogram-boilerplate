@@ -3,12 +3,6 @@ import { pageParamsOf } from "../../utils/util";
 
 const app = getApp();
 
-type PageData<T> = {
-  entities: Array<T>,
-  index: number,
-  hasNext: boolean
-}
-
 type SearchDataOption = {
   tabs: Array<any>,
   histories: Array<API.HistoryDTO>,

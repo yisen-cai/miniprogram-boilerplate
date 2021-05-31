@@ -8,8 +8,8 @@
 
   <view class="comment-actions">
     <input type="text" class="comment-input" placeholder="添加评论" />
-    <view class="add-action" hover-class="add-action-pressed" hover-start-time="100" hover-stay-time="100">
-      添加
+    <view class="add-action">
+      <van-button type="primary" block bindtap="continueInvite">添加</van-button>
     </view>
   </view>
 </view>

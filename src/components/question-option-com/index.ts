@@ -7,6 +7,10 @@ Component({
     optionIndex: {
       type: Number,
       value: 0
+    },
+    hintText: {
+      type: String,
+      value: '选项'
     }
   },
 

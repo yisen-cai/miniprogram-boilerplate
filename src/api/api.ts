@@ -116,6 +116,13 @@ export function search(params: Map<string, any>) {
 }
 
 
+export function searchTags(keyword: string) {
+  let params = pageParamsOf(0, 5);
+  params.set('tab', 'tag');
+  params.set('keyword', keyword);
+  return netRequest('/search', 'GET', params, null);
+}
+
 /**
  * Get tag by name
  * @param params 

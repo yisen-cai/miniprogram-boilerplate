@@ -84,14 +84,8 @@
   font-family: serif;
 }
 
-
-button {
-  border-radius: 0 !important;
-  color: white !important;
-  width: 400rpx;
-  background-color: #57f281 !important;
-  box-shadow: 0 0 10rpx 0 lightgray;
-  margin-bottom: 40rpx;
+.test-actions {
+  width: 40%;
 }
 
 .button-hover {

@@ -53,7 +53,7 @@
 
 
   <view class="test-actions">
-    <button bindtap="addToQuestion">参与测评</button>
+    <van-button type="primary" block bindtap="addToQuestion">参与测评</van-button>
   </view>
 
 

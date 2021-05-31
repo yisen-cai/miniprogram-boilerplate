@@ -1,6 +1,6 @@
 <view class="quesiton-option-container">
   <view class="option-details">
-    选项: {{optionContent}}
+    {{hintText}}: {{optionContent}}
   </view>
   <view class="delete-flag" bindtap="deleteOption">
   </view>

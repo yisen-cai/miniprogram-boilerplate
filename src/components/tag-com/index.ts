@@ -11,10 +11,15 @@ Component({
   },
 
   data: {
-    
+
   },
 
   methods: {
-
+    delete(event: any) {
+      this.triggerEvent('deleteTag', {
+        tagName: this.properties.tag.name,
+        tagId: this.properties.tag.id
+      }, {});
+    }
   }
 })

@@ -30,20 +30,9 @@
 
 
 .add-action {
-  width: 100rpx;
-  text-align: center;
-  background: #85ee8d;
-  padding: 20rpx;
-  box-shadow: 0 10rpx 10rpx 0 lightgray;
-  border-radius: 5rpx;
-  color: white;
+  width: 150rpx;
 }
 
-
-.add-action-pressed {
-  color: whitesmoke;
-  background: #75d37d;
-}
 
 
 .comment-actions {

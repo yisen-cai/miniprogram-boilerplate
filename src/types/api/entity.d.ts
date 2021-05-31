@@ -37,6 +37,12 @@ type QuestionOption = {
   content: string
 }
 
+type PageData<T> = {
+  entities: Array<T>,
+  index: number,
+  hasNext: boolean
+}
+
 type QuestionAnswer = {
   index: number,
   content: string
@@ -47,7 +53,8 @@ type QuestionVO = {
   content: string,
   type: string,
   options: Array<QuestionOption>,
-  answers: Array<string>
+  answers: Array<QuestionAnswer>,
+  tags: string
 }
 
 

@@ -15,7 +15,12 @@
 
 
 .pressed {
-  opacity: .8;
+  opacity: .8 !important;
+}
+
+.disabled {
+  opacity: .8 !important;
+  background: whitesmoke !important;
 }
 
 .tab-bar-title__selected {

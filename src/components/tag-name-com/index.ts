@@ -28,6 +28,11 @@ Component({
   },
 
   methods: {
+    deleteTag(event: any) {
+      let tagName = event.detail.tagName;
+      let tagId = event.detail.tagId;
+      this.triggerEvent('deleteTag', { tagName: tagName, tagId: tagId }, {});
+    }
   }
 });
 

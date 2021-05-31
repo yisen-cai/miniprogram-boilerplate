@@ -1,3 +1,5 @@
+<wxs src="../../utils/util.wxs" module="tools" />
+
 <view class="container">
   <van-notify id="van-notify" />
   <view class="weui-cells__title">试题类型<text style="color: red;">*</text>:</view>
@@ -19,7 +21,7 @@
     </editor-com>
   </view>
 
-  <view class="weui-cells__title">试题选项<text style="color: red;">*</text>:</view>
+  <view class="weui-cells__title">试题选项<text style="color: red;" wx:if="{{questionIndex < 3}}">*</text>:</view>
 
   <view class="question-options">
     <view wx:for="{{options}}" wx:key="id" wx:for-item="option" wx:for-index="index">
@@ -28,7 +30,8 @@
       </question-option-com>
     </view>
 
-    <view class="add-data option" hover-class="added-data" hover-stay-time="100" bindtap="addQuestionOption">
+    <view class="add-data option {{disableOption ? 'disabled' : ''}}" hover-class="added-data" hover-stay-time="100"
+      bindtap="addQuestionOption">
       <view class="add-icon">
       </view>
     </view>
@@ -37,12 +40,13 @@
   <view class="weui-cells__title">试题答案<text style="color: red;">*</text>:</view>
   <view class="question-answers">
     <view wx:for="{{answers}}" wx:key="id" wx:for-item="answer" wx:for-index="index">
-      <question-option-com optionContent="{{answer.content}}" optionIndex="{{answer.index}}"
+      <question-option-com optionContent="{{answer.content}}" optionIndex="{{answer.index}}" hintText="答案"
         bind:deleteOption="deleteAnswer">
       </question-option-com>
     </view>
 
-    <view class="add-data answer" hover-class="added-data" hover-stay-time="100" bindtap="addQuestionAnswer">
+    <view class="add-data answer {{disableAnswer ? 'disabled' : ''}}" hover-class="added-data" hover-stay-time="100"
+      bindtap="addQuestionAnswer">
       <view class="add-icon">
       </view>
     </view>
@@ -50,23 +54,34 @@
 
 
   <view class="weui-cells__title">试题标签:</view>
-  <view class="question-tags">
-
+  <view class="question-tags-content">
     <search-com text="{{tagSearchText}}" bind:search="searchTag" inputShowed="{{false}}" active="{{true}}"
-      bind:searchResult="searchTagResult" bind:clear="clearTagText" scaleStyle=".8"></search-com>
-
-    <view class="show-search-tags">
-    </view>
+      bind:searchResult="searchTagResult" bind:clear="clearTagText" scaleStyle=".9"></search-com>
 
     <view class="question-tags">
       <view class="question-tag" wx:for="{{tags}}" wx:key="index" wx:for-index="index">
-        <tag-name-com tagName="{{item}}"></tag-name-com>
+        <tag-name-com tagName="{{item}}" bind:deleteTag="deleteTag"></tag-name-com>
+      </view>
+    </view>
+
+    <view class="show-search-tags" wx:if="{{expandPanel}}">
+      <view class="search-tag-results">
+        <view class="tag-result" wx:for="{{searchTags.entities}}" wx:key="id" wx:for-item="tag" wx:for-index="index">
+          <view class="tag-cover" style="background-image: url({{tag.cover}});">
+          </view>
+          <view class="tab-name">
+            {{tag.name}}
+          </view>
+          <view class="tag-action" bindtap="addQuestionTag" data-tag-name="{{tag.name}}">
+            {{tools.indexOf(tags, tag.name) ? '已添加' : '添加'}}
+          </view>
+        </view>
       </view>
     </view>
   </view>
 
   <view class="question-action">
-    <button type="primary" bindtap="validateForm">添加试题</button>
+    <van-button type="primary" block bindtap="validateForm">添加试题</van-button>
   </view>
   <!-- add option dialog -->
   <view class="add-dialog" wx:if="{{showInput}}">
@@ -80,16 +95,35 @@
       </view>
     </view>
 
-
     <view class="add-label">
       {{addLabel}}<text style="color: red;">*</text>
     </view>
 
-    <view>
+    <!-- directly input content -->
+    <view wx:if="{{!isAddOption || questionIndex > 2}}">
       <textarea class="add-input-text {{inputValid ? 'ok' : 'error'}}" model:value="{{questionInput}}"></textarea>
       <text class="{{inputValid ? 'hide-text' : 'show-text'}}">请填写内容</text>
     </view>
 
-    <button type="primary" bindtap="addToQuestion">添加{{addLabel}}</button>
+    <view class="add-answer" wx:else>
+      <view class="judge-or-select" wx:if="{{questionIndex == 0 || questionIndex == 1}}">
+        <van-radio-group value="{{ answers[0].index }}" bind:change="onChangeAnswer">
+          <view class="ele" wx:for="{{options}}" wx:key="id" wx:for-item="option" wx:for-index="index">
+            <van-radio name="{{option.index}}">{{option.content}}</van-radio>
+          </view>
+        </van-radio-group>
+      </view>
+
+      <view class="multi-select" wx:if="{{questionIndex == 2}}">
+        <view class="ele" wx:for="{{options}}" wx:key="id" wx:for-item="option" wx:for-index="index">
+          <van-checkbox value="{{tools.indexOf(checkedOptions, option.index)}}" shape="square"
+            bind:change="onCheckedOption" data-option-index="{{option.index}}">
+            {{option.content}}
+          </van-checkbox>
+        </view>
+      </view>
+    </view>
+
+    <van-button type="primary" block bindtap="addToQuestion">添加{{addLabel}}</van-button>
   </view>
 </view>
