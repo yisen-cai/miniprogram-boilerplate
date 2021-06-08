@@ -2,7 +2,7 @@
 <view class="container">
   <van-notify id="van-notify" />
   <view class="test-cover" style="z-index: 100;">
-    <image-chooser-com bind:finishUpload="finishUpload" height="480" cutRatio="1.5" width="640"  imgSrc="{{cover}}" borderRadius="0"></image-chooser-com>
+    <image-chooser-com bind:finishUpload="finishUpload" height="493" cutRatio="1.5" width="750"  imgSrc="{{cover}}" borderRadius="0"></image-chooser-com>
   </view>
 
   <van-cell-group>

@@ -5,7 +5,7 @@
   align-items: center;
   padding: 0;
   justify-content: space-around;
-  padding-top: 40rpx;
+  padding-top: 0;
   padding-bottom: 50rpx;
   background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 234, 234, 1) 100%);
@@ -16,8 +16,8 @@
 }
 
 van-cell-group {
-  margin-top: 200rpx;
   width: 100%;
+  background: white;
 }
 
 .test-tags-content {
@@ -29,14 +29,13 @@ van-cell-group {
 }
 
 .test-cover {
-  width: 160rpx;
-  height: 160rpx;
   box-shadow: 0 0 12rpx 0 #A5A5A529;
   border-radius: 80rpx;
   background-color: white;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  margin: 0 0 0 0 !important;
 }
 
 .edit-svg {
@@ -82,7 +81,7 @@ input {
 
 
 .show-search-tags {
-  bottom: -641rpx !important;
+  bottom: -808rpx !important;
 }
 
 button {
@@ -95,8 +94,4 @@ button {
 
 .test-next {
   width: 35%;
-}
-
-van-cell-group {
-  background: white;
 }
