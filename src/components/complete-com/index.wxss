@@ -41,6 +41,9 @@ button {
   font-weight: normal;
 }
 
+van-button {
+  margin-bottom: 30rpx;
+}
 
 .button {
   width: 400rpx;

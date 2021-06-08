@@ -1,1 +1,20 @@
 /* src/pages/add-test-question/index.wxss */
+.container {
+  padding-top: 28rpx;
+}
+
+
+.questions-displayer {
+  width: 90%;
+}
+
+
+.score-count {
+  width: 90%;
+}
+
+
+
+.complete-action {
+  width: 40%;
+}

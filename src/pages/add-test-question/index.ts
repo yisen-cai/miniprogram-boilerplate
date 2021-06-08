@@ -7,7 +7,7 @@ type TTestQuestionData = {
 }
 
 type TestQuestionOption = {
-  testId: string
+  id: string
 }
 
 Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
