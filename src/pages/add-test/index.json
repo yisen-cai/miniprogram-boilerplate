@@ -3,7 +3,10 @@
     "van-field": "@vant/weapp/field/index",
     "image-chooser-com": "/components/image-chooser-com/index",
     "editor-com": "/components/editor-com/index",
-    "van-notify": "@vant/weapp/notify/index"
+    "van-notify": "@vant/weapp/notify/index",
+    "van-button": "@vant/weapp/button/index",
+    "search-com": "/components/search-com/index",
+    "tag-name-com": "/components/tag-name-com/index"
   },
   "enablePullDownRefresh": false
 }

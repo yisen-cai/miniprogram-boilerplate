@@ -1,6 +1,6 @@
 <view class="image-chooser-container" style="width: {{width}}rpx;">
   <view class="image-chooser" wx:if="{{!showCropper}}"
-    style="background-image:url({{imageSrc}}); width: {{width}}rpx; height: {{height}}rpx;" bindtap="chooseImage">
+    style="background-image:url({{imageSrc}}); width: {{width}}rpx; height: {{height}}rpx; border-radius: {{borderRadius}}rpx;" bindtap="chooseImage">
   </view>
   <my-cropper bind:close="hideCut" cutRatio="{{cutRatio}}" wx:if="{{showCropper}}" cropperRatio="{{cropperRatio}}"
     cropperWidth="{{cropperWidth}}" />

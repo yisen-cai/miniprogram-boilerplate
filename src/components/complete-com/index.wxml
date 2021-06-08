@@ -10,11 +10,8 @@
   </view>
 
   <view class="complete-actions">
-    <view class="button check-button" bindtap="checkResult" hover-class="pressed" hover-stay-time="0" hover-stay-time="0">
-      查看
-    </view>
-    <view class="button back-button" bindtap="backHome" hover-class="pressed" hover-stay-time="0" hover-start-time="0">
-      返回主页
-    </view>
+    <van-button wx:if="{{next != ''}}" type="primary" color="#70E6A7" block bindtap="nextAction">添加试题</van-button>
+    <van-button type="primary" color="#1f7cf5" block bindtap="checkResult">查看</van-button>
+    <van-button type="primary" block bindtap="backHome">返回主页</van-button>
   </view>
 </view>

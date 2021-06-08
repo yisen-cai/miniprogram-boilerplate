@@ -33,6 +33,7 @@
   height: 300rpx;
   display: flex;
   flex-direction: column;
+  width: 400rpx;
   justify-content: space-around;
 }
 

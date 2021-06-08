@@ -16,6 +16,11 @@ namespace API {
     password: string,
     role: string
   }
+
+  type CreatedDTO = {
+    message: string,
+    location: string
+  }
 }
 
 

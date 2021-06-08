@@ -12,6 +12,10 @@ Component({
       type: Number,
       value: 160
     },
+    borderRadius: {
+      type: Number,
+      value: 100
+    },
     cutRatio: {
       type: Number,
       value: 1

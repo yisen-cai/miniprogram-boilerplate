@@ -2,18 +2,50 @@
 <view class="container">
   <van-notify id="van-notify" />
   <view class="test-cover" style="z-index: 100;">
-    <image-chooser-com bind:finishUpload="finishUpload" imgSrc="{{cover}}"></image-chooser-com>
+    <image-chooser-com bind:finishUpload="finishUpload" height="480" cutRatio="1.5" width="640"  imgSrc="{{cover}}" borderRadius="0"></image-chooser-com>
   </view>
 
   <van-cell-group>
     <van-field model:value="{{ name }}" label="名称" placeholder="请输入测评名称" required clearable />
-    <van-field model:value="{{ totalScore }}" type="digit"  label="总分" placeholder="请输入测评总分"  required clearable/>
+    <van-field model:value="{{ totalScore }}" type="digit" label="总分" placeholder="请输入测评总分" required clearable />
     <van-field model:value="{{accessToken}}" label="访问密钥" placeholder="请输入访问密钥" clearable />
-    <van-field label="测评详情" type="text" autosize readonly="{{true}}"/>
+    <van-field label="测评详情" type="text" autosize readonly="{{true}}" />
+    <editor-com style="width: 100%;" placeholder="请输入测评详情" bind:updateDes="updateDes" editorText="{{description}}">
+    </editor-com>
+
+    <van-field label="测评标签" type="text" autosize readonly="{{true}}" />
+
+    <view class="common-tags-content">
+      <search-com text="{{tagSearchText}}" bind:search="searchTag" inputShowed="{{false}}" active="{{true}}"
+        bind:searchResult="searchTagResult" bind:clear="clearTagText" scaleStyle=".9"></search-com>
+
+      <view class="common-tags">
+        <view class="common-tag" wx:for="{{tags}}" wx:key="index" wx:for-index="index">
+          <tag-name-com tagName="{{item}}" bind:deleteTag="deleteTag"></tag-name-com>
+        </view>
+      </view>
+
+      <view class="show-search-tags" wx:if="{{expandPanel}}">
+        <view class="search-tag-results">
+          <view class="tag-result" wx:for="{{searchTags.entities}}" wx:key="id" wx:for-item="tag" wx:for-index="index">
+            <view class="tag-cover" style="background-image: url({{tag.cover}});">
+            </view>
+            <view class="tab-name">
+              {{tag.name}}
+            </view>
+            <view class="tag-action" bindtap="addTag" data-tag-name="{{tag.name}}">
+              {{tools.indexOf(tags, tag.name) ? '已添加' : '添加'}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
   </van-cell-group>
 
-  <editor-com style="width: 100%;" placeholder="请输入测评详情" bind:updateDes="updateDes" editorText="{{description}}"></editor-com>
+
+
+
   <view class="test-next">
-    <button type="primary" bindtap="validateForm">创建测评</button>
+    <van-button type="primary" block bindtap="validateForm">创建测评</van-button>
   </view>
 </view>

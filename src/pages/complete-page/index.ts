@@ -1,6 +1,7 @@
 type TCompletePageData = {
   message: string,
-  url: string
+  url: string,
+  next: string,
 }
 
 
@@ -11,16 +12,20 @@ Page<TCompletePageData, WechatMiniprogram.Page.CustomOption>({
    */
   data: {
     message: '测评',
-    url: 'url'
+    url: 'url',
+    next: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options: CompleteParam) {
+    let url = options.url.replace("^^", "?").replace("equals", "=");
+    let next = options.next.replace("^^", "?").replace("equals", "=");
     this.setData({
       message: options.message,
-      url: options.url
+      url: url,
+      next: next
     });
   },
 

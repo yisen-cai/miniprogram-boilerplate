@@ -5,6 +5,7 @@
   align-items: center;
   padding: 0;
   justify-content: space-around;
+  padding-top: 40rpx;
   padding-bottom: 50rpx;
   background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 234, 234, 1) 100%);
@@ -15,8 +16,16 @@
 }
 
 van-cell-group {
-  margin-top: 80rpx;
+  margin-top: 200rpx;
   width: 100%;
+}
+
+.test-tags-content {
+  margin: 10rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400rpx;
 }
 
 .test-cover {
@@ -71,10 +80,23 @@ input {
   box-shadow: 0 0 12rpx 0 #A5A5A529;
 }
 
+
+.show-search-tags {
+  bottom: -641rpx !important;
+}
+
 button {
   font-weight: normal;
 }
 
 .van-notify {
   z-index: 2000 !important;
+}
+
+.test-next {
+  width: 35%;
+}
+
+van-cell-group {
+  background: white;
 }

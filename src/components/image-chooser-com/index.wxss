@@ -6,7 +6,6 @@
 .image-chooser {
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 100rpx;
 }
 
 .upload-progress {

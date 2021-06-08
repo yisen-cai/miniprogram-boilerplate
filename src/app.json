@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/add-test/index",
+    "pages/complete-page/index",
     "pages/main/index",
     "pages/add-question/index",
     "pages/complete/index",
@@ -10,7 +12,6 @@
     "pages/search/index",
     "pages/add-article/index",
     "pages/add-tag/index",
-    "pages/add-test/index",
     "pages/test-detail/index",
     "pages/test/index",
     "pages/add-test-question/index",
@@ -25,7 +26,6 @@
     "pages/collect/index",
     "pages/history/index",
     "pages/messages/index",
-    "pages/complete-page/index",
     "pages/add-user/index",
     "pages/test-case/index"
   ],

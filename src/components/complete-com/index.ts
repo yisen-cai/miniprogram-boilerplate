@@ -7,6 +7,10 @@ Component({
     url: {
       type: String,
       value: ''
+    },
+    next: {
+      type: String,
+      value: ''
     }
   },
 
@@ -23,8 +27,14 @@ Component({
 
     checkResult() {
       wx.navigateTo({
-        url: this.data.url
+        url: this.properties.url
       });
+    },
+
+    nextAction() {
+      wx.navigateTo({
+        url: this.properties.next
+      })
     }
   }
 })
