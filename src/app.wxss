@@ -16,6 +16,7 @@
 
 .pressed {
   opacity: .8 !important;
+  box-shadow: 0 5rpx 5rpx 0 lightgray !important;
 }
 
 .disabled {

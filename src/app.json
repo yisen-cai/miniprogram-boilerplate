@@ -1,10 +1,6 @@
 {
   "pages": [
     "pages/add-test-question/index",
-<<<<<<< HEAD
-=======
-    "pages/add-question/index",
->>>>>>> a15dcc3ba486a453b0d838ad6fe3ae4a0ad7ac1d
     "pages/add-test/index",
     "pages/complete-page/index",
     "pages/main/index",

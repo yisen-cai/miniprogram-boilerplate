@@ -1,4 +1,6 @@
 <!--src/pages/add-test/add-test.wxml-->
+<wxs src="../../utils/util.wxs" module="tools" />
+
 <view class="container">
   <van-notify id="van-notify" />
   <view class="test-cover" style="z-index: 100;">

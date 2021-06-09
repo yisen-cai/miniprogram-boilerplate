@@ -1,5 +1,9 @@
 {
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
-  }
+    "van-button": "@vant/weapp/button/index",
+    "question-com": "/components/question-com/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "search-com": "/components/search-com/index"
+  },
+  "enablePullDownRefresh": false
 }

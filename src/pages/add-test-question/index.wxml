@@ -1,24 +1,94 @@
+<wxs src="../../utils/util.wxs" module="tools" />
+
 <view class="container">
-  <view class="questions-displayer">
-    <view class="label">
-      问题*:
+  <view class="normal-display">
+    <view class="questions-displayer">
+      <view class="label">
+        问题*:
+      </view>
+
+      <view class="questions-container">
+        <view class="question" wx:for="{{questions}}" wx:key="id" wx:for-item="question" wx:for-index="index">
+          <question-com question="{{question}}" canDelete="{{true}}"></question-com>
+        </view>
+
+        <view class="add-question-action" hover-class="pressed" hover-start-time="50" hover-stay-time="100"
+          bindtap="addQuestion">
+          <view class="add-question-icon">
+
+          </view>
+        </view>
+      </view>
     </view>
 
-    <view class="questions-container">
-      
+    <view class="score-count">
+      <view class="score-left-label">
+        剩余分数:
+      </view>
+      <view class="score-left">
+        {{leftScore}}
+      </view>
+    </view>
+
+    <view class="complete-action">
+      <van-button type="primary" block bindtap="checkResult">完成</van-button>
     </view>
   </view>
 
-  <view class="score-count">
-    <view class="score-left-label">
-      剩余分数:
-    </view>
-    <view class="score-left">
 
-    </view>
-  </view>
+  <view class="add-question-window" wx:if="{{isShowAdd}}">
 
-  <view class="complete-action">
-    <van-button type="primary" block bindtap="checkResult">完成</van-button>
+    <view class="window-content">
+      <view class="window-label">
+        添加试题
+      </view>
+
+      <view class="contents">
+        <view class="line">
+          <view class="label">试题分数</view>
+          <input model:value="{{ questionScore }}"class="weui-input" type="number" placeholder="剩余{{leftScore}}分" />
+        </view>
+
+        <view class="line">
+          <view class="label">直接添加</view>
+          <view class="directly-add">
+            <van-button type="primary" icon="plus" bindtap="checkResult"></van-button>
+          </view>
+        </view>
+
+        <view class="line">
+          <view class="label">搜索添加</view>
+        </view>
+
+        <view class="common-question-content">
+          <search-com text="{{searchQuestionText}}" bind:search="searchQuestion" inputShowed="{{false}}"
+            active="{{true}}" bind:searchResult="searchQuestionResult" bind:clear="clearQuestionText" scaleStyle=".7">
+          </search-com>
+
+          <view class="show-search-questions" wx:if="{{expandPanel}}">
+            <view class="question-result" wx:for="{{searchQuestions.entities}}" wx:key="id" wx:for-item="question"
+              wx:for-index="index">
+              <!-- question -->
+              <view class="question-content" bindtap="goQuestionDetail" data-question-id="{{question.id}}">
+                <view class="question-name">
+                  {{question.content}}
+                </view>
+
+                <view class="question-type">
+                  {{tools.getFromMap(question.type)}}
+                </view>
+              </view>
+              <view class="question-action" bindtap="addOneQuestion" data-question-id="{{question.id}}">
+                {{tools.indexOfQuestion(questions, question) ? '已添加' : '添加'}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="add-action">
+        <van-button type="primary" block bindtap="checkResult">添加试题</van-button>
+      </view>
+    </view>
   </view>
 </view>

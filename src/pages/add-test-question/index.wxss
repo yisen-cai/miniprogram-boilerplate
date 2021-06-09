@@ -1,11 +1,58 @@
 /* src/pages/add-test-question/index.wxss */
 .container {
-  padding-top: 28rpx;
+  padding-top: 0;
+}
+
+.normal-display {
+  justify-content: left;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 28rpx;
+}
+
+input {
+  width: 200rpx;
+}
+
+.questions-container {
+  margin-top: 30rpx;
 }
 
 
+picker {
+  width: 56rpx;
+}
+.add-question-action {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  box-shadow: 0 10rpx 10rpx 0 lightgray;
+  background: #FFA7A5;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.label {
+  font-size: 14pt;
+}
+
+.score-count {
+  display: inline-flex;
+}
+
+.add-question-icon {
+  width: 44rpx;
+  height: 44rpx;
+  margin: auto;
+  background-size: cover;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath id='Icon_ionic-ios-add' data-name='Icon ionic-ios-add' d='M32.408,19.908H23.021V10.521a1.556,1.556,0,1,0-3.113,0v9.387H10.521a1.556,1.556,0,0,0,0,3.113h9.387v9.387a1.556,1.556,0,0,0,3.113,0V23.021h9.387a1.556,1.556,0,0,0,0-3.113Z' transform='translate(-8.965 -8.965)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+
 .questions-displayer {
   width: 90%;
+  margin-bottom: 30rpx;
 }
 
 
@@ -17,4 +64,100 @@
 
 .complete-action {
   width: 40%;
+}
+
+.add-question-window {
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  backdrop-filter: blur(1px) brightness(50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.common-question-content {
+  margin-top: 20rpx;
+}
+
+.show-search-questions {
+  bottom: 375rpx;
+  position: absolute;
+  width: 437rpx;
+  left: 155rpx;
+  height: 400rpx;
+  background: white;
+  z-index: 100;
+}
+
+.window-content {
+  background: white;
+  width: 640rpx;
+  margin-top: 20%;
+  display: flex;
+  padding: 40rpx 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.window-label {
+  font-size: 18pt;
+}
+
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-items: flex-start;
+  margin: 50rpx 0;
+}
+
+
+.line {
+  width: 60%;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 30rpx;
+  height: 60rpx;
+  justify-content: space-between;
+}
+
+.add-action {
+  width: 40%;
+}
+
+.directly-add>van-button>button {
+  height: 60rpx !important;
+}
+
+
+
+
+.question-result {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px dashed lightgray;
+  margin-top: 10rpx;
+  justify-content: space-between;
+  padding-bottom: 10rpx;
+}
+
+.question-content {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.question-name {
+  text-decoration: underline;
+}
+
+.question-type {
+  text-decoration: underline;
 }

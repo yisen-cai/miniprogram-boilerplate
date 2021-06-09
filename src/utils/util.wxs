@@ -7,4 +7,26 @@ function indexOf(arr, value) {
     }
 }
 
+
+function indexOfQuestion(arr, question) {
+    let flag = false;
+    arr.forEach(function(element) {
+        if(arr.id == question.id) {
+            flag = true;
+        }
+    });
+    return flag;
+}
+
+var TYPE_ARRAY = ['JUDGE', 'SELECT', 'CHECK', 'INPUT', 'ANSWER'];
+var NAME_ARRAY = ['判断题', '选择题', '多选题', '填空题', '简答题'];
+
+function getFromMap(key) {
+    console.log(key);
+    var index = TYPE_ARRAY.indexOf(key);
+    console.log(index);
+    return NAME_ARRAY[index];
+}
+
+module.exports.getFromMap = getFromMap;
 module.exports.indexOf = indexOf;

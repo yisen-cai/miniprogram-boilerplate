@@ -62,6 +62,12 @@ type QuestionVO = {
   tags: string
 }
 
+type QuestionMetaVO = {
+  index: number,
+  score?: number,
+  questionId: string
+}
+
 
 type QuestionResult = {
   id: string,
@@ -173,6 +179,7 @@ type TagDTO = {
 type QuestionDTO = {
   id: string,
   description: string,
+  content: string,
   type: string,
   tags: string,
   likeCount: number,
@@ -194,6 +201,7 @@ type TestDTO = {
   name: string,
   cover: string,
   author: UserMeta,
+  totalScore: number,
   state: number,
   description: string,
   totalTested: number,

@@ -123,6 +123,13 @@ export function searchTags(keyword: string) {
   return netRequest('/search', 'GET', params, null);
 }
 
+export function searchQuestion(keyword: string) {
+  let params = pageParamsOf(0, 5);
+  params.set('tab', 'question');
+  params.set('keyword', keyword);
+  return netRequest('/search', 'GET', params, null);
+}
+
 /**
  * Get tag by name
  * @param params 
