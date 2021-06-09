@@ -2,6 +2,7 @@
 
 <view class="container">
   <view class="normal-display">
+    <van-notify id="van-notify" />
     <view class="questions-displayer">
       <view class="label">
         问题*:
@@ -22,10 +23,10 @@
     </view>
 
     <view class="score-count">
-      <view class="score-left-label">
+      <view class="label">
         剩余分数:
       </view>
-      <view class="score-left">
+      <view class="score-left label">
         {{leftScore}}
       </view>
     </view>
@@ -37,7 +38,8 @@
 
 
   <view class="add-question-window" wx:if="{{isShowAdd}}">
-
+    <view class="close-input" bindtap="closeInput">
+    </view>
     <view class="window-content">
       <view class="window-label">
         添加试题
@@ -46,7 +48,8 @@
       <view class="contents">
         <view class="line">
           <view class="label">试题分数</view>
-          <input model:value="{{ questionScore }}"class="weui-input" type="number" placeholder="剩余{{leftScore}}分" />
+          <input bindinput="bindKeyInput" value="{{readyAddQuestion.score}}" class="weui-input" type="number"
+            placeholder="剩余{{leftScore}}分" />
         </view>
 
         <view class="line">
@@ -81,6 +84,14 @@
               <view class="question-action" bindtap="addOneQuestion" data-question-id="{{question.id}}">
                 {{tools.indexOfQuestion(questions, question) ? '已添加' : '添加'}}
               </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="line">
+          <view class="ready-question" wx:if="{{readyAddQuestion != null}}">
+            <view class="question-content">
+              {{readyAddQuestion.questionId}}
             </view>
           </view>
         </view>

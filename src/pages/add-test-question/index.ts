@@ -1,4 +1,5 @@
-import { getTest, search, searchQuestion } from "../../api/api"
+import { addTestQuestion, getTest, search, searchQuestion } from "../../api/api";
+import Notify from '@vant/weapp/notify/notify';
 
 type TTestQuestionData = {
   questions: Array<QuestionMetaVO>,
@@ -9,8 +10,7 @@ type TTestQuestionData = {
   addQuestionIndex: number,
   searchQuestionText: string,
   expandPanel: boolean,
-  readyAddQuestion?: QuestionMetaVO,
-  questionScore: number,
+  readyAddQuestion: QuestionMetaVO,
   searchQuestions: PageResult<QuestionDTO>
 }
 
@@ -23,10 +23,14 @@ Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
    * 页面的初始数据
    */
   data: {
+    readyAddQuestion: {
+      index: 0,
+      score: 10,
+      questionId: ''
+    },
     test: undefined,
     questions: [],
     searchQuestionText: '',
-    questionScore: 0,
     other: '',
     searchQuestions: {
       total: 0,
@@ -34,9 +38,9 @@ Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
       hasNext: false,
     },
     expandPanel: false,
-    leftScore: 0,
+    leftScore: 100,
     addQuestionIndex: 0,
-    isShowAdd: true
+    isShowAdd: false
   },
 
   /**
@@ -55,19 +59,38 @@ Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
   },
 
 
+  closeInput(event:any) {
+    this.setData({
+      isShowAdd: false
+    });
+    this.initData();
+  },
+
   goQuestionDetail(event: any) {
     let id = event.currentTarget.dataset.questionId;
     wx.navigateTo({
-      url: `/pages/question-detail?id=${id}`
+      url: `/pages/question-detail/index?id=${id}`
     });
   },
 
   initData() {
     this.setData({
-      readyAddQuestion: undefined
+      readyAddQuestion: {
+        questionId: '',
+        index: 0,
+        score: 10
+      },
+      questionScore: 10
     });
   },
 
+  bindKeyInput(event: any) {
+    let question = this.data.readyAddQuestion;
+    question.score = event.detail.value
+    this.setData({
+      readyAddQuestion: question
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -89,16 +112,17 @@ Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
 
   addOneQuestion(event: any) {
     let id = event.currentTarget.dataset.questionId;
-    let question: QuestionMetaVO;
+    let question = this.data.readyAddQuestion;
     this.data.searchQuestions.entities.forEach(ele => {
       if (ele.id == id) {
         question.index = this.data.addQuestionIndex + 1;
         question.questionId = ele.id;
+        this.setData({
+          readyAddQuestion: question
+        });
       }
-      this.setData({
-        readyAddQuestion: question
-      });
-    })
+    });
+    this.clearQuestionText();
   },
 
   /**
@@ -152,7 +176,32 @@ Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
     });
   },
 
-  checkResult(event:any) {
-    
+  checkResult(event: any) {
+    let readyScore = this.data.readyAddQuestion.score!!;
+    let leftScore = this.data.leftScore;
+    if (readyScore == 0) {
+      Notify({ type: 'danger', message: '添加试题的分数不可为0!' });
+    }
+    if (leftScore - readyScore < 0) {
+      Notify({ type: 'danger', message: '试题分数超过总分!' });
+    }
+
+    if (this.data.readyAddQuestion.questionId == '') {
+      Notify({ type: 'danger', message: '请选择题目添加!' });
+    }
+    let self = this;
+    addTestQuestion('60897eba03e081335f70fda0', this.data.readyAddQuestion).then(res => {
+      Notify({ type: 'success', message: '添加试题成功!' });
+      let questions = self.data.questions;
+      questions.push(self.data.readyAddQuestion);
+      self.setData({
+        addQuestionIndex: self.data.addQuestionIndex + 1,
+        questions: questions,
+        isShowAdd: false
+      });
+      self.initData();
+    }).catch(err=> {
+      console.log(err);
+    });
   }
 })

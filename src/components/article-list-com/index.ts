@@ -22,7 +22,7 @@ Component({
   methods: {
     navigateArticle(event: any) {
       wx.navigateTo({
-        url: `/pages/article/article?id=${this.properties.article.id}`
+        url: `/pages/article/index?id=${this.properties.article.id}`
       })
     }
   }

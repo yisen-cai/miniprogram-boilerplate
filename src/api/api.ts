@@ -130,6 +130,11 @@ export function searchQuestion(keyword: string) {
   return netRequest('/search', 'GET', params, null);
 }
 
+
+export function addTestQuestion(testId: string, question: QuestionMetaVO) {
+  return netRequest(`/tests/${testId}/questions`, 'PUT', null, question);
+}
+
 /**
  * Get tag by name
  * @param params 
