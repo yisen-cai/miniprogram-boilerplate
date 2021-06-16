@@ -5,6 +5,7 @@
     "actions-com": "/components/actions-com/index",
     "add-rating-com": "/components/add-rating-com/index",
     "test-com": "/components/test-com/index",
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-loading": "@vant/weapp/loading/index"
   }
 }

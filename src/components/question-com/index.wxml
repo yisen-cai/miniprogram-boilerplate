@@ -1,10 +1,13 @@
-<view class="question-container">
+<view class="question-container" bindtap="checkDetails">
   <view class="delete-back" style="display: {{canDelete ? 'block;': 'none;'}}">
     <view class="delete-tag" >
     </view>
   </view>
 
-  <view class="question-index {{selected ? 'active' : 'unactive'}}" hover-stay-time="100" hover-class="pressed">
+  <view wx:if="{{index == 0}}" class="question-index {{selected ? 'active' : 'unactive'}}" hover-stay-time="100" hover-class="pressed">
     {{question.index}}
+  </view>
+  <view wx:if="{{index != 0}}" class="question-index {{selected ? 'active' : 'unactive'}}" hover-stay-time="100" hover-class="pressed">
+    {{index}}
   </view>
 </view>

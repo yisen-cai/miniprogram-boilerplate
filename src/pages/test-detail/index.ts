@@ -2,7 +2,8 @@ import { getTest } from "../../api/api"
 
 
 type TTestDetail = {
-  test: TestDTO | null
+  test: TestDTO | null,
+  loading: boolean
 }
 
 let app = getApp();
@@ -14,7 +15,8 @@ Page<TTestDetail, WechatMiniprogram.Page.CustomOption>({
    * 页面的初始数据
    */
   data: {
-    test: null
+    test: null,
+    loading: true
   },
 
   /**
@@ -24,7 +26,8 @@ Page<TTestDetail, WechatMiniprogram.Page.CustomOption>({
     getTest(options.id).then(res => {
       let testDTO: TestDTO = <TestDTO>res.data;
       this.setData({
-        test: testDTO
+        test: testDTO,
+        loading: false
       });
     }).catch(err => {
       console.log(err);
@@ -71,6 +74,12 @@ Page<TTestDetail, WechatMiniprogram.Page.CustomOption>({
    */
   onReachBottom() {
 
+  },
+
+  joinTest(event:any) {
+    wx.navigateTo({
+      url: `/pages/test-case-info/index?id=${this.data.test!!.id}`
+    });
   },
 
   /**

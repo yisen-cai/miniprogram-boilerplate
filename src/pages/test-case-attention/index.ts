@@ -5,7 +5,8 @@ type TTestCaseAttentionData = {
   timeSpan: string,
   countDown: number,
   verify: boolean,
-  counter: any | null
+  counter: any | null,
+  testId: string
 }
 
 
@@ -20,14 +21,18 @@ Page<TTestCaseAttentionData, WechatMiniprogram.Page.CustomOption>({
     timeSpan: '120',
     countDown: 15,
     verify: false,
+    testId: '',
     counter: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-
+  onLoad(options: BaseParam) {
+    let testId = options.id;
+    this.setData({
+      testId: testId
+    });
   },
 
   /**
@@ -56,6 +61,12 @@ Page<TTestCaseAttentionData, WechatMiniprogram.Page.CustomOption>({
    */
   onUnload() {
     clearInterval(this.data.counter);
+  },
+
+  startTest(event: any) {
+    wx.navigateTo({
+      url: `/pages/join-test/index?id=${this.data.testId}`
+    });
   },
 
   onChange(event: any) {

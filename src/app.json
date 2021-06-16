@@ -1,11 +1,13 @@
 {
   "pages": [
-    "pages/add-test-question/index",
-    "pages/add-test/index",
-    "pages/complete-page/index",
     "pages/main/index",
-    "pages/complete/index",
     "pages/join-test/index",
+    "pages/add-test-question/index",
+
+    "pages/add-test/index",
+
+    "pages/complete-page/index",
+    "pages/complete/index", 
     "pages/test-case-info/index",
     "pages/test-case-attention/index",
     "pages/info/index",

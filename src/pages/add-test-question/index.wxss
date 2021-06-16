@@ -37,21 +37,30 @@ input {
 }
 
 .questions-container {
-  margin-top: 30rpx;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: crosshair;
 }
 
 
 picker {
   width: 56rpx;
 }
+
 .add-question-action {
+  top: 18rpx;
+  position: relative;
   width: 100rpx;
   height: 100rpx;
+  align-items: center;
   border-radius: 50rpx;
   box-shadow: 0 10rpx 10rpx 0 lightgray;
   background: #FFA7A5;
-  display: table-cell;
+  display: flex;
   vertical-align: middle;
+  justify-content: center;
 }
 
 .label {
@@ -62,10 +71,13 @@ picker {
   display: inline-flex;
 }
 
+.question {
+  width: 130rpx;
+}
+
 .add-question-icon {
-  width: 44rpx;
-  height: 44rpx;
-  margin: auto;
+  width: 42rpx;
+  height: 42rpx;
   background-size: cover;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath id='Icon_ionic-ios-add' data-name='Icon ionic-ios-add' d='M32.408,19.908H23.021V10.521a1.556,1.556,0,1,0-3.113,0v9.387H10.521a1.556,1.556,0,0,0,0,3.113h9.387v9.387a1.556,1.556,0,0,0,3.113,0V23.021h9.387a1.556,1.556,0,0,0,0-3.113Z' transform='translate(-8.965 -8.965)' fill='%23fff'/%3E%3C/svg%3E%0A");
 }
@@ -83,6 +95,7 @@ picker {
 
 
 .complete-action {
+  margin-top: 50rpx;
   width: 40%;
 }
 

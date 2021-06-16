@@ -1,86 +1,90 @@
 <view class="container">
-  <view class="test-details">
-    <view class="test-cover" style="background-image: url({{test.cover}});">
-    </view>
+  <van-loading wx:if="{{loading}}" size="36px" type="spinner" color="#1989fa" vertical>加载中</van-loading>
 
-    <view class="test-basic-info">
-      <view class="line1 line">
-        <view class="test-name">
-          {{test.name}}
-        </view>
-        <view class="user-status">
-          未参与
-        </view>
+  <view class="main-content" wx:if="{{!loading}}">
+    <view class="test-details">
+      <view class="test-cover" style="background-image: url({{test.cover}});">
       </view>
 
-      <view class="line">
-        <view class="min-label">
-          作者:
+      <view class="test-basic-info">
+        <view class="line1 line">
+          <view class="test-name">
+            {{test.name}}
+          </view>
+          <view class="user-status">
+            未参与
+          </view>
         </view>
-        <view class="test-author">
-          <author-com author="{{test.author}}"></author-com>
-        </view>
-      </view>
 
-      <view class="line">
-        <view class="grades">
+        <view class="line">
           <view class="min-label">
-            总分:
+            作者:
           </view>
-          <view class="test-total">
-            {{test.totalScore}}
+          <view class="test-author">
+            <author-com author="{{test.author}}"></author-com>
           </view>
         </view>
 
-        <view class="grades">
-          <view class="min-label">
-            平均分:
+        <view class="line">
+          <view class="grades">
+            <view class="min-label">
+              总分:
+            </view>
+            <view class="test-total">
+              {{test.totalScore}}
+            </view>
           </view>
-          <view class="test-average">
-            {{test.averageScore}}
+
+          <view class="grades">
+            <view class="min-label">
+              平均分:
+            </view>
+            <view class="test-average">
+              {{test.averageScore}}
+            </view>
           </view>
         </view>
       </view>
     </view>
-  </view>
 
-  <view class="test-desc">
-    <view class="label">
-      详细介绍:
-    </view>
-    <rich-text nodes="{{test.description}}"></rich-text>
-  </view>
-
-
-  <view class="test-actions">
-    <van-button type="primary" block bindtap="addToQuestion">参与测评</van-button>
-  </view>
-
-
-  <view class="test-comments">
-    <view class="label">
-      评分:
+    <view class="test-desc">
+      <view class="label">
+        详细介绍:
+      </view>
+      <rich-text nodes="{{test.description}}"></rich-text>
     </view>
 
-    <view class="comments">
-    </view>
-  </view>
 
-  <view class="comment-bar">
-    <add-rating-com></add-rating-com>
-  </view>
-
-  <view class="actions-bar">
-    <actions-com></actions-com>
-  </view>
-
-  <view class="related-tests">
-    <view class="label">
-      相关测评:
+    <view class="test-actions">
+      <van-button type="primary" block bindtap="joinTest">参与测评</van-button>
     </view>
 
-    <view class="tests">
-      <test-com></test-com>
+
+    <view class="test-comments">
+      <view class="label">
+        评分:
+      </view>
+
+      <view class="comments">
+      </view>
     </view>
+
+    <view class="comment-bar">
+      <add-rating-com></add-rating-com>
+    </view>
+
+    <view class="actions-bar">
+      <actions-com></actions-com>
+    </view>
+
+    <!-- <view class="related-tests">
+      <view class="label">
+        相关测评:
+      </view>
+
+      <view class="tests">
+        <test-com></test-com>
+      </view>
+    </view> -->
   </view>
 </view>

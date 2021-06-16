@@ -8,7 +8,7 @@
       tabBackgroundColor="none" activeClass="tab-bar-title__selected" swipperHeight="{{swiperHeight}}">
 
       <block wx:for="{{tabs}}" wx:key="title" wx:for-index="tabIndex">
-
+        <van-loading wx:if="{{loading}}" size="36px" type="spinner" color="#1989fa" vertical>加载中</van-loading>
         <!-- tests -->
         <view class="tab-content" data-set="{{item.title}}" slot="tab-content-0">
           <view class="entity-list" wx:for="{{tabIndex== 0 ? tests.entities : []}}" wx:key="id" wx:for-item="test"

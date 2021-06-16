@@ -11,5 +11,5 @@
   </view>
 
   <van-checkbox value="{{ verify }}" shape="square" checked-color="#58bd6a" bind:change="onChange">确认</van-checkbox>
-  <van-button type="primary" block bindtap="continueInvite" disabled="{{countDown != 0}}">开始测评<text wx:if="{{countDown != 0 && countDown != 15}}"> ({{countDown}})</text></van-button>
+  <van-button type="primary" block bindtap="startTest" disabled="{{countDown != 0}}">开始测评<text wx:if="{{countDown != 0 && countDown != 15}}"> ({{countDown}})</text></van-button>
 </view>

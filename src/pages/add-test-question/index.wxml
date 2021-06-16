@@ -1,7 +1,8 @@
 <wxs src="../../utils/util.wxs" module="tools" />
 
 <view class="container">
-  <view class="normal-display">
+  <van-loading wx:if="{{loading}}" size="36px" type="spinner" color="#1989fa" vertical>加载中</van-loading>
+  <view wx:if="{{!loading}}" class="normal-display">
     <van-notify id="van-notify" />
     <view class="questions-displayer">
       <view class="label">
@@ -16,7 +17,6 @@
         <view class="add-question-action" hover-class="pressed" hover-start-time="50" hover-stay-time="100"
           bindtap="addQuestion">
           <view class="add-question-icon">
-
           </view>
         </view>
       </view>
@@ -32,12 +32,15 @@
     </view>
 
     <view class="complete-action">
-      <van-button type="primary" block bindtap="checkResult">完成</van-button>
+      <van-button wx:if="{{leftScore != 0}}" type="primary" block bindtap="checkResult">完成</van-button>
+
+      <van-button wx:if="{{leftScore == 0}}" type="primary" color="#1f7cf5" block bindtap="releaseTest">发布测评
+      </van-button>
     </view>
   </view>
 
 
-  <view class="add-question-window" wx:if="{{isShowAdd}}">
+  <view class="add-question-window" wx:if="{{isShowAdd && !loading}}">
     <view class="close-input" bindtap="closeInput">
     </view>
     <view class="window-content">

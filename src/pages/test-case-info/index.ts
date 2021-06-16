@@ -6,14 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    testId: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-    
+  onLoad(options: BaseParam) {
+    let testId = options.id;
+    this.setData({
+      testId: testId
+    })
   },
 
   /**
@@ -42,5 +45,11 @@ Page({
    */
   onUnload() {
     
+  },
+
+  continueInvite(event: any) {
+    wx.navigateTo({
+      url: `/pages/test-case-attention/index?id=${this.data.testId}`
+    });
   }
 });

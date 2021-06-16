@@ -15,6 +15,7 @@ Page({
       y: 0
     },
     showCreate: true,
+    loading: true,
     tabs: [
       {
         title: '热门'

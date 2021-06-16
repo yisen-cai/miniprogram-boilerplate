@@ -10,6 +10,7 @@ type TAddTestData = {
   description: string,
   totalScore: number,
   accessToken: string,
+  timeLimit: number,
   questions: Array<QuestionVO>,
   tags: Array<string>,
   isShowed: boolean,
@@ -27,6 +28,7 @@ Page<TAddTestData, WechatMiniprogram.Page.CustomOption>({
     accessToken: '',
     questions: [],
     tagSearchText: '',
+    timeLimit: 120,
     tags: [],
     isShowed: false,
     expandPanel: false,
@@ -60,6 +62,7 @@ Page<TAddTestData, WechatMiniprogram.Page.CustomOption>({
       cover: this.data.cover,
       description: this.data.description,
       totalScore: this.data.totalScore,
+      timeLimit: this.data.timeLimit,
       accessToken: this.data.accessToken,
       questions: null
     }).then(res => {
@@ -91,7 +94,7 @@ Page<TAddTestData, WechatMiniprogram.Page.CustomOption>({
   },
 
   validateForm(event: any) {
-    if (notEmptyString(this.data.name) && this.data.totalScore != null) {
+    if (notEmptyString(this.data.name) && this.data.totalScore != null && this.data.timeLimit > 0) {
       this.addTest();
     } else {
       Notify({ type: 'danger', message: '请把信息填写完整!' });

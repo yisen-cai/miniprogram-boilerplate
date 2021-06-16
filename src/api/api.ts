@@ -11,6 +11,8 @@ export function addQuestion(question: QuestionVO) {
 }
 
 
+// export function createTestCase()
+
 /**
  * Get Question by id.
  * @param questionId 
@@ -19,6 +21,10 @@ export function getQuestion(questionId: string) {
   return netRequest(`/questions/${questionId}`, 'GET');
 }
 
+
+export function getTestQuestions(testId: string) {
+  return netRequest(`/tests/${testId}/questions`, 'GET')
+}
 
 /**
  * Add Test entity.
@@ -133,6 +139,11 @@ export function searchQuestion(keyword: string) {
 
 export function addTestQuestion(testId: string, question: QuestionMetaVO) {
   return netRequest(`/tests/${testId}/questions`, 'PUT', null, question);
+}
+
+
+export function releaseTest(testId: string) {
+  return netRequest(`/tests/${testId}/release`, 'PUT', null, null);
 }
 
 /**

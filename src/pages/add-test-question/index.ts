@@ -1,7 +1,10 @@
-import { addTestQuestion, getTest, search, searchQuestion } from "../../api/api";
+import { addTestQuestion, getTest, releaseTest, search, searchQuestion } from "../../api/api";
 import Notify from '@vant/weapp/notify/notify';
+const app = <MyAppOption>getApp();
+
 
 type TTestQuestionData = {
+  loading: boolean,
   questions: Array<QuestionMetaVO>,
   other: string,
   test?: TestDTO,
@@ -28,6 +31,7 @@ Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
       score: 10,
       questionId: ''
     },
+    loading: true,
     test: undefined,
     questions: [],
     searchQuestionText: '',
@@ -47,19 +51,47 @@ Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
    * 生命周期函数--监听页面加载
    */
   onLoad(options: TestQuestionOption) {
-    getTest(options.id).then(res => {
-      let data = <TestDTO>res.data;
-      this.setData({
-        test: data,
-        leftScore: data.totalScore
+    // let testId = options.id;
+    // getTest(testId).then(res => {
+    //   let data = <TestDTO>res.data;
+    //   this.setData({
+    //     test: data,
+    //     leftScore: data.totalScore
+    //   });
+    // }).catch(res => {
+    //   console.log(res);
+    // });
+
+    let self = this;
+    app.loginReadyCallback = (res: any) => {
+      let testId = options.id;
+      getTest(testId).then(res => {
+        let data = <TestDTO>res.data;
+        if(data.state == 2) {
+          Notify({ type: 'danger', message: '发布的测评无法修改!' });
+          return;
+        }
+        let leftScore = data.totalScore;
+        data.questions.forEach(qu => {
+          leftScore -= qu.score
+        });
+        self.setData({
+          test: data,
+          leftScore: leftScore,
+          questions: data.questions,
+          loading: false
+        });
+      }).catch(res => {
+        console.log(res);
+        self.setData({
+          loading: false
+        });
       });
-    }).catch(res => {
-      console.log(res);
-    });
+    }
   },
 
 
-  closeInput(event:any) {
+  closeInput(event: any) {
     this.setData({
       isShowAdd: false
     });
@@ -190,18 +222,32 @@ Page<TTestQuestionData, WechatMiniprogram.Page.CustomOption>({
       Notify({ type: 'danger', message: '请选择题目添加!' });
     }
     let self = this;
-    addTestQuestion('60897eba03e081335f70fda0', this.data.readyAddQuestion).then(res => {
+    addTestQuestion(this.data.test!!.id, this.data.readyAddQuestion).then(res => {
       Notify({ type: 'success', message: '添加试题成功!' });
       let questions = self.data.questions;
       questions.push(self.data.readyAddQuestion);
       self.setData({
         addQuestionIndex: self.data.addQuestionIndex + 1,
         questions: questions,
+        leftScore: leftScore,
         isShowAdd: false
       });
       self.initData();
-    }).catch(err=> {
+    }).catch(err => {
       console.log(err);
     });
+  },
+
+  releaseTest(event: any) {
+    let testId = this.data.test!!.id;
+    let url = `/pages/test-detail/index^^idequals${testId}`
+
+    releaseTest(testId).then(res => {
+      wx.navigateTo({
+        url: `/pages/complete-page/index?message=测评&url=${url}`
+      });
+    }).catch(err => {
+
+    })
   }
 })

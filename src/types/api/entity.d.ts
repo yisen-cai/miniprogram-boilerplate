@@ -64,7 +64,7 @@ type QuestionVO = {
 
 type QuestionMetaVO = {
   index: number,
-  score?: number,
+  score: number,
   questionId: string
 }
 
@@ -96,6 +96,7 @@ type TestVO = {
   name: string,
   cover: string,
   description: string,
+  timeLimit: number,
   totalScore: number,
   accessToken: string,
   questions: Array<TestQuestion>?
@@ -202,6 +203,7 @@ type TestDTO = {
   cover: string,
   author: UserMeta,
   totalScore: number,
+  questions: Array<QuestionMetaVO>,
   state: number,
   description: string,
   totalTested: number,

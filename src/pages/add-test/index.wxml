@@ -11,6 +11,7 @@
     <van-field model:value="{{ name }}" label="名称" placeholder="请输入测评名称" required clearable />
     <van-field model:value="{{ totalScore }}" type="digit" label="总分" placeholder="请输入测评总分" required clearable />
     <van-field model:value="{{accessToken}}" label="访问密钥" placeholder="请输入访问密钥" clearable />
+    <van-field model:value="{{ timeLimit }}" type="digit" label="测评时间" placeholder="请输入测评时间" required clearable />
     <van-field label="测评详情" type="text" autosize readonly="{{true}}" />
     <editor-com style="width: 100%;" placeholder="请输入测评详情" bind:updateDes="updateDes" editorText="{{description}}">
     </editor-com>

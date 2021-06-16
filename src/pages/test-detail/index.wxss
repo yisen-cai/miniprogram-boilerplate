@@ -5,10 +5,14 @@
 
 .test-details {
   height: 200rpx;
-  width: 90%;
+  width: 100%;
   display: inline-flex;
   align-items: center;
   font-family: serif;
+}
+
+.main-content {
+  width: 90%;
 }
 
 .user-status {
@@ -53,10 +57,11 @@
 .line1 {
   justify-content: space-between;
 }
+
 .grades {
- display: inline-flex;
- margin-right: 30rpx;
- font-family: serif;
+  display: inline-flex;
+  margin-right: 30rpx;
+  font-family: serif;
 }
 
 .test-cover {
@@ -72,7 +77,7 @@
   margin-top: 40rpx;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   font-family: serif;
   min-height: 600rpx;
 }
@@ -100,23 +105,23 @@ rich-text {
 
 .comment-bar {
   margin-bottom: 50rpx;
-  width: 90%;
+  width: 100%;
 }
 
 .test-comments {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 90%;
+  width: 100%;
 }
 
 .actions-bar {
-  width: 90%;
+  width: 100%;
 }
 
 .related-tests {
   margin-top: 50rpx;
-  width: 90%;
+  width: 100%;
 }
 
 .tests {

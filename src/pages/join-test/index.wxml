@@ -2,20 +2,18 @@
   <view class="question-body">
     <view class="question-content">
       <view class="question-index">
-        1.
+        {{activeIndex}}.
       </view>
       <view class="question-content-des">
-        This actor often has the first two tricks
-        planned before performing, and then
-        goes for______.
+        <rich-text nodes="{{activeQuestion.content}}"></rich-text>
       </view>
     </view>
 
     <view class="question-options">
-      <option-com option="whichever" tag="A" selected="{{false}}"></option-com>
-      <option-com option="whenever" tag="B" selected="{{false}}"></option-com>
-      <option-com option="whatever" tag="C" selected="{{false}}"></option-com>
-      <option-com option="wherever" tag="D" selected="{{false}}"></option-com>
+      <view class="option" wx:for="{{activeQuestion.options}}" wx:key="id" wx:for-item="option" wx:for-index="index" bindtap="activeOption" data-index="{{index}}" >
+        <option-com option="{{option.content}}" tag="{{optionTags[index]}}" selected="{{activeAnswer == index}}">
+        </option-com>
+      </view>
     </view>
   </view>
 
@@ -24,27 +22,27 @@
     </view>
 
     <view class="expand-fold-content">
-      <question-com question="{{question1}}" canDelete="{{false}}" selected="{{true}}"></question-com>
-      <question-com question="{{question2}}" canDelete="{{false}}" selected="{{false}}"></question-com>
-      <question-com question="{{question3}}" canDelete="{{false}}" selected="{{false}}"></question-com>
-      <question-com question="{{question4}}" canDelete="{{false}}" selected="{{false}}"></question-com>
+      <view class="questions" wx:for="{{questions}}" wx:key="id" wx:for-item="question" wx:for-index="index">
+        <question-com question="{{question}}" index="{{index + 1}}" action="{{true}}" bind:click="activeQuestion" canDelete="{{false}}" data-index="{{index}}"
+          selected="{{activeIndex == index + 1}}"></question-com>
+      </view>
     </view>
   </view>
 
   <view class="bottom-navi">
-    <view class="prev-question">
+    <view class="prev-question" bindtap="prev">
       上一题
     </view>
 
     <view class="timer" wx:if="{{!expandFold}}">
-      00:32:21
-    </view>
-    
-    <view class="post-answer" wx:if="{{expandFold}}">
-      <van-button type="primary" block bindtap="continueInvite">交卷</van-button>
+      <van-count-down time="{{ timeLimit }}" />
     </view>
 
-    <view class="next-question">
+    <view class="post-answer" wx:if="{{expandFold}}">
+      <van-button type="primary" block bindtap="postAnswer">交卷</van-button>
+    </view>
+
+    <view class="next-question" bindtap="next">
       下一题
     </view>
   </view>

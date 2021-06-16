@@ -36,13 +36,13 @@
 
 .position {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   margin-top: 30rpx;
   background: #ff4e4a;
   border: 1px solid red;
   border-radius: 20rpx;
-  padding: 0 10rpx;
+  padding: 10rpx 10rpx;
 }
 
 
